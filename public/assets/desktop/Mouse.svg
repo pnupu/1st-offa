@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 100 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-1471,-814)">
-        <g id="Mouse" transform="matrix(0.965926,-0.258819,0.258819,0.965926,-130.612,465.505)">
-            <ellipse cx="1488.05" cy="828.336" rx="48.048" ry="67.171" style="fill:#909090;"/>
+<svg width="100%" height="100%" viewBox="0 0 101 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1483,-860)">
+        <g id="Mouse" transform="matrix(-0.889007,0.457894,-0.457894,-0.889007,3231.15,963.088)">
+            <path d="M1488.05,761.165C1514.57,761.165 1533.61,780.417 1533.61,817.49C1533.61,854.562 1515.04,877.748 1488.52,877.748C1462,877.748 1443.84,851.067 1443.84,813.995C1443.84,776.922 1461.53,761.165 1488.05,761.165Z" style="fill:#909090;"/>
+            <clipPath id="_clip1">
+                <path d="M1488.05,761.165C1514.57,761.165 1533.61,780.417 1533.61,817.49C1533.61,854.562 1515.04,877.748 1488.52,877.748C1462,877.748 1443.84,851.067 1443.84,813.995C1443.84,776.922 1461.53,761.165 1488.05,761.165Z"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(-0.889007,-0.457894,0.457894,-0.889007,2426.58,2325.7)">
+                    <path d="M1505.93,864.348C1509.59,866.619 1512.7,869.341 1515.07,872.605C1517.07,875.362 1518.55,878.505 1519.38,882.09" style="fill:#99e5bd;"/>
+                    <path d="M1520.13,885.307C1518.84,885.604 1518.77,885.591 1517.65,884.89C1516.14,883.951 1516.41,883.677 1515.94,881.962C1513.74,873.864 1507.96,869.52 1504.18,867.152C1503.06,866.448 1503.02,866.391 1502.72,865.1C1502.71,865.084 1503.12,862.606 1503.12,862.601C1503.81,862.111 1504.36,861.329 1505.17,861.137C1506.68,860.784 1506.73,860.946 1508.04,861.772C1518.75,868.555 1521.54,876.908 1522.6,881.34C1522.91,882.657 1522.29,883.66 1522.18,883.832C1522.08,884.004 1521.46,885.002 1520.13,885.307Z" style="fill:#a7a7a7;"/>
+                </g>
+            </g>
         </g>
     </g>
 </svg>

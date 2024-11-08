@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 240 240" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-86,-92)">
+        <g id="Clock" transform="matrix(1,0,0,1,-1.5786,8.23896)">
+            <g id="Clock1" serif:id="Clock" transform="matrix(1.11937,0,0,1.11937,-125.756,-51.6333)">
+                <circle cx="297.979" cy="228.124" r="106.963" style="fill:#d5c9bd;"/>
+            </g>
+            <g id="Clock2" serif:id="Clock" transform="matrix(1.07582,0,0,1.07582,-112.779,-41.6988)">
+                <circle cx="297.979" cy="228.124" r="106.963" style="fill:#f2eeeb;"/>
+            </g>
+            <g transform="matrix(1.04141,0,0,1.04141,-8.60459,-8.43601)">
+                <g transform="matrix(1.00535e-15,-3.28059,1.98401,7.4811e-16,-90.2923,885.406)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-1.6403,-2.84107,1.7182,-0.992003,290.486,943.121)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-2.84107,-1.6403,0.992003,-1.7182,649.106,802.714)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-3.28059,-7.03373e-15,4.3939e-15,-1.98401,889.477,501.808)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-2.84107,1.6403,-0.992003,-1.7182,947.192,121.03)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-1.6403,2.84107,-1.7182,-0.992003,806.785,-237.591)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(-1.30621e-14,3.28059,-1.98401,-8.03968e-15,505.879,-477.962)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+                <g transform="matrix(1.6403,2.84107,-1.7182,0.992003,125.101,-535.676)">
+                    <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:1.05px;"/>
+                </g>
+            </g>
+            <g id="Clock3" serif:id="Clock" transform="matrix(0.893724,0,0,0.904231,-58.5181,-2.55497)">
+                <circle cx="297.979" cy="228.124" r="106.963" style="fill:#f2eeeb;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.834862,0,33.6422)">
+                <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:5.77px;"/>
+            </g>
+            <g transform="matrix(3.26992e-16,-1,0.511344,1.8699e-16,103.614,411.515)">
+                <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:6.69px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
