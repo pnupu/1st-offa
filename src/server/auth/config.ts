@@ -2,10 +2,10 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { type DefaultSession, type NextAuthConfig } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import EmailProvider from "next-auth/providers/email";
 
 import { db } from "@/server/db";
 import { type UserRole } from "@prisma/client";
+import { env } from "@/env";
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -14,14 +14,17 @@ declare module "next-auth" {
       role: UserRole;
     } & DefaultSession["user"];
   }
+
+  interface User {
+    role: UserRole;
+  }
 }
 
 export const authConfig = {
   pages: {
     signIn: '/auth/signin',
-    // signOut: '/auth/signout',
-    // error: '/auth/error',
-    // verifyRequest: '/auth/verify-request',
+    error: '/auth/error',
+    verifyRequest: '/auth/verify-request',
   },
   callbacks: {
     session: ({ session, user }) => ({
@@ -29,6 +32,7 @@ export const authConfig = {
       user: {
         ...session.user,
         id: user.id,
+        role: user.role,
       },
     }),
     redirect({ url, baseUrl }) {
@@ -42,19 +46,15 @@ export const authConfig = {
   adapter: PrismaAdapter(db),
   providers: [
     GoogleProvider({
-      clientId: process.env.AUTH_GOOGLE_ID ?? "",
-      clientSecret: process.env.AUTH_GOOGLE_SECRET ?? "",
-    }),
-    EmailProvider({
-      server: {
-        host: process.env.EMAIL_SERVER_HOST,
-        port: process.env.EMAIL_SERVER_PORT,
-        auth: {
-          user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD,
-        },
-      },
-      from: process.env.EMAIL_FROM,
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code"
+        }
+      }
     }),
   ],
 } satisfies NextAuthConfig;

@@ -13,9 +13,9 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
-    NEXTAUTH_URL: z.string().url(),
+    NEXTAUTH_URL: z.string().url().optional(),
     SEED_USER_ID: z.string().optional(),
-    VERCEL_URL: z.string().url().optional(),
+    VERCEL_URL: z.string().optional(),
   },
 
   client: {
