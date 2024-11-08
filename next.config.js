@@ -24,6 +24,14 @@ const config = {
             key: 'Cache-Control',
             value: 'no-store, max-age=0',
           },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'none'"
+          }
         ],
       },
     ];
@@ -33,16 +41,12 @@ const config = {
     return {
       beforeFiles: [
         {
-          source: '/auth/signin',
-          destination: '/api/auth/signin',
-        },
-        {
-          source: '/auth/callback/google',
-          destination: '/api/auth/callback/google',
-        },
+          source: '/api/auth/callback/google',
+          destination: '/api/auth/callback/google'
+        }
       ],
       afterFiles: [],
-      fallback: [],
+      fallback: []
     };
   },
 };
