@@ -9,7 +9,7 @@ export default function SignInPage() {
   
   // Redirect to game if already signed in
   if (session?.user) {
-    redirect("/create-profile");
+    redirect("/dashboard");
   }
 
   return (
