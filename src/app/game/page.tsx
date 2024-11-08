@@ -5,7 +5,7 @@ import Game from "./_components/Game";
 
 const GamePage = () => {
   return (
-    <div style={{ textAlign: 'center', height: "100vh", width: "100vw", background: "grey" }}>
+    <div style={{ textAlign: 'center', height: "100vh", width: "100vw", display: "flex", alignItems: "center", justifyContent: "center", background: "black" }}>
       <GameTimeProvider>
         <Game />
       </GameTimeProvider>
