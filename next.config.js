@@ -14,6 +14,41 @@ const config = {
       },
     ],
   },
+  // Add trusted domains for authentication
+  async headers() {
+    return [
+      {
+        source: '/api/auth/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, max-age=0',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'none'"
+          }
+        ],
+      },
+    ];
+  },
+  // Add rewrites for authentication
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/api/auth/callback/google',
+          destination: '/api/auth/callback/google'
+        }
+      ],
+      afterFiles: [],
+      fallback: []
+    };
+  },
 };
 
 export default config;

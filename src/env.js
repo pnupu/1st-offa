@@ -13,7 +13,9 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    NEXTAUTH_URL: z.string().url().optional(),
     SEED_USER_ID: z.string().optional(),
+    VERCEL_URL: z.string().optional(),
   },
 
   client: {
@@ -27,6 +29,8 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     NODE_ENV: process.env.NODE_ENV,
     SEED_USER_ID: process.env.SEED_USER_ID,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    VERCEL_URL: process.env.VERCEL_URL,
   },
 
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
