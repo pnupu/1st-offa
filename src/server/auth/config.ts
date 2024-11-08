@@ -14,17 +14,14 @@ declare module "next-auth" {
       role: UserRole;
     } & DefaultSession["user"];
   }
-
-  interface User {
-    role: UserRole;
-  }
 }
 
 export const authConfig = {
   pages: {
     signIn: '/auth/signin',
-    error: '/auth/error',
-    verifyRequest: '/auth/verify-request',
+    // signOut: '/auth/signout',
+    // error: '/auth/error',
+    // verifyRequest: '/auth/verify-request',
   },
   callbacks: {
     session: ({ session, user }) => ({
@@ -32,7 +29,6 @@ export const authConfig = {
       user: {
         ...session.user,
         id: user.id,
-        role: user.role,
       },
     }),
     redirect({ url, baseUrl }) {
@@ -46,15 +42,8 @@ export const authConfig = {
   adapter: PrismaAdapter(db),
   providers: [
     GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code"
-        }
-      }
+      clientId: env.AUTH_GOOGLE_ID,
+      clientSecret: env.AUTH_GOOGLE_SECRET,
     }),
   ],
 } satisfies NextAuthConfig;
