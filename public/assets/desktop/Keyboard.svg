@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 848 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-536,-908)">
-        <g id="Keyboard" transform="matrix(1.2263,0,0,1.2263,-296.51,-205.505)">
-            <path d="M1370.11,1033.28L679.157,1033.28L740.153,908.092L1309.11,908.092L1370.11,1033.28Z" style="fill:#909090;"/>
+<svg width="100%" height="100%" viewBox="0 0 928 155" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-496,-892)">
+        <g id="Keyboard" transform="matrix(1.34139,0,0,1.2263,-414.433,-220.652)">
+            <path d="M1370.11,1033.28L679.157,1033.28L746.773,908.092L1302.49,908.092L1370.11,1033.28Z" style="fill:#909090;"/>
         </g>
     </g>
 </svg>
