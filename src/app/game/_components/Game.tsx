@@ -1,7 +1,9 @@
 'use client';
 
 import { useGameTime } from "./GameTimeContext";
+import ComputerObject from "./static_components/ComputerObject";
 import Desk from "./static_components/Desk";
+import StaticItem from "./static_components/StaticItem";
 
 const Game = () => {
     const { timeAsString, timeAsNumber, startGameTime, pauseGameTime } = useGameTime();
@@ -13,8 +15,17 @@ const Game = () => {
                 Game Time: {timeAsString}
             </div>
             
-            {/* Desk Component */}
             <Desk />
+            <StaticItem
+                x={386}
+                y={205}
+                width={500}
+                height={385}
+                zIndex={30}
+            >
+                <ComputerObject />
+            </StaticItem>
+            
         </div>
     );
 }
