@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useDragAndDropContext } from '../DragAndDropContext';
 
 interface DraggableItemProps {
@@ -15,10 +15,12 @@ interface DraggableItemProps {
 const DraggableItem = ({ id, initialX, initialY, width, height, children }: DraggableItemProps) => {
     const { positions, updatePosition } = useDragAndDropContext();
     const ref = useRef<HTMLDivElement>(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startPosition, setStartPosition] = useState({ x: initialX, y: initialY });
-    const [offset, setOffset] = useState({ x: 0, y: 0 });
-    const [isClick, setIsClick] = useState(true);
+
+    // Use refs to track dragging and offset, avoiding state-related async issues
+    const isDraggingRef = useRef(false);
+    const startPositionRef = useRef({ x: initialX, y: initialY });
+    const offsetRef = useRef({ x: 0, y: 0 });
+    const isClickRef = useRef(true);
 
     // Initialize position if not set
     useEffect(() => {
@@ -28,20 +30,18 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
     }, [id, initialX, initialY, updatePosition, positions]);
 
     const onMouseDown = (e: React.MouseEvent) => {
-        e.preventDefault(); // Prevent any default action, such as text selection
+        e.preventDefault(); // Prevent text selection and other default actions
 
         const currentX = positions[id]?.x ?? initialX;
         const currentY = positions[id]?.y ?? initialY;
 
-        // console.log('onMouseDown', currentX, currentY);
-
-        setIsClick(true);
-        setIsDragging(true);
-        setStartPosition({ x: currentX, y: currentY });
-        setOffset({
+        isClickRef.current = true;
+        isDraggingRef.current = true; // Set ref to indicate dragging has started
+        startPositionRef.current = { x: currentX, y: currentY };
+        offsetRef.current = {
             x: e.clientX - currentX,
             y: e.clientY - currentY,
-        });
+        };
 
         // Attach global event listeners to track mouse movements
         document.addEventListener('mousemove', onMouseMove);
@@ -49,15 +49,13 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
     };
 
     const onMouseMove = (e: MouseEvent) => {
-        if (!ref.current?.parentElement) return;
+        if (!isDraggingRef.current || !ref.current?.parentElement) return;
 
-        //console.log('onMouseMove', e.clientX, e.clientY);
-
-        setIsClick(false); // Indicates it's a drag, not just a click
+        isClickRef.current = false; // Indicates it's a drag, not just a click
 
         const parentRect = ref.current.parentElement.getBoundingClientRect();
-        let newX = e.clientX - offset.x;
-        let newY = e.clientY - offset.y;
+        let newX = e.clientX - offsetRef.current.x;
+        let newY = e.clientY - offsetRef.current.y;
 
         // Boundaries within parent container
         newX = Math.max(0, Math.min(newX, parentRect.width - width));
@@ -66,14 +64,12 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
         updatePosition(id, newX, newY);
     };
 
-    const onMouseUp = (e: MouseEvent) => {
-        // console.log('onMouseUp');
-
-        setIsDragging(false);
+    const onMouseUp = () => {
+        isDraggingRef.current = false; // Set ref to indicate dragging has ended
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
 
-        if (isClick && ref.current) {
+        if (isClickRef.current && ref.current) {
             // Call the child's onClick if it was a click without drag
             const child = ref.current.querySelector('*');
             if (child && typeof child.dispatchEvent === 'function') {
@@ -95,7 +91,6 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
                 top: `${currentY}px`,
                 width: `${width}px`,
                 height: `${height}px`,
-                opacity: isDragging ? 0.8 : 1,
             }}
         >
             {children}
