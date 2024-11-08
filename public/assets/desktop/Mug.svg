@@ -4,17 +4,18 @@
     <g transform="matrix(1,0,0,1,-179,-701)">
         <g id="Mug" transform="matrix(1.54678,0,0,1.54678,-406.319,-435.397)">
             <g transform="matrix(1,0,0,1,-545.316,-56.1629)">
-                <ellipse cx="975.811" cy="807.187" rx="51.486" ry="16.196" style="fill:#757575;"/>
+                <ellipse cx="975.811" cy="807.187" rx="51.486" ry="16.196" style="fill:url(#_Radial1);"/>
             </g>
             <g transform="matrix(1,0,0,1,-545.316,-48.0271)">
-                <ellipse cx="975.811" cy="807.187" rx="51.486" ry="16.196" style="fill:#545454;"/>
+                <ellipse cx="975.811" cy="807.187" rx="51.486" ry="16.196" style="fill:#493131;"/>
             </g>
             <g transform="matrix(1,0,0,1,-529.505,57.0972)">
-                <path d="M1011.49,790.953L1011.49,807.187C1011.49,816.126 988.416,823.383 960,823.383C931.584,823.383 908.514,816.126 908.514,807.187L908.514,693.927C908.514,702.866 931.584,710.123 960,710.123C988.416,710.123 1011.49,702.866 1011.49,693.927L1011.49,718.259C1031.55,718.259 1047.83,734.545 1047.83,754.606C1047.83,774.666 1031.55,790.953 1011.49,790.953ZM1011.49,736.432L1011.49,772.779C1021.52,772.779 1029.66,764.636 1029.66,754.606C1029.66,744.576 1021.52,736.432 1011.49,736.432Z" style="fill:url(#_Radial1);"/>
+                <path d="M1011.49,790.953L1011.49,807.187C1011.49,816.126 988.416,823.383 960,823.383C931.584,823.383 908.514,816.126 908.514,807.187L908.514,693.927C908.514,702.866 931.584,710.123 960,710.123C988.416,710.123 1011.49,702.866 1011.49,693.927L1011.49,718.259C1031.55,718.259 1047.83,734.545 1047.83,754.606C1047.83,774.666 1031.55,790.953 1011.49,790.953ZM1011.49,736.432L1011.49,772.779C1021.52,772.779 1029.66,764.636 1029.66,754.606C1029.66,744.576 1021.52,736.432 1011.49,736.432Z" style="fill:url(#_Radial2);"/>
             </g>
         </g>
     </g>
     <defs>
-        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(153.876,-7.34988e-14,2.99575e-13,627.186,960,750.557)"><stop offset="0" style="stop-color:#909090;stop-opacity:1"/><stop offset="1" style="stop-color:#5a5a5a;stop-opacity:1"/></radialGradient>
+        <radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(69.5793,0,0,240.273,975.811,863.817)"><stop offset="0" style="stop-color:#f39ba3;stop-opacity:1"/><stop offset="1" style="stop-color:#ed6673;stop-opacity:1"/></radialGradient>
+        <radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(42.3188,0,0,240.273,960,750.557)"><stop offset="0" style="stop-color:#ed6673;stop-opacity:1"/><stop offset="1" style="stop-color:#d15b6f;stop-opacity:1"/></radialGradient>
     </defs>
 </svg>
