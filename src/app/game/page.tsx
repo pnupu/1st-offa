@@ -1,11 +1,14 @@
 'use client';
 
-import GameWrapper from "./_components/GameWrapper";
+import { GameTimeProvider } from "./_components/GameTimeContext";
+import Game from "./_components/Game";
 
 const GamePage = () => {
   return (
     <div style={{ textAlign: 'center', height: "100vh", width: "100vw", background: "grey" }}>
-      <GameWrapper />
+      <GameTimeProvider>
+        <Game />
+      </GameTimeProvider>
     </div>
   );
 };
