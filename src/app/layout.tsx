@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,9 +36,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TRPCReactProvider>
-            {children}
-          </TRPCReactProvider>
+          <SessionProvider>
+            <TRPCReactProvider>
+              {children}
+            </TRPCReactProvider>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>
