@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const Browser = () => {
-  const [url, setUrl] = useState("https://www.google.com");
+  const [url, setUrl] = useState("https://rwbk.fi");
   const [inputUrl, setInputUrl] = useState(url);
 
   const navigateToUrl = () => {
@@ -64,6 +64,9 @@ const Browser = () => {
 
       {/* Favorites Bar */}
       <div className="h-[30px] bg-gray-100 flex items-center px-2 space-x-2 border-b border-gray-300 text-sm text-gray-700">
+        <button onClick={() => openFavorite("https://rwbk.fi")} className="hover:bg-gray-200 px-2 py-1 rounded">
+          RWBK
+        </button>
         <button onClick={() => openFavorite("https://github.com")} className="hover:bg-gray-200 px-2 py-1 rounded">
           GitHub
         </button>
@@ -81,9 +84,6 @@ const Browser = () => {
         </button>
         <button onClick={() => openFavorite("https://reddit.com")} className="hover:bg-gray-200 px-2 py-1 rounded">
           Netflix
-        </button>
-        <button onClick={() => openFavorite("https://rwbk.fi")} className="hover:bg-gray-200 px-2 py-1 rounded">
-          RWBK
         </button>
       </div>
 
