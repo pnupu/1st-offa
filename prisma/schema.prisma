@@ -164,3 +164,41 @@ model File {
   userId    String?  @unique
   company   Company?
 }
+
+model GameEmail {
+  id        String   @id @default(cuid())
+  subject   String
+  content   String   @db.Text
+  from      String
+  read      Boolean  @default(false)
+  archived  Boolean  @default(false)
+  order     Int      // To control the sequence of emails in the game
+  
+  // Optional: If we want to allow replies
+  replies   GameEmailReply[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}
+
+model GameEmailReply {
+  id        String    @id @default(cuid())
+  content   String    @db.Text
+  
+  // OCEAN scores for this reply
+  openness          Float?    @db.DoublePrecision
+  conscientiousness Float?    @db.DoublePrecision
+  extraversion      Float?    @db.DoublePrecision
+  agreeableness     Float?    @db.DoublePrecision
+  neuroticism       Float?    @db.DoublePrecision
+  
+  // Relations
+  email     GameEmail @relation(fields: [emailId], references: [id])
+  emailId   String
+  
+  createdAt DateTime  @default(now())
+
+  @@index([emailId])
+}
