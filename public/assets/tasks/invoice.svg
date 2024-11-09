@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 794 1123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:10;">
+    <g id="g10" transform="matrix(1.33333,0,0,1.33333,0,4.27297e-05)">
+        <g transform="matrix(0.741837,0,0,0.743133,5.43826,8.25919)">
+            <rect x="-7.331" y="-11.114" width="802.435" height="1132.89" style="fill:#fff;"/>
+        </g>
+        <g id="g12" transform="matrix(0.75,0,0,0.75,0,0)">
+            <g id="g14">
+                <g id="g16">
+                    <g id="g18">
+                        <g id="g20">
+                            <g id="g22">
+                                <g id="g24">
+                                    <clipPath id="_clip1">
+                                        <path d="M710.701,354.875L83,354.875L84,353.875L709.701,353.875"/>
+                                    </clipPath>
+                                    <g clip-path="url(#_clip1)">
+                                        <path id="path30" d="M84,353.875L709.701,353.875L84,353.875ZM83,352.875L710.701,352.875L710.701,354.875L83,354.875L83,352.875Z" style="fill:#020202;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="g32">
+                                <g id="g34">
+                                    <clipPath id="_clip2">
+                                        <path d="M83,354.875L83,352.875L84,353.875"/>
+                                    </clipPath>
+                                    <g clip-path="url(#_clip2)">
+                                        <path id="path40" d="M84,353.875L709.701,353.875L84,353.875ZM83,352.875L710.701,352.875L710.701,354.875L83,354.875L83,352.875Z" style="fill:#010101;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="g42">
+                                <g id="g44">
+                                    <clipPath id="_clip3">
+                                        <path d="M710.701,354.875L710.701,352.875L709.701,353.875"/>
+                                    </clipPath>
+                                    <g clip-path="url(#_clip3)">
+                                        <path id="path50" d="M84,353.875L709.701,353.875L84,353.875ZM83,352.875L710.701,352.875L710.701,354.875L83,354.875L83,352.875Z" style="fill:#020202;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="g52">
+                                <g id="g54">
+                                    <clipPath id="_clip4">
+                                        <path d="M710.701,352.875L83,352.875L84,353.875L709.701,353.875"/>
+                                    </clipPath>
+                                    <g clip-path="url(#_clip4)">
+                                        <path id="path60" d="M84,353.875L709.701,353.875L84,353.875ZM83,352.875L710.701,352.875L710.701,354.875L83,354.875L83,352.875Z" style="fill:#010101;"/>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="g62">
+                                <g id="g64">
+                                    <path id="path66" d="M83,429.665L180.723,429.665" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g68">
+                                <g id="g70">
+                                    <path id="path72" d="M179.723,429.665L544.447,429.665" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g74">
+                                <g id="g76">
+                                    <path id="path78" d="M543.447,429.665L710.701,429.665" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g80">
+                                <g id="g82">
+                                    <path id="path84" d="M83.5,429.165L83.5,494.661" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g86">
+                                <g id="g88">
+                                    <path id="path90" d="M180.223,429.165L180.223,494.661" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g92">
+                                <g id="g94">
+                                    <path id="path96" d="M83,494.161L180.723,494.161" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g98">
+                                <g id="g100">
+                                    <path id="path102" d="M543.947,429.165L543.947,494.661" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g104">
+                                <g id="g106">
+                                    <path id="path108" d="M179.723,494.161L544.447,494.161" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g110">
+                                <g id="g112">
+                                    <path id="path114" d="M710.201,429.165L710.201,494.661" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g116">
+                                <g id="g118">
+                                    <path id="path120" d="M543.447,494.161L710.701,494.161" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g122">
+                                <g id="g124">
+                                    <path id="path126" d="M83.5,493.661L83.5,582.223" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g128">
+                                <g id="g130">
+                                    <path id="path132" d="M180.223,493.661L180.223,582.223" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g134">
+                                <g id="g136">
+                                    <path id="path138" d="M83,581.723L180.723,581.723" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g140">
+                                <g id="g142">
+                                    <path id="path144" d="M543.947,493.661L543.947,582.223" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g146">
+                                <g id="g148">
+                                    <path id="path150" d="M179.723,581.723L544.447,581.723" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g152">
+                                <g id="g154">
+                                    <path id="path156" d="M710.201,493.661L710.201,582.223" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g158">
+                                <g id="g160">
+                                    <path id="path162" d="M543.447,581.723L710.701,581.723" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g164">
+                                <g id="g166">
+                                    <path id="path168" d="M83.5,581.223L83.5,669.786" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g170">
+                                <g id="g172">
+                                    <path id="path174" d="M180.223,581.223L180.223,669.786" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g176">
+                                <g id="g178">
+                                    <path id="path180" d="M83,669.286L180.723,669.286" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g182">
+                                <g id="g184">
+                                    <path id="path186" d="M543.947,581.223L543.947,669.786" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g188">
+                                <g id="g190">
+                                    <path id="path192" d="M179.723,669.286L544.447,669.286" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g194">
+                                <g id="g196">
+                                    <path id="path198" d="M710.201,581.223L710.201,669.786" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g200">
+                                <g id="g202">
+                                    <path id="path204" d="M543.447,669.286L710.701,669.286" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g206">
+                                <g id="g208">
+                                    <path id="path210" d="M83.5,668.786L83.5,734.067" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g212">
+                                <g id="g214">
+                                    <path id="path216" d="M180.223,668.786L180.223,734.067" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g218">
+                                <g id="g220">
+                                    <path id="path222" d="M83,733.567L180.723,733.567" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g224">
+                                <g id="g226">
+                                    <path id="path228" d="M543.947,668.786L543.947,734.067" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g230">
+                                <g id="g232">
+                                    <path id="path234" d="M179.723,733.567L544.447,733.567" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g236">
+                                <g id="g238">
+                                    <path id="path240" d="M710.201,668.786L710.201,734.067" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g242">
+                                <g id="g244">
+                                    <path id="path246" d="M543.447,733.567L710.701,733.567" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g248">
+                                <g id="g250">
+                                    <path id="path252" d="M83.5,733.067L83.5,798.348" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g254">
+                                <g id="g256">
+                                    <path id="path258" d="M180.223,733.067L180.223,798.348" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g260">
+                                <g id="g262">
+                                    <path id="path264" d="M83,797.848L180.723,797.848" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g266">
+                                <g id="g268">
+                                    <path id="path270" d="M543.947,733.067L543.947,798.348" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g272">
+                                <g id="g274">
+                                    <path id="path276" d="M179.723,797.848L544.447,797.848" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g278">
+                                <g id="g280">
+                                    <path id="path282" d="M710.201,733.067L710.201,798.348" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g284">
+                                <g id="g286">
+                                    <path id="path288" d="M543.447,797.848L710.701,797.848" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g290">
+                                <g id="g292">
+                                    <path id="path294" d="M83.5,797.348L83.5,885.911" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g296">
+                                <g id="g298">
+                                    <path id="path300" d="M180.223,797.348L180.223,885.911" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g302">
+                                <g id="g304">
+                                    <path id="path306" d="M83,885.411L180.723,885.411" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g308">
+                                <g id="g310">
+                                    <path id="path312" d="M543.947,797.348L543.947,885.911" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g314">
+                                <g id="g316">
+                                    <path id="path318" d="M179.723,885.411L544.447,885.411" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g320">
+                                <g id="g322">
+                                    <path id="path324" d="M710.201,797.348L710.201,885.911" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g326">
+                                <g id="g328">
+                                    <path id="path330" d="M543.447,885.411L710.701,885.411" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g332">
+                                <g id="g334">
+                                    <path id="path336" d="M83.5,884.911L83.5,950.407" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g338">
+                                <g id="g340">
+                                    <path id="path342" d="M180.223,884.911L180.223,950.407" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g344">
+                                <g id="g346">
+                                    <path id="path348" d="M83,949.907L180.723,949.907" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g350">
+                                <g id="g352">
+                                    <path id="path354" d="M543.947,884.911L543.947,950.407" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g356">
+                                <g id="g358">
+                                    <path id="path360" d="M179.723,949.907L544.447,949.907" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g362">
+                                <g id="g364">
+                                    <path id="path366" d="M710.201,884.911L710.201,950.407" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="g368">
+                                <g id="g370">
+                                    <path id="path372" d="M543.447,949.907L710.701,949.907" style="fill:none;fill-rule:nonzero;stroke:#696969;stroke-width:1px;"/>
+                                </g>
+                            </g>
+                            <g id="text376" transform="matrix(1,0,0,1,83,120.372)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">Invoice for PRJ5678 – Q3 2024</text>
+                            </g>
+                            <g id="text380" transform="matrix(1,0,0,1,83,171.27)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Project:</text>
+                            </g>
+                            <g id="text384" transform="matrix(1,0,0,1,177.636,171.27)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">PRJ5678 – Company W<tspan x="252.031px 264.756px " y="0px 0px ">eb</tspan>site Revamp</text>
+                            </g>
+                            <g id="text388" transform="matrix(1,0,0,1,83,221.366)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Invoice Number:</text>
+                            </g>
+                            <g id="text392" transform="matrix(1,0,0,1,276.894,221.366)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">INV<tspan x="41.699px 50px " y="0px 0px ">-2</tspan>024-Q4-PRJ5678</text>
+                            </g>
+                            <g id="text396" transform="matrix(1,0,0,1,83,271.462)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Invoice Date:</text>
+                            </g>
+                            <g id="text400" transform="matrix(1,0,0,1,237.929,271.462)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">November 9, 2024</text>
+                            </g>
+                            <g id="text404" transform="matrix(1,0,0,1,83,321.558)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Due Date:</text>
+                            </g>
+                            <g id="text408" transform="matrix(1,0,0,1,201.181,321.558)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">November 23, 2024</text>
+                            </g>
+                            <g id="text412" transform="matrix(1,0,0,1,83,400.246)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">Description of Services</text>
+                            </g>
+                            <g id="text416" transform="matrix(1,0,0,1,104,468.944)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Item</text>
+                            </g>
+                            <g id="text420" transform="matrix(1,0,0,1,200.723,468.944)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Description</text>
+                            </g>
+                            <g id="text424" transform="matrix(1,0,0,1,564.447,468.944)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al</text>
+                            </g>
+                            <g id="text428" transform="matrix(1,0,0,1,104,544.866)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">1</text>
+                            </g>
+                            <g id="text432" transform="matrix(1,0,0,1,200.723,533.225)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">W<tspan x="18.926px 30.762px " y="0px 0px ">eb</tspan>site Revamp (Design</text>
+                            </g>
+                            <g id="text436" transform="matrix(1,0,0,1,200.723,556.507)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Phase)</text>
+                            </g>
+                            <g id="text440" transform="matrix(1,0,0,1,564.447,544.866)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$7,500.00</text>
+                            </g>
+                            <g id="text444" transform="matrix(1,0,0,1,104,632.429)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">2</text>
+                            </g>
+                            <g id="text448" transform="matrix(1,0,0,1,200.723,620.788)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Content Creation &amp; SEO</text>
+                            </g>
+                            <g id="text452" transform="matrix(1,0,0,1,200.723,644.069)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Optimization</text>
+                            </g>
+                            <g id="text456" transform="matrix(1,0,0,1,564.447,632.429)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$3,500.00</text>
+                            </g>
+                            <g id="text460" transform="matrix(1,0,0,1,104,708.35)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">3</text>
+                            </g>
+                            <g id="text464" transform="matrix(1,0,0,1,200.723,708.35)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Backend Development</text>
+                            </g>
+                            <g id="text468" transform="matrix(1,0,0,1,564.447,708.35)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$10,500.00</text>
+                            </g>
+                            <g id="text472" transform="matrix(1,0,0,1,104,772.632)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">4</text>
+                            </g>
+                            <g id="text476" transform="matrix(1,0,0,1,200.723,772.632)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">User T<tspan x="66.66px 78.496px " y="0px 0px ">es</tspan>ting &amp; QA</text>
+                            </g>
+                            <g id="text480" transform="matrix(1,0,0,1,564.447,772.632)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$5,500.00</text>
+                            </g>
+                            <g id="text484" transform="matrix(1,0,0,1,104,848.554)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">5</text>
+                            </g>
+                            <g id="text488" transform="matrix(1,0,0,1,200.723,836.913)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Ongoing Maintenance</text>
+                            </g>
+                            <g id="text492" transform="matrix(1,0,0,1,200.723,860.194)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">(Quarterly)</text>
+                            </g>
+                            <g id="text496" transform="matrix(1,0,0,1,564.447,848.554)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">-$2,000.00</text>
+                            </g>
+                            <g id="text500" transform="matrix(1,0,0,1,104,924.69)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al</text>
+                            </g>
+                            <g id="text504" transform="matrix(1,0,0,1,564.447,924.69)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">$29,300.00</text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 794 1123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="g10" transform="matrix(1.33333,0,0,1.33333,0,4.27297e-05)">
+        <g transform="matrix(0.75,0,0,0.75,0,-3.20472e-05)">
+            <rect x="0" y="0" width="793.701" height="1122.52" style="fill:#fff;"/>
+        </g>
+        <g id="g12" transform="matrix(0.75,0,0,0.75,0,0)">
+            <g id="g14">
+                <g id="g16">
+                    <g id="g18">
+                        <g id="g20">
+                            <g id="text24" transform="matrix(1,0,0,1,83,139.359)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:40px;fill:#191970;">File Naming Standards</text>
+                            </g>
+                            <g id="text28" transform="matrix(1,0,0,1,83,194.371)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Purpose:</text>
+                            </g>
+                            <g id="text32" transform="matrix(1,0,0,1,188.169,194.371)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">T<tspan x="11.787px 23.828px " y="0px 0px ">o </tspan>create a streamlined and consistent structure</text>
+                            </g>
+                            <g id="text36" transform="matrix(1,0,0,1,83,217.653)">
+                                <g transform="matrix(20,0,0,20,113.398,0)">
+                                </g>
+                                <g transform="matrix(20,0,0,20,120.555,0)">
+                                </g>
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">for project ﬂe storage, ensuring all team members can easily</text>
+                            </g>
+                            <g id="text40" transform="matrix(1,0,0,1,83,240.934)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">locate documents, track progress, and archive completed</text>
+                            </g>
+                            <g id="text44" transform="matrix(1,0,0,1,83,264.215)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">work.</text>
+                            </g>
+                            <g id="text48" transform="matrix(1,0,0,1,83,322.001)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">1. Naming Conventions</text>
+                            </g>
+                            <g id="text52" transform="matrix(1,0,0,1,83,375.948)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">Projects</text>
+                            </g>
+                            <g id="text56" transform="matrix(1,0,0,1,83,423.431)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Each project folder should begin with a unique project code,</text>
+                            </g>
+                            <g id="text60" transform="matrix(1,0,0,1,83,446.712)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">followed by the quarter/year<tspan x="287.725px 294.082px " y="0px 0px ">, </tspan>and fnally the document’s</text>
+                            </g>
+                            <g id="text64" transform="matrix(1,0,0,1,83,469.993)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">content type.</text>
+                            </g>
+                            <g id="text68" transform="matrix(1,0,0,1,83,496.09)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">F<tspan x="13.105px 26.445px " y="0px 0px ">or</tspan>mat:</text>
+                            </g>
+                            <g id="text72" transform="matrix(1,0,0,1,177.082,496.09)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">Pr<tspan x="19.96px " y="0px ">o</tspan>jectCode_Y<tspan x="132.84px " y="0px ">e</tspan>arQuarter_ContentT<tspan x="332.6px " y="0px ">y</tspan>pe</text>
+                            </g>
+                            <g id="text76" transform="matrix(1,0,0,1,83,523.33)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Example:</text>
+                            </g>
+                            <g id="text80" transform="matrix(1,0,0,1,192.336,523.33)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">PRJ5678_2023Q4_Report</text>
+                            </g>
+                            <g id="text84" transform="matrix(1,0,0,1,83,574.562)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">Dates</text>
+                            </g>
+                            <g id="text88" transform="matrix(1,0,0,1,83,622.045)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">F<tspan x="12.783px 24.824px " y="0px 0px ">or</tspan> documents requiring specifc dates (such as meeting</text>
+                            </g>
+                            <g id="text92" transform="matrix(1,0,0,1,83,648.142)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">minutes or milestone updates), append the date in</text>
+                            </g>
+                            <g id="text96" transform="matrix(1,0,0,1,601.76,648.142)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">YYYYMMDD</text>
+                            </g>
+                            <g id="text100" transform="matrix(1,0,0,1,83,672.567)">
+                                <g transform="matrix(20,0,0,20,248.506,0)">
+                                </g>
+                                <g transform="matrix(20,0,0,20,255.662,0)">
+                                </g>
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">format at the end of the ﬂe name.</text>
+                            </g>
+                            <g id="text104" transform="matrix(1,0,0,1,83,698.663)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Example:</text>
+                            </g>
+                            <g id="text108" transform="matrix(1,0,0,1,192.336,698.663)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">PRJ5678_2023Q4_MeetingMinutes_20231015</text>
+                            </g>
+                            <g id="text112" transform="matrix(1,0,0,1,83,749.896)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">Project Phases</text>
+                            </g>
+                            <g id="text116" transform="matrix(1,0,0,1,83,797.379)">
+                                <g transform="matrix(20,0,0,20,370.283,0)">
+                                </g>
+                                <g transform="matrix(20,0,0,20,377.439,0)">
+                                </g>
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">W<tspan x="20.205px 26.602px " y="0px 0px ">it</tspan>hin each project folder<tspan x="263.232px 269.59px " y="0px 0px ">, </tspan>organize ﬂes by the specifc</text>
+                            </g>
+                            <g id="text120" transform="matrix(1,0,0,1,83,823.475)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">project phase. Common phases include: -</text>
+                            </g>
+                            <g id="text124" transform="matrix(1,0,0,1,506.945,823.475)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">Phase1_Resear<tspan x="140.52px " y="0px ">c</tspan>h</text>
+                            </g>
+                            <g id="text128" transform="matrix(1,0,0,1,693.305,823.475)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">-</text>
+                            </g>
+                            <g id="text132" transform="matrix(1,0,0,1,83,850.715)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">Phase2_Design</text>
+                            </g>
+                            <g id="text136" transform="matrix(1,0,0,1,245.36,850.715)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">-</text>
+                            </g>
+                            <g id="text140" transform="matrix(1,0,0,1,258.473,850.715)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">Phase3_Implementation</text>
+                            </g>
+                            <g id="text144" transform="matrix(1,0,0,1,516.833,850.715)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">-</text>
+                            </g>
+                            <g id="text148" transform="matrix(1,0,0,1,83,877.956)">
+                                <text x="0px" y="0px" style="font-family:'NotoSans-Regular', 'Noto Sans';font-size:20px;">Phase4_Evaluation</text>
+                            </g>
+                            <g id="text152" transform="matrix(1,0,0,1,83,922.38)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">This helps to keep a clear workfow and allows team</text>
+                            </g>
+                            <g id="text156" transform="matrix(1,0,0,1,83,945.662)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">members to understand the project’s current phase at a</text>
+                            </g>
+                            <g id="text160" transform="matrix(1,0,0,1,83,968.943)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">glance.</text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 794 1123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="g10" transform="matrix(1.33333,0,0,1.33333,0,4.27297e-05)">
+        <g transform="matrix(0.75,0,0,0.75,0,-3.20472e-05)">
+            <rect x="0" y="0" width="793.701" height="1122.52" style="fill:#fff;"/>
+        </g>
+        <g id="g12" transform="matrix(0.75,0,0,0.75,0,0)">
+            <g id="g14">
+                <g id="g16">
+                    <g id="g18">
+                        <g id="g20">
+                            <g id="text24" transform="matrix(1,0,0,1,83,120.372)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:23.4px;">BowerBoint Style Guide</text>
+                            </g>
+                            <g id="text28" transform="matrix(1,0,0,1,83,171.27)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">1. Slide Layouts &amp; Structure</text>
+                            </g>
+                            <g id="text32" transform="matrix(1,0,0,1,123,221.366)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Title Slide</text>
+                            </g>
+                            <g id="text36" transform="matrix(1,0,0,1,238.352,221.366)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Large, bold project title (80pt), project code</text>
+                            </g>
+                            <g id="text40" transform="matrix(1,0,0,1,123,244.647)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">and tagline (40pt), logo and date in the bottom-right</text>
+                            </g>
+                            <g id="text44" transform="matrix(1,0,0,1,123,267.928)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">corner<tspan x="64.883px " y="0px ">.</tspan></text>
+                            </g>
+                            <g id="text48" transform="matrix(1,0,0,1,123,291.424)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Content Slides</text>
+                            </g>
+                            <g id="text52" transform="matrix(1,0,0,1,287.111,291.424)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Title (40pt), body text (36pt), left or</text>
+                            </g>
+                            <g id="text56" transform="matrix(1,0,0,1,123,314.705)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">center-aligned. Images max 50% width with padding.</text>
+                            </g>
+                            <g id="text60" transform="matrix(1,0,0,1,123,338.202)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Section Break</text>
+                            </g>
+                            <g id="text64" transform="matrix(1,0,0,1,281.008,338.202)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Bold text (50pt) with section name,</text>
+                            </g>
+                            <g id="text68" transform="matrix(1,0,0,1,123,361.483)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">minimalist design.</text>
+                            </g>
+                            <g id="text72" transform="matrix(1,0,0,1,83,411.579)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">2. Color Scheme</text>
+                            </g>
+                            <g id="text76" transform="matrix(1,0,0,1,123,461.675)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Primary</text>
+                            </g>
+                            <g id="text80" transform="matrix(1,0,0,1,212.453,461.675)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Dark Blue (#003366), White (#FFFFFF), Gray</text>
+                            </g>
+                            <g id="text84" transform="matrix(1,0,0,1,123,484.956)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">(#B0B0B0)</text>
+                            </g>
+                            <g id="text88" transform="matrix(1,0,0,1,123,508.452)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Accent</text>
+                            </g>
+                            <g id="text92" transform="matrix(1,0,0,1,199.377,508.452)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Light Blue (#66B2FF), Orange (#FF7F32)</text>
+                            </g>
+                            <g id="text96" transform="matrix(1,0,0,1,123,531.948)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Background</text>
+                            </g>
+                            <g id="text100" transform="matrix(1,0,0,1,259.826,531.948)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Light Gray (#F4F4F4) for content, White</text>
+                            </g>
+                            <g id="text104" transform="matrix(1,0,0,1,123,555.23)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">for section headers.</text>
+                            </g>
+                            <g id="text108" transform="matrix(1,0,0,1,83,605.326)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">3. F<tspan x="40.947px 54.287px " y="0px 0px ">on</tspan>ts</text>
+                            </g>
+                            <g id="text112" transform="matrix(1,0,0,1,123,655.422)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Headings</text>
+                            </g>
+                            <g id="text116" transform="matrix(1,0,0,1,228.947,655.422)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Bold sans-serif (Arial, Helvetica)</text>
+                            </g>
+                            <g id="text120" transform="matrix(1,0,0,1,123,678.918)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Body</text>
+                            </g>
+                            <g id="text124" transform="matrix(1,0,0,1,178.85,678.918)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Arial, Calibri, or Open Sans</text>
+                            </g>
+                            <g id="text128" transform="matrix(1,0,0,1,83,729.014)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">4. V<tspan x="43.008px 50.605px " y="0px 0px ">is</tspan>ual Elements</text>
+                            </g>
+                            <g id="text132" transform="matrix(1,0,0,1,123,779.11)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Charts</text>
+                            </g>
+                            <g id="text136" transform="matrix(1,0,0,1,197.453,779.11)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Simple (bar<tspan x="129.443px 135.801px " y="0px 0px ">, </tspan>line, pie), color coding consistent.</text>
+                            </g>
+                            <g id="text140" transform="matrix(1,0,0,1,123,802.606)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Icons &amp; Images</text>
+                            </g>
+                            <g id="text144" transform="matrix(1,0,0,1,297.102,802.606)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Use fat design, high resolution,</text>
+                            </g>
+                            <g id="text148" transform="matrix(1,0,0,1,123,825.888)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">maintain relationship to content.</text>
+                            </g>
+                            <g id="text152" transform="matrix(1,0,0,1,123,849.384)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Infographics</text>
+                            </g>
+                            <g id="text156" transform="matrix(1,0,0,1,265.881,849.384)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">: Simple, with arrows, timelines, light</text>
+                            </g>
+                            <g id="text160" transform="matrix(1,0,0,1,123,872.665)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">backgrounds.</text>
+                            </g>
+                            <g id="text168" transform="matrix(1,0,0,1,104.846,221.151)">
+                                <g id="g162">
+                                    <g id="g164">
+                                        <text id="text1681" serif:id="text168" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text176" transform="matrix(1,0,0,1,104.846,291.209)">
+                                <g id="g170">
+                                    <g id="g172">
+                                        <text id="text1761" serif:id="text176" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text184" transform="matrix(1,0,0,1,104.846,337.987)">
+                                <g id="g178">
+                                    <g id="g180">
+                                        <text id="text1841" serif:id="text184" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text192" transform="matrix(1,0,0,1,104.846,461.46)">
+                                <g id="g186">
+                                    <g id="g188">
+                                        <text id="text1921" serif:id="text192" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text200" transform="matrix(1,0,0,1,104.846,508.238)">
+                                <g id="g194">
+                                    <g id="g196">
+                                        <text id="text2001" serif:id="text200" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text208" transform="matrix(1,0,0,1,104.846,531.734)">
+                                <g id="g202">
+                                    <g id="g204">
+                                        <text id="text2081" serif:id="text208" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text216" transform="matrix(1,0,0,1,104.846,655.207)">
+                                <g id="g210">
+                                    <g id="g212">
+                                        <text id="text2161" serif:id="text216" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text224" transform="matrix(1,0,0,1,104.846,678.703)">
+                                <g id="g218">
+                                    <g id="g220">
+                                        <text id="text2241" serif:id="text224" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text232" transform="matrix(1,0,0,1,104.846,778.895)">
+                                <g id="g226">
+                                    <g id="g228">
+                                        <text id="text2321" serif:id="text232" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text240" transform="matrix(1,0,0,1,104.846,802.391)">
+                                <g id="g234">
+                                    <g id="g236">
+                                        <text id="text2401" serif:id="text240" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text248" transform="matrix(1,0,0,1,104.846,849.169)">
+                                <g id="g242">
+                                    <g id="g244">
+                                        <text id="text2481" serif:id="text248" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

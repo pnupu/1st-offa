@@ -4,6 +4,7 @@ import { api } from "@/trpc/react";
 import { useState, useEffect, useMemo } from "react";
 import { useGameTime } from "../../GameTimeContext";
 import { useAppState } from "../AppStateContext";
+import { useTasks } from "../../TaskContext";
 
 interface Email {
   id: string;
@@ -32,6 +33,8 @@ const Koolout = () => {
   const { appStates, updateAppState } = useAppState();
   const [replyContent, setReplyContent] = useState("");
 
+  const { completeAction } = useTasks();
+
   const { data: allEmails, refetch } = api.email.getAll.useQuery(undefined, {
     staleTime: Infinity,
     refetchOnWindowFocus: false,
@@ -57,6 +60,10 @@ const Koolout = () => {
       void refetch();
     }
   });
+
+  useEffect(() => {
+    completeAction(1, 'openEmail');
+  }, [completeAction]);
 
   const { mutate: evaluateResponse } = api.openai.evaluateResponse.useMutation();
   

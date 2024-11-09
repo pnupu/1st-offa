@@ -20,7 +20,10 @@ const Desk = () => {
                 <DraggableItem id="mouse" initialX={1180} initialY={97} width={70} height={70}>
                     <Mouse />
                 </DraggableItem>
-                <DraggablePaper id="namingconv" initialX={500} initialY={-10} width={150} height={212} imagePath="/assets/desktop/testipdf.svg" />
+                <DraggablePaper id="namingconv" initialX={512} initialY={0} width={150} height={212} imagePath="/assets/tasks/file-naming-conventions.svg" />
+                <DraggablePaper id="invoice" initialX={1142} initialY={18} width={150} height={212} imagePath="/assets/tasks/invoice.svg" />
+                <DraggablePaper id="querterly" initialX={298} initialY={29} width={150} height={212} imagePath="/assets/tasks/quarterly-data.svg" />
+                <DraggablePaper id="styleguide" initialX={1315} initialY={1} width={150} height={212} imagePath="/assets/tasks/style-guide.svg" />
             </div>
         </DragAndDropProvider>
     );

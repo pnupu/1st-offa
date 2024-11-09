@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 794 1123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="g10" transform="matrix(1.33333,0,0,1.33333,0,4.27297e-05)">
+        <g transform="matrix(0.75,0,0,0.75,0,-3.20472e-05)">
+            <rect x="0" y="0" width="793.701" height="1122.52" style="fill:#fff;"/>
+        </g>
+        <g id="g12" transform="matrix(0.75,0,0,0.75,0,0)">
+            <g id="g14">
+                <g id="g16">
+                    <g id="g18">
+                        <g id="g20">
+                            <g id="text24" transform="matrix(1,0,0,1,83,139.359)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:40px;fill:#191970;">Quarterly Financial Report</text>
+                            </g>
+                            <g id="text28" transform="matrix(1,0,0,1,83,194.371)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">F<tspan x="13.105px 26.445px " y="0px 0px ">or</tspan> the Quarter Ending September 30, 2024</text>
+                            </g>
+                            <g id="text32" transform="matrix(1,0,0,1,83,252.157)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">1.</text>
+                            </g>
+                            <g id="text36" transform="matrix(1,0,0,1,124.763,252.157)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Revenue</text>
+                            </g>
+                            <g id="text40" transform="matrix(1,0,0,1,123,302.697)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Product Sales: $1,250,000</text>
+                            </g>
+                            <g id="text44" transform="matrix(1,0,0,1,123,325.978)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Service Revenue: $550,000</text>
+                            </g>
+                            <g id="text48" transform="matrix(1,0,0,1,123,349.259)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Other Income: $80,000</text>
+                            </g>
+                            <g id="text52" transform="matrix(1,0,0,1,123,372.755)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Revenue:</text>
+                            </g>
+                            <g id="text56" transform="matrix(1,0,0,1,294.926,372.755)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,880,000</text>
+                            </g>
+                            <g id="text60" transform="matrix(1,0,0,1,83,430.541)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">2.</text>
+                            </g>
+                            <g id="text64" transform="matrix(1,0,0,1,124.763,430.541)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Expenses</text>
+                            </g>
+                            <g id="text68" transform="matrix(1,0,0,1,123,481.081)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Cost of Goods Sold: $780,000</text>
+                            </g>
+                            <g id="text72" transform="matrix(1,0,0,1,123,504.362)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Salaries &amp; Benefts: $450,000</text>
+                            </g>
+                            <g id="text76" transform="matrix(1,0,0,1,123,527.643)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Rent &amp; Utilities: $120,000</text>
+                            </g>
+                            <g id="text80" transform="matrix(1,0,0,1,123,550.925)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Marketing: $75,000</text>
+                            </g>
+                            <g id="text84" transform="matrix(1,0,0,1,123,574.206)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">R&amp;D: $90,000</text>
+                            </g>
+                            <g id="text88" transform="matrix(1,0,0,1,123,597.487)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Administrative: $60,000</text>
+                            </g>
+                            <g id="text92" transform="matrix(1,0,0,1,123,620.983)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Expenses:</text>
+                            </g>
+                            <g id="text96" transform="matrix(1,0,0,1,303.09,620.983)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,575,000</text>
+                            </g>
+                            <g id="text100" transform="matrix(1,0,0,1,83,678.769)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">3.</text>
+                            </g>
+                            <g id="text104" transform="matrix(1,0,0,1,124.763,678.769)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Net Income</text>
+                            </g>
+                            <g id="text108" transform="matrix(1,0,0,1,123,729.523)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Revenue:</text>
+                            </g>
+                            <g id="text112" transform="matrix(1,0,0,1,294.926,729.523)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,880,000</text>
+                            </g>
+                            <g id="text116" transform="matrix(1,0,0,1,123,753.02)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Expenses:</text>
+                            </g>
+                            <g id="text120" transform="matrix(1,0,0,1,303.09,753.02)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,575,000</text>
+                            </g>
+                            <g id="text124" transform="matrix(1,0,0,1,123,776.516)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Net Income:</text>
+                            </g>
+                            <g id="text128" transform="matrix(1,0,0,1,267.251,776.516)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$305,000</text>
+                            </g>
+                            <g id="text132" transform="matrix(1,0,0,1,83,834.301)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">4.</text>
+                            </g>
+                            <g id="text136" transform="matrix(1,0,0,1,124.763,834.301)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">K<tspan x="25.415px 44.502px " y="0px 0px ">ey</tspan> Financial R<tspan x="264.697px 284.136px " y="0px 0px ">at</tspan>ios</text>
+                            </g>
+                            <g id="text140" transform="matrix(1,0,0,1,123,884.841)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Gross Proft Margin: 58.5%</text>
+                            </g>
+                            <g id="text144" transform="matrix(1,0,0,1,123,908.122)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Net Proft Margin: 16.2%</text>
+                            </g>
+                            <g id="text148" transform="matrix(1,0,0,1,123,931.404)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Operating Expense R<tspan x="216.367px 228.291px " y="0px 0px ">at</tspan>io: 21.4%</text>
+                            </g>
+                            <g id="text152" transform="matrix(1,0,0,1,123,954.685)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Current R<tspan x="101.934px 113.857px " y="0px 0px ">at</tspan>io: 1.5</text>
+                            </g>
+                            <g id="text156" transform="matrix(1,0,0,1,83,997.966)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Prepared by the Finance T<tspan x="268.848px 280.684px " y="0px 0px ">ea</tspan>m, That Company<tspan x="469.385px 475.742px " y="0px 0px ">, </tspan>November</text>
+                            </g>
+                            <g id="text160" transform="matrix(1,0,0,1,83,1021.25)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">2024</text>
+                            </g>
+                            <g id="text168" transform="matrix(1,0,0,1,104.846,302.697)">
+                                <g id="g162">
+                                    <g id="g164">
+                                        <text id="text1681" serif:id="text168" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text176" transform="matrix(1,0,0,1,104.846,325.978)">
+                                <g id="g170">
+                                    <g id="g172">
+                                        <text id="text1761" serif:id="text176" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text184" transform="matrix(1,0,0,1,104.846,349.259)">
+                                <g id="g178">
+                                    <g id="g180">
+                                        <text id="text1841" serif:id="text184" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text192" transform="matrix(1,0,0,1,104.846,481.081)">
+                                <g id="g186">
+                                    <g id="g188">
+                                        <text id="text1921" serif:id="text192" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text200" transform="matrix(1,0,0,1,104.846,504.362)">
+                                <g id="g194">
+                                    <g id="g196">
+                                        <text id="text2001" serif:id="text200" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text208" transform="matrix(1,0,0,1,104.846,527.643)">
+                                <g id="g202">
+                                    <g id="g204">
+                                        <text id="text2081" serif:id="text208" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text216" transform="matrix(1,0,0,1,104.846,550.925)">
+                                <g id="g210">
+                                    <g id="g212">
+                                        <text id="text2161" serif:id="text216" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text224" transform="matrix(1,0,0,1,104.846,574.206)">
+                                <g id="g218">
+                                    <g id="g220">
+                                        <text id="text2241" serif:id="text224" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text232" transform="matrix(1,0,0,1,104.846,597.487)">
+                                <g id="g226">
+                                    <g id="g228">
+                                        <text id="text2321" serif:id="text232" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text240" transform="matrix(1,0,0,1,104.846,729.309)">
+                                <g id="g234">
+                                    <g id="g236">
+                                        <text id="text2401" serif:id="text240" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text248" transform="matrix(1,0,0,1,104.846,752.805)">
+                                <g id="g242">
+                                    <g id="g244">
+                                        <text id="text2481" serif:id="text248" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text256" transform="matrix(1,0,0,1,104.846,884.841)">
+                                <g id="g250">
+                                    <g id="g252">
+                                        <text id="text2561" serif:id="text256" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text264" transform="matrix(1,0,0,1,104.846,908.122)">
+                                <g id="g258">
+                                    <g id="g260">
+                                        <text id="text2641" serif:id="text264" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text272" transform="matrix(1,0,0,1,104.846,931.404)">
+                                <g id="g266">
+                                    <g id="g268">
+                                        <text id="text2721" serif:id="text272" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text280" transform="matrix(1,0,0,1,104.846,954.685)">
+                                <g id="g274">
+                                    <g id="g276">
+                                        <text id="text2801" serif:id="text280" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
