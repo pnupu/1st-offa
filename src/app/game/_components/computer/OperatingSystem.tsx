@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMousePosition } from "../MousePositionContext";
 import Image from "next/image";
 import Koolout from "./apps/Koolout";
+import Mooz from "./apps/Mooz";
 import { AppStateProvider } from "./AppStateContext";
 import Bower from "./apps/Bower";
 
@@ -28,6 +29,8 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         return <Koolout />;
       case "BowerBoint":
         return <Bower />;
+      case "Mooz":
+        return <Mooz />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
           <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
@@ -87,7 +90,20 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           >
             <Image 
               src="/assets/apps/BowerApp.svg" 
-              alt="Koolout" 
+              alt="Koolout"
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div
+            onClick={() => setOpenApp("Mooz")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/MoozApp.svg" 
+              className="absolute top-[3px]"
+              alt="Mooz" 
               width={20} 
               height={20}
               unoptimized
