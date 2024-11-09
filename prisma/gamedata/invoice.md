@@ -7,13 +7,6 @@
 
 ---
 
-#### **Billing Information**  
-**Billed To:** XYZ Solutions  
-123 Business St., New York, NY 10001  
-**Billed From:** ABC Corp., 456 Corporate Blvd., San Francisco, CA 94105
-
----
-
 ### **Description of Services**  
 
 | **Item** | **Description**                           | **Total**    |
@@ -24,11 +17,3 @@
 | 4        | User Testing & QA                         | $5,500.00    |
 | 5        | Ongoing Maintenance (Quarterly)          | -$2,000.00    |
 | **Total**|                                           | **$29,300.00** |
-
----
-
-### **Payment Instructions**
-Bank of America  
-Account Name: ABC Corp.  
-Account Number: 123456789  
-SWIFT/BIC Code: BOFAUS3N
