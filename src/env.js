@@ -16,6 +16,7 @@ export const env = createEnv({
     NEXTAUTH_URL: z.string().url().optional(),
     SEED_USER_ID: z.string().optional(),
     VERCEL_URL: z.string().optional(),
+    OPENAI_API_KEY: z.string(),
   },
 
   client: {
@@ -31,6 +32,7 @@ export const env = createEnv({
     SEED_USER_ID: process.env.SEED_USER_ID,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     VERCEL_URL: process.env.VERCEL_URL,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
 
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
