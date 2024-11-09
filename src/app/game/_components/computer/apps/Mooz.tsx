@@ -6,6 +6,7 @@ import { useUser } from "@/hooks/useUser";
 import BossAnimation from './BossAnimation';
 import { useTasks } from '../../TaskContext';
 import { api } from "@/trpc/react";
+import { useWebcam } from '../../WebcamContext';
 
 interface Meeting {
   id: number;
@@ -26,6 +27,7 @@ const UserVideoPlaceholder = ({ initials }: { initials: string }) => (
 
 const Mooz = () => {
   const { timeHours, timeMinutes } = useGameTime();
+  const { toggleWebcam } = useWebcam();
   const [inCall, setInCall] = useState(false);
   const [webcamStream, setWebcamStream] = useState<MediaStream | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -71,6 +73,7 @@ const Mooz = () => {
       setWebcamStream(stream);
       setHasWebcamPermission(true);
       localStorage.setItem('webcamPermission', 'true');
+      toggleWebcam();
 
       // Create game event for enabling webcam
       createGameEvent.mutate({
