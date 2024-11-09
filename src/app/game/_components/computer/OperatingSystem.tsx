@@ -5,6 +5,7 @@ import { useMousePosition } from "../MousePositionContext";
 import Image from "next/image";
 import Koolout from "./apps/Koolout";
 import Mooz from "./apps/Mooz";
+import Checkout from "./apps/Checkout";
 import { AppStateProvider } from "./AppStateContext";
 
 interface OperatingSystemProps {
@@ -28,6 +29,8 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         return <Koolout />;
       case "Mooz":
         return <Mooz />;
+      case "Checkout":
+        return <Checkout />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
           <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
@@ -56,7 +59,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           {openApp ? (
             <div className="bg-white w-[655px] h-[315px] absolute top-[15px] rounded-md">
               <div className="bg-gray-400 w-full h-[30px] flex justify-between items-center px-2">
-                <div>{openApp} App</div>
+                <div>{openApp}</div>
                 <div 
                   className="h-[20px] w-[20px] bg-red-500 rounded-md cursor-pointer" 
                   onClick={() => setOpenApp(undefined)}
@@ -89,6 +92,19 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
               src="/assets/apps/MoozApp.svg" 
               className="absolute top-[3px]"
               alt="Mooz" 
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div 
+            onClick={() => setOpenApp("Checkout")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/CheckOut.svg" 
+              className="absolute top-[3px] left-[51px]"
+              alt="Checkout" 
               width={20} 
               height={20}
               unoptimized
