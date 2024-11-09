@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { api } from "@/trpc/react";
 
 const DinoGame = () => {
   const [isJumping, setIsJumping] = useState(false);
@@ -25,6 +26,45 @@ const DinoGame = () => {
   const jumpThreshold = 20; // Buffer from the ground to allow a jump
   const jumpHeightLimit = 150; // Maximum jump height
   const minDistanceBetweenObstacles = 200;
+
+  const createGameEvent = api.gameEvent.create.useMutation();
+  const createPost = api.post.create.useMutation();
+
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [hasShared, setHasShared] = useState(false);
+
+  // Track game session for OCEAN impacts
+  useEffect(() => {
+    if (score > 0 && isGameOver) {
+      // Get the user's current high score
+      const currentHighScore = parseInt(localStorage.getItem('dinoHighScore') ?? '0');
+      
+      // Only save and create event if this is a new high score
+      if (score > currentHighScore) {
+        localStorage.setItem('dinoHighScore', score.toString());
+        
+        createGameEvent.mutate({
+          type: "DINO_GAME_PLAYED",
+          score: score,
+          oceanScores: {
+            conscientiousness: -0.05,
+            neuroticism: -0.05,
+            extraversion: 0.05
+          }
+        });
+
+        // Additional OCEAN impacts for beating personal best
+        createGameEvent.mutate({
+          type: "DINO_GAME_HIGHSCORE",
+          oceanScores: {
+            conscientiousness: 0.1,
+            neuroticism: -0.1
+          }
+        });
+      }
+    }
+  }, [isGameOver]);
 
   // Move each obstacle independently and reset if off-screen
   useEffect(() => {
@@ -119,24 +159,92 @@ const DinoGame = () => {
 
   // Restart the game
   const restartGame = () => {
+    // Create game event for restarting (showing persistence)
+    if (score > 0) {
+      createGameEvent.mutate({
+        type: "DINO_GAME_RESTART",
+        oceanScores: {
+          conscientiousness: 0.02,  // Small boost for persistence
+          neuroticism: -0.02       // Slight decrease for handling failure well
+        }
+      });
+    }
+
     setIsGameOver(false);
     setDinoPosition(0);
     setObstacle1Position(800);
     setObstacle2Position(1200);
     setObstacle3Position(1600);
+    setHasShared(false);
     setScore(0);
     setSpeed(10);
   };
 
-  // Share score function (you can expand it to actually share score via social media API if needed)
+  // Modal component
+  const Modal = () => showModal ? (
+    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[52]">
+      <div className="bg-white p-4 rounded-lg w-[300px]">
+        <h3 className="text-lg font-bold mb-2">Score Shared!</h3>
+        <p className="text-sm mb-3">{modalMessage}</p>
+        <button
+          onClick={() => setShowModal(false)}
+          className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  ) : null;
+
+  // Share score function with duplicate check
   const shareScore = () => {
-    alert(`Share your score: ${score}!`);
+    if (score > 0 && !hasShared) {
+      // Create post on CheckedOut
+      createPost.mutate({
+        content: `Just scored ${score} points in the Bunny Jump game! 🐰`,
+      }, {
+        onSuccess: () => {
+          setModalMessage(`Your score of ${score} points has been shared on CheckedOut!`);
+          setShowModal(true);
+          setHasShared(true);
+        },
+        onError: () => {
+          setModalMessage('Unable to share score. Please try again later.');
+          setShowModal(true);
+        }
+      });
+
+      // Create game event for sharing score
+      createGameEvent.mutate({
+        type: "DINO_GAME_SHARE",
+        oceanScores: {
+          extraversion: 0.1,        // Boost for social sharing
+          agreeableness: 0.05,      // Small boost for community participation
+          neuroticism: -0.03        // Slight decrease for social confidence
+        }
+      });
+
+      // Add achievement-based OCEAN impacts
+      if (score >= 50) {
+        createGameEvent.mutate({
+          type: "DINO_GAME_HIGH_SCORE",
+          oceanScores: {
+            conscientiousness: 0.1,  // Good boost for achieving high score
+            neuroticism: -0.05      // Decrease for mastery
+          }
+        });
+      }
+    } else if (hasShared) {
+      setModalMessage('You have already shared this score!');
+      setShowModal(true);
+    }
   };
 
   return (
     <div 
       className="relative w-full h-full bg-gray-100 overflow-hidden flex items-end justify-center"
     >
+      <Modal />
       <div className='absolute top-0 left-0 w-full h-full z-[50]'>
       {/* Score and Game Over Display */}
       <div className="absolute top-2 left-2 text-lg font-bold text-gray-800 z-[51]">
@@ -149,15 +257,19 @@ const DinoGame = () => {
           <div className="text-lg font-semibold text-white mb-6">Final Score: {score}</div>
           <button
             onClick={restartGame}
-            className="bg-green-500 text-white font-semibold py-2 px-4 rounded-md mb-2"
+            className="bg-green-500 text-white font-semibold py-2 px-4 rounded-md mb-2 hover:bg-green-600"
           >
             Play Again
           </button>
           <button
             onClick={shareScore}
-            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md"
+            className={`${
+              hasShared 
+                ? 'bg-gray-500 cursor-not-allowed' 
+                : 'bg-blue-500 hover:bg-blue-600'
+            } text-white font-semibold py-2 px-4 rounded-md`}
           >
-            Share Score on CheckedOut
+            {hasShared ? 'Score Shared!' : 'Share Score on CheckedOut'}
           </button>
         </div>
       )}

@@ -251,11 +251,12 @@ model GameEvent {
   conscientiousness Float?    @db.DoublePrecision
   extraversion      Float?    @db.DoublePrecision
   agreeableness     Float?    @db.DoublePrecision
-  neuroticism      Float?    @db.DoublePrecision
+  neuroticism       Float?    @db.DoublePrecision
 
   // Task-related fields
   taskId          String?   // Store as string to maintain flexibility
   taskTitle       String?   // Store task title for easier querying
+  score           Int?      // Add this field for game scores
   completionTime  Float?    @db.DoublePrecision  // Store completion time in seconds
 
   createdAt DateTime @default(now())
@@ -263,4 +264,5 @@ model GameEvent {
   @@index([userId])
   @@index([type])
   @@index([taskId])
+  @@index([score]) // Add index for score queries
 }

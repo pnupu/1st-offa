@@ -15,6 +15,7 @@ export const gameEventRouter = createTRPCRouter({
             taskId: z.number().optional(),
             taskTitle: z.string().optional(),
             completionTime: z.number().optional(), // in seconds
+            score: z.number().optional(),
         }))
         .mutation(async ({ ctx, input }) => {
             return ctx.db.gameEvent.create({
@@ -27,6 +28,7 @@ export const gameEventRouter = createTRPCRouter({
                     agreeableness: input.oceanScores.agreeableness,
                     neuroticism: input.oceanScores.neuroticism,
                     taskId: input.taskId?.toString(),
+                    score: input.score,
                     taskTitle: input.taskTitle,
                     completionTime: input.completionTime,
                 },
@@ -34,7 +36,7 @@ export const gameEventRouter = createTRPCRouter({
         }),
 
     calculateFinalScores: protectedProcedure
-        .query(async ({ ctx }) => {
+        .mutation(async ({ ctx }) => {
             // Get all events, email replies, and task completions
             const [events, emailReplies, taskEvents] = await Promise.all([
                 ctx.db.gameEvent.findMany({
