@@ -7,7 +7,7 @@
         "Subject": "Update on the Team Meeting",
         "SentTime": 0,
         "Greeting": "Hi",
-        "Body": ",\n\nWe\u2019re planning to hold a team meeting to discuss the upcoming project deadlines and workload distribution. Can you confirm your availability for either 10:00 a.m. or 3:00 p.m. tomorrow? Once we settle on a time, I\u2019ll send over the agenda.\n\nAlso, if there\u2019s anything specific you\u2019d like to discuss, feel free to let me know so I can add it to the agenda.\n\nThanks,\nJulia"
+        "Body": ",\n\nWe\u2019re planning to hold a team meeting to discuss the upcoming project deadlines and workload distribution. Can you confirm your availability for 1:00 p.m. today? If there\u2019s anything specific you\u2019d like to discuss, feel free to let me know so I can add it to the agenda.\n\nThanks,\nJulia"
     },
     {
         "Sender": {
@@ -37,7 +37,7 @@
         "Subject": "Last-Minute Report Request",
         "SentTime": 0,
         "Greeting": "Hey",
-        "Body": ",\n\nI know this is last-minute, but I could really use your help with the quarterly financial report. Could you confirm if you have the latest figures for the last quarter? If so, could you send them over to me by the end of the day? Otherwise, let me know if there\u2019s a delay, and I\u2019ll follow up with the finance team.\n\nThanks in advance for your help!\n\nBest,\nDerek"
+        "Body": ",\n\nI know this is last-minute, but I could really use your help with the quarterly financial report. Could you confirm if you have the latest figures for the last quarter? If so, could you send the key numbers over to me by the end of the day? Otherwise, let me know if there\u2019s a delay, and I\u2019ll follow up with the finance team.\n\nThanks in advance for your help!\n\nBest,\nDerek"
     },
     {
         "Sender": {
@@ -77,7 +77,7 @@
         "Subject": "Document Formatting Issue",
         "SentTime": 0,
         "Greeting": "Hi",
-        "Body": ",\n\nI noticed that a couple of the slides in the presentation file you sent over seem to have some formatting issues\u2014the images are shifting off-center, and some of the text doesn\u2019t align correctly. Do you have a moment to look it over and adjust it? If you need any specific guidance on the brand standards, just let me know.\n\nThanks so much!\nPaula"
+        "Body": ",\n\nI noticed that a couple of the slides in our presentation file you seem to have some formatting issues. Could you send me a list of issues that need to be fixed in the presentation? \n\nThanks so much!\nPaula"
     },
     {
         "Sender": {
@@ -87,7 +87,7 @@
         "Subject": "Invoice Question from Vendor",
         "SentTime": 0,
         "Greeting": "Hello",
-        "Body": ",\n\nOne of our vendors reached out about a recent invoice they received, which had a few discrepancies. They mentioned some incorrect item quantities. Could you double-check the invoice for any errors and let me know what needs updating? We\u2019d like to avoid any back-and-forth, so I\u2019d appreciate it if you could handle it quickly.\n\nThanks,\nThomas"
+        "Body": ",\n\nOne of our vendors reached out about a recent invoice they received, which had a few discrepancies. Could you double-check the invoice for any errors and let me know what needs updating? We\u2019d like to avoid any back-and-forth, so I\u2019d appreciate it if you could handle it quickly.\n\nThanks,\nThomas"
     },
     {
         "Sender": {
@@ -97,6 +97,6 @@
         "Subject": "Assistance with Filing System",
         "SentTime": 0,
         "Greeting": "Hi",
-        "Body": ",\n\nI\u2019m working on reorganizing our digital filing system and noticed that a few folders have been mislabeled. Since you\u2019ve worked with these files recently, could you help me identify the right labels for each? It would save me a lot of time if you could point me to the most accurate names or file structure we should use.\n\nThanks so much for your help!\nSophie"
+        "Body": ",\n\nI\u2019m working on reorganizing our digital filing system. It would save me a lot of time if you could point me to the most accurate names or file structure we should use.\n\nThanks so much for your help!\nSophie"
     }
 ]
