@@ -1,5 +1,4 @@
 import React from 'react';
-import Invoice from './Invoice';
 
 const App = () => {
   const invoiceDetails = {
@@ -36,7 +35,7 @@ const App = () => {
 
   return (
     <div>
-      <Invoice {...invoiceDetails} />
+      {/* <Invoice {...invoiceDetails} /> */}
     </div>
   );
 };

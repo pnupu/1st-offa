@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
 
 interface GameTimeContextProps {
     timeAsNumber: number;
@@ -15,43 +15,46 @@ const GameTimeContext = createContext<GameTimeContextProps | undefined>(undefine
 
 const initialHour = 7;
 const initialMinute = 45;
-const secondsPerGameMinute = 1; // 1 real second = 1 game minute
+const secondsPerGameMinute = 1; // Added missing constant
 
 export const GameTimeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [timeInMinutes, setTimeInMinutes] = useState(initialHour * 60 + initialMinute);
     const [isRunning, setIsRunning] = useState(false);
 
-    // Convert time in minutes to a formatted hh:mm string
-    const formatTime = (time: number): string => {
+    const formatTime = useCallback((time: number): string => {
         const hours = Math.floor(time / 60);
         const minutes = time % 60;
         return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    };
+    }, []);
 
     const timeAsString = formatTime(timeInMinutes);
     const timeHours = Math.floor(timeInMinutes / 60);
     const timeMinutes = timeInMinutes % 60;
 
-    // Start the timer
     const startGameTime = useCallback(() => {
         setIsRunning(true);
     }, []);
 
-    // Pause the timer
     const pauseGameTime = useCallback(() => {
         setIsRunning(false);
     }, []);
 
-    // Update game time every second if running
     useEffect(() => {
         if (!isRunning) return;
 
         const interval = setInterval(() => {
-            setTimeInMinutes((prevTime) => prevTime + 1);
+            setTimeInMinutes(prev => prev + 1);
         }, secondsPerGameMinute * 1000);
 
         return () => clearInterval(interval);
     }, [isRunning]);
+
+    const value = useMemo(() => ({
+        timeAsNumber: timeInMinutes,
+        timeAsString,
+        startGameTime,
+        pauseGameTime,
+    }), [timeInMinutes, timeAsString, startGameTime, pauseGameTime]);
 
     return (
         <GameTimeContext.Provider
@@ -69,7 +72,6 @@ export const GameTimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     );
 };
 
-// Custom hook for using game time
 export const useGameTime = (): GameTimeContextProps => {
     const context = useContext(GameTimeContext);
     if (!context) {

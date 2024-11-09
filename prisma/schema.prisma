@@ -34,6 +34,7 @@ model User {
   gameScores   GameScore[]
   oceanProfile OceanProfile?
   files        File[]
+  emailReads   GameEmailRead[] // Added relation for email reads
 
   // Company relations
   employeeAt     Company? @relation("CompanyEmployees", fields: [companyId], references: [id])
@@ -163,4 +164,59 @@ model File {
   user      User?    @relation(fields: [userId], references: [id])
   userId    String?  @unique
   company   Company?
+}
+
+model GameEmail {
+  id        String   @id @default(cuid())
+  subject   String
+  content   String   @db.Text
+  from      String
+  position  String   // Added for sender's position
+  sentTime  Int      // Game time when email becomes available
+  archived  Boolean  @default(false)
+  order     Int      // To control the sequence of emails in the game
+  
+  // Optional: If we want to allow replies
+  replies   GameEmailReply[]
+  reads     GameEmailRead[] // Added relation for tracking reads per user
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+  @@index([sentTime])
+}
+
+model GameEmailRead {
+  id        String    @id @default(cuid())
+  email     GameEmail @relation(fields: [emailId], references: [id])
+  emailId   String
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String
+  
+  createdAt DateTime  @default(now())
+
+  @@unique([emailId, userId])
+  @@index([emailId])
+  @@index([userId])
+}
+
+model GameEmailReply {
+  id        String    @id @default(cuid())
+  content   String    @db.Text
+  
+  // OCEAN scores for this reply
+  openness          Float?    @db.DoublePrecision
+  conscientiousness Float?    @db.DoublePrecision
+  extraversion      Float?    @db.DoublePrecision
+  agreeableness     Float?    @db.DoublePrecision
+  neuroticism       Float?    @db.DoublePrecision
+  
+  // Relations
+  email     GameEmail @relation(fields: [emailId], references: [id])
+  emailId   String
+  
+  createdAt DateTime  @default(now())
+
+  @@index([emailId])
 }

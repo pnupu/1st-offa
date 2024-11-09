@@ -32,7 +32,12 @@ const FileNamingAndOrganizationStandards: React.FC = () => {
       <h3>Document Type Tags</h3>
       <p>Each document’s file name should include a tag indicating the type of document. Common tags are:</p>
       <ul>
-        <li><code>Report</code>, <code>Presentation</code>, <code>Invoice</code>, <code>Budget</code>, <code>Notes</code>, <code>Timeline</code>
+        <li><code>Report</code></li>
+        <li><code>Presentation</code></li>
+        <li><code>Invoice</code></li>
+        <li><code>Budget</code></li>
+        <li><code>Notes</code></li>
+        <li><code>Timeline</code></li>
       </ul>
       <p><code>Example: PRJ5678_2023Q4_Presentation</code></p>
       <p>Including the document type in the file name clarifies the file’s purpose, making it easy to locate within each project phase folder.</p>
@@ -40,7 +45,7 @@ const FileNamingAndOrganizationStandards: React.FC = () => {
       <h2>2. Folder Structure</h2>
 
       <h3>Root Folder</h3>
-      <p>Each project has its own main folder in the central "Projects" directory. This root folder should contain subfolders for each document type.</p>
+      <p>Each project has its own main folder in the central &quot;Projects&quot; directory. This root folder should contain subfolders for each document type.</p>
       <code>Example: /Projects/PRJ5678</code>
 
       <h3>Subfolders for Document Types</h3>
@@ -86,7 +91,7 @@ const FileNamingAndOrganizationStandards: React.FC = () => {
       <h2>3. Archiving Completed Projects</h2>
 
       <h3>Quarterly Archives</h3>
-      <p>At the end of each quarter, completed projects should be moved to the "Archives" folder.</p>
+      <p>At the end of each quarter, completed projects should be moved to the &quotArchives&quot folder.</p>
       <code>Folder Format: /Archives/YearQuarter/ProjectCode</code>
       <p><code>Example: /Archives/2023Q4/PRJ5678</code></p>
       <p>Archiving completed projects frees up space in active directories and ensures current projects remain easily accessible.</p>

@@ -1,4 +1,5 @@
 import { PrismaClient, ProfileType } from '@prisma/client';
+import emailData from './gamedata/emails.json';
 const prisma = new PrismaClient();
 
 async function main() {
@@ -173,6 +174,34 @@ async function main() {
       companyId: company2.id,
     },
   });
+
+  // Seed game emails
+  for (let i = 0; i < emailData.length; i++) {
+    const email = emailData[i];
+    if (!email) {
+      throw new Error('Email data is missing');
+    }
+    await prisma.gameEmail.upsert({
+      where: { id: `email-${i + 1}` },
+      update: {
+        subject: email.Subject,
+        content: `${email.Greeting}${email.Body}`,
+        from: email.Sender.Name,
+        position: email.Sender.Position,
+        sentTime: email.SentTime,
+        order: i + 1,
+      },
+      create: {
+        id: `email-${i + 1}`,
+        subject: email.Subject,
+        content: `${email.Greeting}${email.Body}`,
+        from: email.Sender.Name,
+        position: email.Sender.Position,
+        sentTime: email.SentTime,
+        order: i + 1,
+      },
+    });
+  }
 
   console.log('Seed data created successfully');
 }
