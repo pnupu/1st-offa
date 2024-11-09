@@ -1,4 +1,5 @@
 import { PrismaClient, ProfileType } from '@prisma/client';
+import emailData from './gamedata/emails.json';
 const prisma = new PrismaClient();
 
 async function main() {
@@ -175,110 +176,32 @@ async function main() {
   });
 
   // Seed game emails
-  await prisma.gameEmail.upsert({
-    where: { id: 'welcome-email' },
-    update: {
-      subject: 'Welcome to Tech Innovators!',
-      content: `Dear New Employee,
-
-Welcome to Tech Innovators! We're excited to have you join our team. 
-
-Your first task is to complete the personality assessment that will help us understand how to best work together. Please take your time and answer honestly.
-
-Best regards,
-HR Team`,
-      from: 'hr@techinnovators.com',
-      order: 1,
-    },
-    create: {
-      id: 'welcome-email',
-      subject: 'Welcome to Tech Innovators!',
-      content: `Dear New Employee,
-
-Welcome to Tech Innovators! We're excited to have you join our team. 
-
-Your first task is to complete the personality assessment that will help us understand how to best work together. Please take your time and answer honestly.
-
-Best regards,
-HR Team`,
-      from: 'hr@techinnovators.com',
-      order: 1,
-    },
-  });
-
-  await prisma.gameEmail.upsert({
-    where: { id: 'task-assignment' },
-    update: {
-      subject: 'First Project Assignment',
-      content: `Hi there,
-
-I hope you're settling in well. I'd like you to start working on your first project. We need you to review our current user interface and suggest improvements.
-
-Please analyze the following aspects:
-- User flow
-- Visual consistency
-- Accessibility
-- Performance
-
-Looking forward to your insights!
-
-Best,
-Project Lead`,
-      from: 'lead@techinnovators.com',
-      order: 2,
-    },
-    create: {
-      id: 'task-assignment',
-      subject: 'First Project Assignment',
-      content: `Hi there,
-
-I hope you're settling in well. I'd like you to start working on your first project. We need you to review our current user interface and suggest improvements.
-
-Please analyze the following aspects:
-- User flow
-- Visual consistency
-- Accessibility
-- Performance
-
-Looking forward to your insights!
-
-Best,
-Project Lead`,
-      from: 'lead@techinnovators.com',
-      order: 2,
-    },
-  });
-
-  await prisma.gameEmail.upsert({
-    where: { id: 'team-lunch' },
-    update: {
-      subject: 'Team Lunch This Friday',
-      content: `Hello everyone!
-
-We're organizing a team lunch this Friday at 12:30 PM. It's a great opportunity to meet your colleagues in a more relaxed setting.
-
-Please let me know if you have any dietary restrictions.
-
-Cheers,
-Office Manager`,
-      from: 'office@techinnovators.com',
-      order: 3,
-    },
-    create: {
-      id: 'team-lunch',
-      subject: 'Team Lunch This Friday',
-      content: `Hello everyone!
-
-We're organizing a team lunch this Friday at 12:30 PM. It's a great opportunity to meet your colleagues in a more relaxed setting.
-
-Please let me know if you have any dietary restrictions.
-
-Cheers,
-Office Manager`,
-      from: 'office@techinnovators.com',
-      order: 3,
-    },
-  });
+  for (let i = 0; i < emailData.length; i++) {
+    const email = emailData[i];
+    if (!email) {
+      throw new Error('Email data is missing');
+    }
+    await prisma.gameEmail.upsert({
+      where: { id: `email-${i + 1}` },
+      update: {
+        subject: email.Subject,
+        content: `${email.Greeting}${email.Body}`,
+        from: email.Sender.Name,
+        position: email.Sender.Position,
+        sentTime: email.SentTime,
+        order: i + 1,
+      },
+      create: {
+        id: `email-${i + 1}`,
+        subject: email.Subject,
+        content: `${email.Greeting}${email.Body}`,
+        from: email.Sender.Name,
+        position: email.Sender.Position,
+        sentTime: email.SentTime,
+        order: i + 1,
+      },
+    });
+  }
 
   console.log('Seed data created successfully');
 }

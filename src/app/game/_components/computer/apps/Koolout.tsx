@@ -1,33 +1,68 @@
 'use client';
 
 import { api } from "@/trpc/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useGameTime } from "../../GameTimeContext";
+import { useAppState } from "../AppStateContext";
 
 interface Email {
   id: string;
   subject: string;
   content: string;
   from: string;
-  read: boolean;
+  position: string;
+  sentTime: number;
   archived: boolean;
+  read: boolean;
   replies: Array<{
     id: string;
     content: string;
+    openness: number | null;
+    conscientiousness: number | null;
+    extraversion: number | null;
+    agreeableness: number | null;
+    neuroticism: number | null;
+    createdAt: Date;
+    emailId: string;
   }>;
 }
 
-const KoolMail = () => {
-  const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
+const Koolout = () => {
+  const { timeAsNumber } = useGameTime();
+  const { appStates, updateAppState } = useAppState();
   const [replyContent, setReplyContent] = useState("");
 
-  const { data: emails, refetch } = api.email.getAll.useQuery(undefined);
-  const { mutate: markAsRead } = api.email.markAsRead.useMutation();
+  const { data: allEmails, refetch } = api.email.getAll.useQuery(undefined, {
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
+
+  const selectedEmail = useMemo(() => {
+    return allEmails?.find(email => email.id === appStates.Koolout.selectedEmailId) ?? null;
+  }, [allEmails, appStates.Koolout.selectedEmailId]);
+
+  // Reset reply content when selected email changes
+  useEffect(() => {
+    setReplyContent("");
+  }, [selectedEmail?.id]);
+
+  // Filter emails based on current game time
+  const availableEmails = useMemo(() => {
+    return allEmails?.filter(email => email.sentTime <= timeAsNumber) ?? [];
+  }, [allEmails, timeAsNumber]);
+
+  const { mutate: markAsRead } = api.email.markAsRead.useMutation({
+    onSuccess: () => {
+      void refetch();
+    }
+  });
+
   const { mutate: evaluateResponse } = api.openai.evaluateResponse.useMutation();
   
   const { mutate: sendReply } = api.email.reply.useMutation({
     onSuccess: (reply) => {
       setReplyContent("");
-      // Trigger OpenAI evaluation in the background
       evaluateResponse({
         replyId: reply.id,
         response: reply.content,
@@ -36,18 +71,8 @@ const KoolMail = () => {
     },
   });
 
-  // Update selected email with fresh data whenever emails change
-  useEffect(() => {
-    if (selectedEmail && emails) {
-      const updatedEmail = emails.find(email => email.id === selectedEmail.id);
-      if (updatedEmail && JSON.stringify(updatedEmail) !== JSON.stringify(selectedEmail)) {
-        setSelectedEmail(updatedEmail);
-      }
-    }
-  }, [emails, selectedEmail]);
-
   const handleEmailClick = (email: Email) => {
-    setSelectedEmail(email);
+    updateAppState('Koolout', { selectedEmailId: email.id });
     if (!email.read) {
       markAsRead({ id: email.id });
     }
@@ -66,7 +91,7 @@ const KoolMail = () => {
     <div className="h-full flex">
       {/* Email List */}
       <div className="w-1/3 border-r border-gray-200 overflow-y-auto">
-        {emails?.map((email) => (
+        {availableEmails.map((email) => (
           <div
             key={email.id}
             onClick={() => handleEmailClick(email)}
@@ -105,6 +130,7 @@ const KoolMail = () => {
             {/* Reply Form */}
             <div className="mt-4 border-t pt-4">
               <textarea
+                key={`reply-${selectedEmail.id}`}
                 value={replyContent}
                 onChange={(e) => setReplyContent(e.target.value)}
                 className="w-full h-24 p-2 border rounded"
@@ -128,4 +154,4 @@ const KoolMail = () => {
   );
 };
 
-export default KoolMail;
+export default Koolout;
