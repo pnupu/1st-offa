@@ -35,7 +35,7 @@ export default function DashboardPage() {
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-6">
           <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
-            <Button onClick={() => router.push('/games')} className="bg-[#2A4060] text-white w-32">
+            <Button onClick={() => router.push('/game')} className="bg-[#2A4060] text-white w-32">
               Play
             </Button>
           </div>
@@ -74,7 +74,7 @@ export default function DashboardPage() {
             </p>
             <Button 
               variant="outline"
-              onClick={() => router.push('/games')}
+              onClick={() => router.push('/game')}
               className="w-full"
             >
               Continue Assessment

@@ -3,9 +3,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
-import { TRPCReactProvider } from "@/trpc/react";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import { SessionProvider } from "next-auth/react";
+import { Providers } from './providers'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,20 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable} ${chillax.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <SessionProvider>
-            <TRPCReactProvider>
-              {children}
-            </TRPCReactProvider>
-          </SessionProvider>
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`font-sans ${inter.variable} ${chillax.variable}`}>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
