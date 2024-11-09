@@ -6,6 +6,8 @@ import Image from "next/image";
 import Koolout from "./apps/Koolout";
 import Mooz from "./apps/Mooz";
 import { AppStateProvider } from "./AppStateContext";
+import Bower from "./apps/Bower";
+import Browser from "./apps/Browser";
 
 interface OperatingSystemProps {
   isOn: boolean;
@@ -26,8 +28,12 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
     switch (openApp) {
       case "Koolout":
         return <Koolout />;
+      case "BowerBoint":
+        return <Bower />;
       case "Mooz":
         return <Mooz />;
+      case "Browser":
+        return <Browser />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
           <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
@@ -56,11 +62,15 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           {openApp ? (
             <div className="bg-white w-[655px] h-[315px] absolute top-[15px] rounded-md">
               <div className="bg-gray-400 w-full h-[30px] flex justify-between items-center px-2">
-                <div>{openApp} App</div>
+                <div>{openApp}</div>
                 <div 
                   className="h-[20px] w-[20px] bg-red-500 rounded-md cursor-pointer" 
                   onClick={() => setOpenApp(undefined)}
-                />
+                >
+                  <div className="absolute top-[3px] ml-[5px]">
+                    ×
+                  </div>
+                </div>
               </div>
               <div className="w-full h-[285px]">
                 {renderApp()}
@@ -82,6 +92,30 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             />
           </div>
           <div 
+            onClick={() => setOpenApp("BowerBoint")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/BowerApp.svg" 
+              alt="Koolout"
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div 
+            onClick={() => setOpenApp("Browser")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/BowerApp.svg" 
+              alt="Koolout"
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div
             onClick={() => setOpenApp("Mooz")}
             className="cursor-pointer"
           >
