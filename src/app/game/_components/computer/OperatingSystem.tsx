@@ -5,6 +5,7 @@ import { useMousePosition } from "../MousePositionContext";
 import Image from "next/image";
 import Koolout from "./apps/Koolout";
 import Mooz from "./apps/Mooz";
+import Checkout from "./apps/Checkout";
 import { AppStateProvider } from "./AppStateContext";
 import Bower from "./apps/Bower";
 import Browser from "./apps/Browser";
@@ -35,6 +36,8 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         return <Mooz />;
       case "Interwebs Adventurer":
         return <Browser />;
+      case "Checkout":
+        return <Checkout />;
       case "Dinogame":
         return <DinoGame />;
       default:
@@ -138,6 +141,19 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
               src="/assets/apps/MoozApp.svg" 
               className="absolute top-[3px]"
               alt="Mooz" 
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div 
+            onClick={() => setOpenApp("Checkout")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/CheckOut.svg" 
+              className="absolute top-[3px] left-[51px]"
+              alt="Checkout" 
               width={20} 
               height={20}
               unoptimized
