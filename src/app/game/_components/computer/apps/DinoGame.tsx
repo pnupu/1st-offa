@@ -9,17 +9,20 @@ const DinoGame = () => {
   const [score, setScore] = useState(0);
   const [speed, setSpeed] = useState(10);
 
+  // Fixed obstacle height
+  const obstacleHeight = 50; // Constant height for all obstacles
+
   // Independent obstacle positions and properties
   const [obstacle1Position, setObstacle1Position] = useState(800);
-  const [obstacle1Height, setObstacle1Height] = useState(20);
+  const [obstacle1Offset, setObstacle1Offset] = useState(0);
   const [obstacle1IsDouble, setObstacle1IsDouble] = useState(false);
 
   const [obstacle2Position, setObstacle2Position] = useState(1200);
-  const [obstacle2Height, setObstacle2Height] = useState(30);
+  const [obstacle2Offset, setObstacle2Offset] = useState(0);
   const [obstacle2IsDouble, setObstacle2IsDouble] = useState(false);
 
   const [obstacle3Position, setObstacle3Position] = useState(1600);
-  const [obstacle3Height, setObstacle3Height] = useState(40);
+  const [obstacle3Offset, setObstacle3Offset] = useState(0);
   const [obstacle3IsDouble, setObstacle3IsDouble] = useState(false);
 
   const jumpThreshold = 20; // Buffer from the ground to allow a jump
@@ -31,10 +34,10 @@ const DinoGame = () => {
     if (isGameOver) return;
 
     const obstacleTimer = setInterval(() => {
-      const resetObstacle = (prevPos: number, otherObstaclePositions: number[], setHeight: (height: number) => void, setIsDouble: (isDouble: boolean) => void) => {
+      const resetObstacle = (prevPos, otherObstaclePositions, setOffset, setIsDouble) => {
         if (prevPos > -50) return prevPos - speed;
 
-        let newPosition: number;
+        let newPosition;
         do {
           newPosition = Math.random() * 200 + 800;
         } while (
@@ -43,7 +46,7 @@ const DinoGame = () => {
           )
         );
 
-        setHeight(Math.random() * 30 + 20);
+        setOffset(Math.random() * 30); // Random offset to simulate depth
         setIsDouble(score >= 20 && Math.random() < 0.5);
 
         setScore((prevScore) => prevScore + 1);
@@ -51,13 +54,13 @@ const DinoGame = () => {
       };
 
       setObstacle1Position((prev) =>
-        resetObstacle(prev, [obstacle2Position, obstacle3Position], setObstacle1Height, setObstacle1IsDouble)
+        resetObstacle(prev, [obstacle2Position, obstacle3Position], setObstacle1Offset, setObstacle1IsDouble)
       );
       setObstacle2Position((prev) =>
-        resetObstacle(prev, [obstacle1Position, obstacle3Position], setObstacle2Height, setObstacle2IsDouble)
+        resetObstacle(prev, [obstacle1Position, obstacle3Position], setObstacle2Offset, setObstacle2IsDouble)
       );
       setObstacle3Position((prev) =>
-        resetObstacle(prev, [obstacle1Position, obstacle2Position], setObstacle3Height, setObstacle3IsDouble)
+        resetObstacle(prev, [obstacle1Position, obstacle2Position], setObstacle3Offset, setObstacle3IsDouble)
       );
 
       setSpeed((prevSpeed) => Math.min(prevSpeed + 0.01, 20));
@@ -92,20 +95,20 @@ const DinoGame = () => {
 
   // Collision detection for each obstacle
   useEffect(() => {
-    const checkCollision = (position: number, height: number) => {
-      if (position > 20 && position < 80 && dinoPosition < height) {
+    const checkCollision = (position, offset) => {
+      if (position > 20 && position < 80 && dinoPosition < obstacleHeight - offset) {
         setIsGameOver(true);
       }
     };
 
-    checkCollision(obstacle1Position, obstacle1Height);
-    checkCollision(obstacle2Position, obstacle2Height);
-    checkCollision(obstacle3Position, obstacle3Height);
+    checkCollision(obstacle1Position, obstacle1Offset);
+    checkCollision(obstacle2Position, obstacle2Offset);
+    checkCollision(obstacle3Position, obstacle3Offset);
   }, [obstacle1Position, obstacle2Position, obstacle3Position, dinoPosition]);
 
   // Handle jump on spacebar press, considering jump threshold
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e) => {
       if (e.code === 'Space') {
         if (isGameOver) {
           restartGame();
@@ -175,54 +178,60 @@ const DinoGame = () => {
 
       {/* Obstacle 1 */}
       <div
-        className="absolute bottom-0 bg-red-500 w-10"
+        className="absolute bg-red-500 w-10"
         style={{
           left: `${obstacle1Position}px`,
-          height: `${obstacle1Height}px`,
+          bottom: `${obstacle1Offset}px`,
+          height: `${obstacleHeight}px`,
         }}
       ></div>
       {obstacle1IsDouble && (
         <div
-          className="absolute bottom-0 bg-red-500 w-10"
+          className="absolute bg-red-500 w-10"
           style={{
             left: `${obstacle1Position + 12}px`,
-            height: `${obstacle1Height}px`,
+            bottom: `${obstacle1Offset}px`,
+            height: `${obstacleHeight}px`,
           }}
         ></div>
       )}
 
       {/* Obstacle 2 */}
       <div
-        className="absolute bottom-0 bg-red-500 w-10"
+        className="absolute bg-red-500 w-10"
         style={{
           left: `${obstacle2Position}px`,
-          height: `${obstacle2Height}px`,
+          bottom: `${obstacle2Offset}px`,
+          height: `${obstacleHeight}px`,
         }}
       ></div>
       {obstacle2IsDouble && (
         <div
-          className="absolute bottom-0 bg-red-500 w-10"
+          className="absolute bg-red-500 w-10"
           style={{
             left: `${obstacle2Position + 12}px`,
-            height: `${obstacle2Height}px`,
+            bottom: `${obstacle2Offset}px`,
+            height: `${obstacleHeight}px`,
           }}
         ></div>
       )}
 
       {/* Obstacle 3 */}
       <div
-        className="absolute bottom-0 bg-red-500 w-10"
+        className="absolute bg-red-500 w-10"
         style={{
           left: `${obstacle3Position}px`,
-          height: `${obstacle3Height}px`,
+          bottom: `${obstacle3Offset}px`,
+          height: `${obstacleHeight}px`,
         }}
       ></div>
       {obstacle3IsDouble && (
         <div
-          className="absolute bottom-0 bg-red-500 w-10"
+          className="absolute bg-red-500 w-10"
           style={{
             left: `${obstacle3Position + 12}px`,
-            height: `${obstacle3Height}px`,
+            bottom: `${obstacle3Offset}px`,
+            height: `${obstacleHeight}px`,
           }}
         ></div>
       )}
