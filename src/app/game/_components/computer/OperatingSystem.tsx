@@ -36,9 +36,9 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         return <Mooz />;
       case "Interwebs Adventurer":
         return <Browser />;
-      case "Checkout":
+      case "CheckedOut":
         return <Checkout />;
-      case "Dinogame":
+      case "Running from responsibilities":
         return <DinoGame />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
@@ -84,7 +84,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             </div>
           ) : null}
         </div>
-        <div className="absolute top-[333px] left-[180px] p-[4px] h-[28px] w-[300px] bg-white/40 backdrop-blur-sm border-white/40 border rounded-md flex gap-1">
+        <div className="absolute top-[333px] left-[180px] p-[4px] h-[28px] w-[300px] bg-white/40 backdrop-blur-sm border-white/40 border rounded-md flex gap-3">
           <div 
             onClick={() => setOpenApp("Koolout")}
             className="cursor-pointer"
@@ -122,14 +122,14 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             />
           </div>
           <div 
-            onClick={() => setOpenApp("Dinogame")}
+            onClick={() => setOpenApp("Running from responsibilities")}
             className="cursor-pointer"
           >
             <Image 
-              src="/assets/apps/Adventurer.svg" 
+              src="/assets/apps/Bunny.svg" 
               alt="Koolout"
-              width={20} 
-              height={20}
+              width={12} 
+              height={12}
               unoptimized
             />
           </div>
@@ -147,7 +147,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             />
           </div>
           <div 
-            onClick={() => setOpenApp("Checkout")}
+            onClick={() => setOpenApp("CheckedOut")}
             className="cursor-pointer"
           >
             <Image 
