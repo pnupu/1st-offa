@@ -38,12 +38,6 @@
             <g id="Clock3" serif:id="Clock" transform="matrix(0.893724,0,0,0.904231,-58.5181,-2.55497)">
                 <circle cx="297.979" cy="228.124" r="106.963" style="fill:#f2eeeb;"/>
             </g>
-            <g transform="matrix(1,0,0,0.834862,0,33.6422)">
-                <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:5.77px;"/>
-            </g>
-            <g transform="matrix(3.26992e-16,-1,0.511344,1.8699e-16,103.614,411.515)">
-                <path d="M207.793,203.722L207.793,96.766" style="fill:none;stroke:#000;stroke-width:6.69px;"/>
-            </g>
         </g>
     </g>
 </svg>
