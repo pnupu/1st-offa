@@ -16,66 +16,107 @@ interface DraggableItemProps {
 }
 
 const DraggableItem = ({ id, initialX, initialY, width, height, children, manualZ }: DraggableItemProps) => {
-    const { positions, updatePosition } = useDragAndDropContext();
+    const { positions, updatePosition, globalIsDragging, setGlobalIsDragging } = useDragAndDropContext();
     const ref = useRef<HTMLDivElement>(null);
     const { x, y, updateMousePosition } = useMousePosition();
 
-    const isMouseComponent = React.isValidElement(children) && children.type === Mouse;
-
     const baseZIndex = 200;
     const isDraggingRef = useRef(false);
+    const globalIsDraggingRef = useRef(globalIsDragging); // Ref to hold the latest globalIsDragging value
     const startPositionRef = useRef({ x: initialX, y: initialY });
     const offsetRef = useRef({ x: 0, y: 0 });
+    const isHoveringRef = useRef(false);
     const isClickRef = useRef(true);
+
+    useEffect(() => {
+        globalIsDraggingRef.current = globalIsDragging; // Update ref whenever globalIsDragging changes
+    }, [globalIsDragging]);
 
     useEffect(() => {
         if (!positions[id]) {
             updatePosition(id, initialX, initialY);
         }
-    }, [id, initialX, initialY, updatePosition, positions]);
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if ((e.key === 'D' || e.key === 'd') && isHoveringRef.current && !isDraggingRef.current && !globalIsDraggingRef.current) {
+                startDragging();
+                setGlobalIsDragging(true);
+            }
+        };
+
+        const handleKeyUp = (e: KeyboardEvent) => {
+            if (e.key === 'D' || e.key === 'd') {
+                stopDragging();
+                setGlobalIsDragging(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('keyup', handleKeyUp);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('keyup', handleKeyUp);
+        };
+    }, [positions, id, initialX, initialY]);
+
+    useEffect(() => {
+        if (!globalIsDraggingRef.current && isDraggingRef.current) {
+            stopDragging();
+        }
+    }, [globalIsDraggingRef.current]); // Dependency on the ref's current value
+
+    const startDragging = () => {
+        document.addEventListener('mousemove', captureInitialMousePosition, { once: true });
+    };
+
+    const captureInitialMousePosition = (e: MouseEvent) => {
+        const currentX = positions[id]?.x ?? initialX;
+        const currentY = positions[id]?.y ?? initialY;
+
+        offsetRef.current = {
+            x: e.clientX - currentX,
+            y: e.clientY - currentY,
+        };
+
+        isClickRef.current = true;
+        isDraggingRef.current = true;
+        startPositionRef.current = { x: currentX, y: currentY };
+
+        document.addEventListener('mousemove', onMouseMove);
+    };
+
+    const stopDragging = () => {
+        isDraggingRef.current = false;
+        document.removeEventListener('mousemove', onMouseMove);
+    };
+
+    const onMouseEnter = () => {
+        isHoveringRef.current = true;
+    };
+
+    const onMouseLeave = () => {
+        isHoveringRef.current = false;
+    };
 
     const onMouseDown = (e: React.MouseEvent) => {
-        // Handle left-click (button === 0) for click simulation
-        if (e.button === 0 && isMouseComponent) {
+        if (e.button === 0 && React.isValidElement(children) && children.type === Mouse) {
             e.preventDefault();
             simulateClickAtMousePosition(x, y);
-        } 
-        // Right-click (button === 2) to initiate dragging
-        else if (e.button === 2) { 
-            e.preventDefault();
-
-            const currentX = positions[id]?.x ?? initialX;
-            const currentY = positions[id]?.y ?? initialY;
-
-            isClickRef.current = true;
-            isDraggingRef.current = true;
-            startPositionRef.current = { x: currentX, y: currentY };
-            offsetRef.current = {
-                x: e.clientX - currentX,
-                y: e.clientY - currentY,
-            };
-
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', onMouseUp);
         }
     };
 
     const simulateClickAtMousePosition = (mouseX: number, mouseY: number) => {
-        // Find the div with id "div-computer-screen-edge" to calculate relative position
         const screenEdgeDiv = document.getElementById('computer-screen');
         if (!screenEdgeDiv) {
             console.warn('Screen edge div not found');
             return;
         }
 
-        // Get the bounding rectangle of the screen edge div
         const screenRect = screenEdgeDiv.getBoundingClientRect();
-
-        // Calculate the absolute on-screen position based on the computer screen offset
         const absoluteX = screenRect.left + mouseX;
         const absoluteY = screenRect.top + mouseY;
 
-        // Ensure the coordinates are within the bounds of the screen
         if (
             absoluteX < screenRect.left ||
             absoluteX > screenRect.right ||
@@ -86,7 +127,6 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
             return;
         }
 
-        // Find the element at the absolute cursor position on the real screen
         const elementAtCursor = document.elementFromPoint(absoluteX, absoluteY);
 
         if (elementAtCursor) {
@@ -103,33 +143,15 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
         let newX = e.clientX - offsetRef.current.x;
         let newY = e.clientY - offsetRef.current.y;
 
-        // Boundaries within parent container
         newX = Math.max(0, Math.min(newX, parentRect.width - width));
         newY = Math.max(0, Math.min(newY, parentRect.height - height));
 
-        if (isMouseComponent) {
+        updatePosition(id, newX, newY);
+
+        if (React.isValidElement(children) && children.type === Mouse) {
             const deltaX = newX - startPositionRef.current.x;
             const deltaY = newY - startPositionRef.current.y;
             updateMousePosition(deltaX * 4, deltaY * 4);
-        }
-
-        updatePosition(id, newX, newY);
-    };
-
-    const onMouseUp = (e: MouseEvent) => {
-        // Only stop dragging if the right mouse button (button === 2) is released
-        if (e.button === 2) {
-            isDraggingRef.current = false;
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
-        }
-
-        // Allow left-click (button === 0) interaction with child components
-        if (isClickRef.current && e.button === 0 && ref.current) {
-            const child = ref.current.querySelector('*');
-            if (child && typeof child.dispatchEvent === 'function') {
-                child.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-            }
         }
     };
 
@@ -140,14 +162,16 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
         <div
             ref={ref}
             onMouseDown={onMouseDown}
-            onContextMenu={(e) => e.preventDefault()} // Prevent context menu on right-click
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onContextMenu={(e) => e.preventDefault()}
             className="absolute"
             style={{
                 left: `${currentX}px`,
                 top: `${currentY}px`,
                 width: `${width}px`,
                 height: `${height}px`,
-                zIndex: manualZ ? manualZ : baseZIndex + currentY, // Dynamic z-index based on y-coordinate
+                zIndex: manualZ ? manualZ : baseZIndex + currentY,
                 cursor: isDraggingRef.current ? 'grabbing' : 'grab',
             }}
         >

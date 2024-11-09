@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import OperatingSystem from "./computer/OperatingSystem";
 import { useGameTime } from "./GameTimeContext";
 import Clock from "./static_components/Clock";
@@ -22,11 +22,26 @@ const Game = () => {
     const { startGameTime, pauseGameTime } = useGameTime();
     const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
+    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
         startGameTime();
+
+        addEventListener('keydown', (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                handleTogglePause();
+            }
+        });
+
         return () => {
-            pauseGameTime();
+            pauseGameTime()
+
+            removeEventListener('keydown', (e: KeyboardEvent) => {
+                if (e.key === 'Escape') {
+                    handleTogglePause();
+                }
+            });
+
         }
     }
     , []);
@@ -38,6 +53,16 @@ const Game = () => {
             setOpenTask(id);
         }
     }
+
+    const handleTogglePause = () => {
+        setIsPaused(!isPaused);
+        if (isPaused) {
+            startGameTime();
+        } else {
+            pauseGameTime();
+        }
+    }
+
 
     const handlePowerButtonClick = () => {
         setComputerOn(!computerOn);
@@ -159,6 +184,7 @@ const Game = () => {
                 <PostIt taskId={4} toggle={() => handleToggleOpenTask(4)} isOpen={openTask === 4} />
             </StaticItem>
         </MousePositionProvider>  
+        {isPaused && <div className="absolute bottom-0 right-0 p-4 text-white text-xs bg-black bg-opacity-50">Press ESC to pause</div> }
         </div>
     );
 }

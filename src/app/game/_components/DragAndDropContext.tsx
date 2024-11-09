@@ -11,13 +11,16 @@ interface Position {
 
 interface DragAndDropContextType {
     positions: Record<string, Position>;
+    globalIsDragging: boolean;
     updatePosition: (id: string, x: number, y: number) => void;
+    setGlobalIsDragging: (isDragging: boolean) => void;
 }
 
 const DragAndDropContext = createContext<DragAndDropContextType | undefined>(undefined);
 
 export const DragAndDropProvider = ({ children }: { children: ReactNode }) => {
     const [positions, setPositions] = useState<Record<string, Position>>({});
+    const [globalIsDragging, setGlobalIsDragging] = useState(false);
 
     const updatePosition = (id: string, x: number, y: number) => {
         setPositions((prev) => ({
@@ -26,8 +29,9 @@ export const DragAndDropProvider = ({ children }: { children: ReactNode }) => {
         }));
     };
 
+
     return (
-        <DragAndDropContext.Provider value={{ positions, updatePosition }}>
+        <DragAndDropContext.Provider value={{ positions, updatePosition, globalIsDragging, setGlobalIsDragging }}>
             {children}
         </DragAndDropContext.Provider>
     );

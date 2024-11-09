@@ -64,7 +64,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         <div className="bg-black w-full h-[15px] text-white text-[11px]">
           <div className="justify-self-end mx-2">{timeAsString}</div>
         </div>      
-        <div className="bg-black w-full h-[353px] text-black bg-[url('/assets/computer_backgrounds/kisse.png')]">
+        <div className="bg-black w-full h-[353px] text-black bg-[url('/assets/computer_backgrounds/kisse.png')] bg-cover" style={{backgroundPositionY : "-15px"}}>
           {openApp ? (
             <div className="bg-white w-[655px] h-[315px] absolute top-[15px] rounded-md">
               <div className="bg-gray-400 w-full h-[30px] flex justify-between items-center px-2">
@@ -84,7 +84,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             </div>
           ) : null}
         </div>
-        <div className="absolute top-[333px] left-[180px] p-[4px] h-[28px] w-[300px] bg-white/40 backdrop-blur-sm border-white/40 border rounded-md flex gap-3">
+        <div className="absolute top-[333px] left-[230px] p-[4px] h-[30px] w-[195px] bg-white/40 backdrop-blur-sm border-white/40 border rounded-md flex gap-3">
           <div 
             onClick={() => setOpenApp("Koolout")}
             className="cursor-pointer"
