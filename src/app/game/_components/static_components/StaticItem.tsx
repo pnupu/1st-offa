@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 
 interface StaticItemProps {
     x: number;         // X position of the item
@@ -8,14 +9,12 @@ interface StaticItemProps {
     height: number;    // Height of the item
     zIndex: number;    // Z-index for layering
     children: React.ReactNode;
-    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const StaticItem = ({ x, y, width, height, zIndex, children, onClick }: StaticItemProps) => {
+const StaticItem = ({ x, y, width, height, zIndex, children }: StaticItemProps) => {
     return (
         <div
             className="absolute"
-            onClick={onClick}
             style={{
                 left: `${x}px`,
                 top: `${y}px`,

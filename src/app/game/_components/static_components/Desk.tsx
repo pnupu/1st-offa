@@ -9,14 +9,14 @@ import { DragAndDropProvider } from "../DragAndDropContext";
 const Desk = () => {
     return (
         <DragAndDropProvider>
-            <div className="relative top-[530px] left-[-60px] w-[1400px] h-[300px] bg-no-repeat bg-contain z-20"style={{ backgroundImage: 'url(/assets/desktop/Table.svg)' }}>
-                <DraggableItem id="coffee" initialX={370} initialY={63} width={60} height={60}>
+            <div className="relative top-[480px] left-[-260px] w-[1800px] h-[250px] bg-no-repeat bg-contain z-50">
+                <DraggableItem id="coffee" initialX={418} initialY={1} width={120} height={120}>
                     <CoffeeCup />
                 </DraggableItem>
-                <DraggableItem id="keyboard" initialX={526} initialY={84} width={300} height={60}>
+                <DraggableItem id="keyboard" initialX={670} initialY={96} width={450} height={90} manualZ={1}>
                     <Keyboard />
                 </DraggableItem>
-                <DraggableItem id="mouse" initialX={874} initialY={67} width={60} height={60}>
+                <DraggableItem id="mouse" initialX={1180} initialY={97} width={70} height={70}>
                     <Mouse />
                 </DraggableItem>
             </div>
