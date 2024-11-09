@@ -15,7 +15,7 @@ export default function DashboardPage() {
   }
 
   if (!profile?.name) {
-    router.push("/create-profile");
+    router.push("/dashboard/profile");
     return null;
   }
 
