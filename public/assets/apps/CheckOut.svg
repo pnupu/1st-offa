@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 332 332" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-960,-430)">
+        <path id="CheckOut" d="M1291.3,467.501L1291.3,724.788C1291.3,745.213 1274.72,761.795 1254.29,761.795L997.008,761.795C976.583,761.795 960,745.213 960,724.788L960,467.501C960,447.076 976.583,430.493 997.008,430.493L1254.29,430.493C1274.72,430.493 1291.3,447.076 1291.3,467.501Z" style="fill:#0a63bd;"/>
+        <clipPath id="_clip1">
+            <path id="CheckOut1" serif:id="CheckOut" d="M1291.3,467.501L1291.3,724.788C1291.3,745.213 1274.72,761.795 1254.29,761.795L997.008,761.795C976.583,761.795 960,745.213 960,724.788L960,467.501C960,447.076 976.583,430.493 997.008,430.493L1254.29,430.493C1274.72,430.493 1291.3,447.076 1291.3,467.501Z"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(1.05052,0,0,1.07766,54.843,-55.4157)">
+                <g transform="matrix(282.157,0,0,282.157,1153.57,699.989)">
+                </g>
+                <text x="885.194px" y="699.989px" style="font-family:'Calibri-Bold', 'Calibri';font-weight:700;font-size:282.157px;fill:#fff;">c<tspan x="1001.89px " y="699.989px ">o</tspan></text>
+            </g>
+            <g transform="matrix(1.55537,0,0,1.55537,-580.523,-307.312)">
+                <circle cx="1048.97" cy="523.862" r="16.138" style="fill:#fff;"/>
+            </g>
+        </g>
+    </g>
+</svg>
