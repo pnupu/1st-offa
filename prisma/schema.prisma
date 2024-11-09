@@ -1,74 +1,166 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
+// prisma/schema.prisma
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "postgresql"
-    // NOTE: When using mysql or sqlserver, uncomment the @db.Text annotations in model Account below
-    // Further reading:
-    // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
-    // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
-    url      = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    createdBy   User   @relation(fields: [createdById], references: [id])
-    createdById String
-
-    @@index([name])
+enum UserRole {
+  ADMIN
+  COMPANY_EMPLOYEE
+  JOB_SEEKER
 }
 
-// Necessary for Next auth
-model Account {
-    id                       String  @id @default(cuid())
-    userId                   String
-    type                     String
-    provider                 String
-    providerAccountId        String
-    refresh_token            String? // @db.Text
-    access_token             String? // @db.Text
-    expires_at               Int?
-    token_type               String?
-    scope                    String?
-    id_token                 String? // @db.Text
-    session_state            String?
-    user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-    refresh_token_expires_in Int?
-
-    @@unique([provider, providerAccountId])
-}
-
-model Session {
-    id           String   @id @default(cuid())
-    sessionToken String   @unique
-    userId       String
-    expires      DateTime
-    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+enum ProfileType {
+  USER
+  COMPANY
 }
 
 model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
-    posts         Post[]
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  lastName      String?
+  emailVerified DateTime?
+  image         String?
+  role          UserRole  @default(JOB_SEEKER)
+
+  // Relations
+  accounts     Account[]
+  sessions     Session[]
+  gameScores   GameScore[]
+  oceanProfile OceanProfile?
+  files        File[]
+
+  // Company relations
+  employeeAt     Company? @relation("CompanyEmployees", fields: [companyId], references: [id])
+  companyId      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([companyId])
+}
+
+model Company {
+  id          String  @id @default(cuid())
+  name        String
+  description String? @db.Text
+  website     String?
+  address     String?
+  logo        File?   @relation(fields: [logoId], references: [id])
+  logoId      String? @unique
+
+  // Relations
+  employees    User[]        @relation("CompanyEmployees")
+  oceanProfile OceanProfile?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([name])
+}
+
+model OceanProfile {
+  id                String      @id @default(cuid())
+  profileType       ProfileType // Discriminator field
+  openness          Float       @db.DoublePrecision
+  conscientiousness Float       @db.DoublePrecision
+  extraversion      Float       @db.DoublePrecision
+  agreeableness     Float       @db.DoublePrecision
+  neuroticism       Float       @db.DoublePrecision
+
+  // Relations
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?  @unique
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId String?  @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GameTask {
+  id          String @id @default(cuid())
+  name        String
+  description String
+  type        String // Type of task/game
+  settings    Json? // Flexible settings for different types of tasks
+  weight      Float  @default(1.0) // Weight in final OCEAN calculation
+
+  // Relations
+  scores GameScore[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([type])
+}
+
+model GameScore {
+  id       String @id @default(cuid())
+  rawScore Json // Store raw game data
+
+  // Relations
+  user   User     @relation(fields: [userId], references: [id])
+  userId String
+  task   GameTask @relation(fields: [taskId], references: [id])
+  taskId String
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([taskId])
+}
+
+// Existing Auth Models
+model Account {
+  id                       String  @id @default(cuid())
+  userId                   String
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String? // @db.Text
+  access_token            String? // @db.Text
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String? // @db.Text
+  session_state            String?
+  user                     User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refresh_token_expires_in Int?
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
-    identifier String
-    token      String   @unique
-    expires    DateTime
+  identifier String
+  token      String   @unique
+  expires    DateTime
 
-    @@unique([identifier, token])
+  @@unique([identifier, token])
+}
+
+model File {
+  id        String   @id @default(cuid())
+  url       String
+  key       String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?  @unique
+  company   Company?
 }
