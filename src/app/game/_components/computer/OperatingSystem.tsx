@@ -63,7 +63,11 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
                 <div 
                   className="h-[20px] w-[20px] bg-red-500 rounded-md cursor-pointer" 
                   onClick={() => setOpenApp(undefined)}
-                />
+                >
+                  <div className="absolute top-[3px] ml-[5px]">
+                    ×
+                  </div>
+                </div>
               </div>
               <div className="w-full h-[285px]">
                 {renderApp()}
