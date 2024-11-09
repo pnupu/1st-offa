@@ -11,6 +11,7 @@ export const postRouter = createTRPCRouter({
   create: protectedProcedure
     .input(z.object({
       content: z.string().min(1).max(280),
+      imageData: z.string().optional(),
     }))
     .mutation(async ({ ctx, input }) => {
       // Content moderation using OpenAI
@@ -27,13 +28,32 @@ export const postRouter = createTRPCRouter({
         });
       }
 
-      return ctx.db.post.create({
+      // Handle the base64 image data
+      let fileData = undefined;
+      if (input.imageData?.includes('base64,')) {
+        const base64Data = input.imageData.split('base64,')[1];
+        if (base64Data) {
+          fileData = {
+            file: {
+              create: {
+                blob: Buffer.from(base64Data, 'base64'),
+                key: `post-image-${Date.now()}`,
+                userId: ctx.session.user.id
+              }
+            }
+          };
+        }
+      }
+
+      const post = await ctx.db.post.create({
         data: {
           content: input.content,
           authorId: ctx.session.user.id,
           approved: true, // Auto-approve if passed moderation
+          ...fileData
         },
       });
+      return post;
     }),
 
   getAll: protectedProcedure
@@ -57,7 +77,7 @@ export const postRouter = createTRPCRouter({
               image: true,
             },
           },
-        },
+},
         cursor: input.cursor ? { id: input.cursor } : undefined,
       });
 

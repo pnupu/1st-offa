@@ -93,7 +93,7 @@ const Game = () => {
         
         // Redirect to dashboard after 2 seconds
         setTimeout(() => {
-            window.location.href = '/dashboard';
+            window.location.href = '/dashboard/profile';
         }, 2000);
     };
 
