@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 793.70081 1122.5197"
+   height="1122.5197"
+   width="793.70081"
+   xml:space="preserve"
+   id="svg2"
+   version="1.1"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs6" /><g
+     transform="matrix(1.3333333,0,0,1.3333333,0,4.2729659e-5)"
+     id="g10"><g
+       transform="scale(0.75)"
+       id="g12"><g
+         id="g14"><g
+           id="g16"><g
+             id="g18"><g
+               id="g20"><text
+                 id="text24"
+                 style="font-variant:normal;font-weight:bold;font-size:23.39999962px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(83,120.37168)"><tspan
+                   id="tspan22"
+                   y="0"
+                   x="0 19.773001 35.380798 55.528198 70.410599 82.742401 102.5154 118.1232 127.0152 144.02699 154.8378 162.981 179.87579 190.6866 204.282 213.174 228.0564 236.1996 256.1832 273.19501 282.08701 298.4436">BowerBoint Style Guide</tspan></text>
+<text
+                 id="text28"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(83,171.26953)"><tspan
+                   id="tspan26"
+                   y="0"
+                   x="0 13.92 20.879999 27.84 42.279999 49.880001 57.48 71.459999 84.18 91.139999 105.2 118.16 129.78 143.12 157.66 166.89999 178.16 185.12 203.17999 210.14 224.58 233.82001 244.36 258.89999 271.07999 280.32001 294.85999 305.39999">1. Slide Layouts &amp; Structure</tspan></text>
+<text
+                 id="text32"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,221.36562)"><tspan
+                   id="tspan30"
+                   y="0"
+                   x="0 14.88 22.48 31.719999 39.32 52.040001 59 73.440002 81.040001 88.639999 102.62">Title Slide</tspan></text>
+<text
+                 id="text36"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(238.35156,221.36562)"><tspan
+                   id="tspan34"
+                   y="0"
+                   x="0 6.7399998 13.1 26.379999 38.299999 47.860001 60.66 72.5 78.860001 85.220001 98.019997 110.06 116.46 129.25999 135.62 148.42 157.98 170.02 176.22 188.06 199.25999 207.3 213.66 221.7 228.10001 236.14 242.53999 254.38 260.73999 268.54001 281.26001 293.98001 306.78 314.82001 322.62 328.98001 335.34 348.14001 357.70001 369.73999 375.94 387.78 398.98001 407.01999 413.38 424.57999 436.62 449.42001">: Large, bold project title (80pt), project code</tspan></text>
+<text
+                 id="text40"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,244.64687)"><tspan
+                   id="tspan38"
+                   y="0"
+                   x="0 11.92 24.799999 37.599998 43.959999 52 63.919998 76.720001 83.120003 89.519997 102.4 114.24 120.6 128.39999 141.12 153.84 166.64 174.67999 182.48 188.84 195.2 201.60001 213.64 226.44 238.48 244.84 256.76001 269.64001 282.44 288.79999 301.60001 313.51999 321.56 333.39999 339.76001 346.16 359.04001 365.39999 373.44 386.32001 398.16 404.51999 417.32001 429.35999 437.39999 445.44 457.48001 476.44 483.20001 492.76001 499.16 511.95999 524.84003">and tagline (40pt), logo and date in the bottom-right</tspan></text>
+<text
+                 id="text44"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,267.92812)"><tspan
+                   id="tspan42"
+                   y="0"
+                   x="0 11.2 23.24 32.799999 45.68 57.52 64.900002">corner.</tspan></text>
+<text
+                 id="text48"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,291.42422)"><tspan
+                   id="tspan46"
+                   y="0"
+                   x="0 15.92 29.26 43.799999 53.040001 65.760002 80.300003 89.540001 96.5 110.94 118.54 126.14 140.12 152.84">Content Slides</tspan></text>
+<text
+                 id="text52"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(287.11133,291.42422)"><tspan
+                   id="tspan50"
+                   y="0"
+                   x="0 6.7399998 13.1 26.440001 32.84 40.880001 47.279999 59.119999 65.480003 73.279999 86 98.720001 111.52 119.56 127.36 133.72 140.08 152.88 164.92 177.72 189.02 195.38 203.42 215.25999 226.53999 234.58 240.94 248.74001 261.45999 274.17999 286.98001 295.01999 302.82001 309.17999 315.54001 321.94 333.78 341.17999 349.22 355.57999 367.62">: Title (40pt), body text (36pt), left or</tspan></text>
+<text
+                 id="text56"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,314.70547)"><tspan
+                   id="tspan54"
+                   y="0"
+                   x="0 11.2 23.040001 35.919998 43.959999 55.799999 65.360001 72.120003 84.040001 90.440002 96.839996 109.64 122.52 134.36 147.16 153.52 159.88 167.78 186.74001 198.66 211.46001 223.3 233.56 239.92 258.88 270.79999 282.07999 288.44 301.16 313.88 332.88 339.23999 356.35999 362.76001 375.56 383.60001 396.48001 402.84 419.95999 426.35999 434.39999 447.28 453.64001 466.44 478.35999 491.16 503.95999 510.35999 523.23999 536.03998">center-aligned. Images max 50% width with padding.</tspan></text>
+<text
+                 id="text60"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,338.20156)"><tspan
+                   id="tspan58"
+                   y="0"
+                   x="0 14.44 27.16 39.34 48.580002 56.18 69.519997 84.059998 91.019997 107.92 118.46 131.17999 144.14">Section Break</tspan></text>
+<text
+                 id="text64"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(281.00781,338.20156)"><tspan
+                   id="tspan62"
+                   y="0"
+                   x="0 6.7399998 13.1 27.799999 39.84 46.240002 59.040001 65.400002 73.440002 85.279999 96.559998 104.6 110.96 118.76 131.48 144.2 157 165.03999 172.84 179.2 196.32001 202.72 210.75999 223.64 230 240.25999 252.10001 263.29999 271.34 277.73999 289.78 302.66 309.01999 321.89999 333.82001 352.78 364.62">: Bold text (50pt) with section name,</tspan></text>
+<text
+                 id="text68"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,361.48281)"><tspan
+                   id="tspan66"
+                   y="0"
+                   x="0 18.959999 25.360001 38.240002 44.639999 63.599998 75.519997 81.919998 88.32 98.580002 106.62 112.98 125.78 137.62 147.88 154.28 167.08 179.96001">minimalist design.</tspan></text>
+<text
+                 id="text72"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(83,411.57891)"><tspan
+                   id="tspan70"
+                   y="0"
+                   x="0 13.92 20.879999 27.84 43.759998 57.099998 64.699997 78.040001 88.580002 95.540001 109.98 122.16 136.7 149.42 170.58">2. Color Scheme</tspan></text>
+<text
+                 id="text76"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,461.675)"><tspan
+                   id="tspan74"
+                   y="0"
+                   x="0 15.04 25.58 33.18 54.34 67.300003 77.839996">Primary</tspan></text>
+<text
+                 id="text80"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(212.45312,461.675)"><tspan
+                   id="tspan78"
+                   y="0"
+                   x="0 6.7399998 13.1 29.139999 41.060001 50.619999 62.740002 69.099998 83.800003 90.199997 103.08 114.92 121.28 129.08 145.84 158.56 171.28 184 196.72 209.44 222.16 229.96001 236.32001 242.67999 263.23999 276.12 282.51999 290.56 302.39999 308.76001 316.56 333.32001 347.20001 361.07999 374.95999 388.84 402.72 416.60001 424.39999 430.76001 437.12 453.10001 462.66 474.57999">: Dark Blue (#003366), White (#FFFFFF), Gray</tspan></text>
+<text
+                 id="text84"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,484.95625)"><tspan
+                   id="tspan82"
+                   y="0"
+                   x="0 7.8000002 24.559999 39.259998 51.98 66.68 79.400002 94.099998 106.82">(#B0B0B0)</tspan></text>
+<text
+                 id="text88"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,508.45234)"><tspan
+                   id="tspan86"
+                   y="0"
+                   x="0 15.52 27.700001 39.880001 52.599998 67.139999">Accent</tspan></text>
+<text
+                 id="text92"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(199.37695,508.45234)"><tspan
+                   id="tspan90"
+                   y="0"
+                   x="0 6.7399998 13.1 26.379999 32.779999 45.580002 58.459999 66.5 72.860001 87.559998 93.959999 106.84 118.68 125.04 132.84 149.60001 162.32001 175.03999 189.74001 202.46001 216.34 230.22 238.02 244.38 250.74001 267.14001 276.70001 288.62 301.5 314.29999 326.14001 332.5 340.29999 357.06 370.94 384.82001 397.54001 411.42001 424.14001 436.85999">: Light Blue (#66B2FF), Orange (#FF7F32)</tspan></text>
+<text
+                 id="text96"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,531.94844)"><tspan
+                   id="tspan94"
+                   y="0"
+                   x="0 16.9 29.860001 42.040001 55.900002 69.879997 80.419998 93.760002 108.3 122.84">Background</tspan></text>
+<text
+                 id="text100"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(259.82617,531.94844)"><tspan
+                   id="tspan98"
+                   y="0"
+                   x="0 6.7399998 13.1 26.379999 32.779999 45.580002 58.459999 66.5 72.860001 88.839996 98.400002 110.32 121.62 127.98 135.78 152.53999 166.42 179.14 193.02 205.74001 219.62 232.34 240.14 246.5 253.89999 265.94 275.5 281.85999 293.06 305.10001 317.98001 326.01999 337.85999 350.73999 358.78 365.14001 371.5 392.06 404.94 411.34 419.38">: Light Gray (#F4F4F4) for content, White</tspan></text>
+<text
+                 id="text104"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,555.22969)"><tspan
+                   id="tspan102"
+                   y="0"
+                   x="0 7.4000001 19.440001 29 35.360001 45.619999 57.459999 68.660004 76.699997 83.099998 95.139999 108.02 114.38 127.26 139.10001 151.02 163.82001 175.66 185.22 195.48">for section headers.</tspan></text>
+<text
+                 id="text108"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(83,605.32578)"><tspan
+                   id="tspan106"
+                   y="0"
+                   x="0 13.92 20.879999 27.84 40.959999 54.299999 68.839996 78.080002">3. Fonts</tspan></text>
+<text
+                 id="text112"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,655.42187)"><tspan
+                   id="tspan110"
+                   y="0"
+                   x="0 18.9 31.620001 44.580002 58.560001 66.160004 80.699997 94.68">Headings</tspan></text>
+<text
+                 id="text116"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(228.94727,655.42187)"><tspan
+                   id="tspan114"
+                   y="0"
+                   x="0 6.7399998 13.1 27.799999 39.84 46.240002 59.040001 65.400002 75.660004 87.580002 100.46 110.72 117.48 127.74 139.58 149.14 155.53999 162.94 169.3 177.10001 191.53999 201.10001 207.5 219.42 225.82001 232.17999 238.53999 255.98 267.82001 274.22 285.51999 297.35999 305.39999 311.79999 323 334.92001">: Bold sans-serif (Arial, Helvetica)</tspan></text>
+<text
+                 id="text120"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,678.91797)"><tspan
+                   id="tspan118"
+                   y="0"
+                   x="0 16.9 30.24 44.220001">Body</tspan></text>
+<text
+                 id="text124"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(178.84961,678.91797)"><tspan
+                   id="tspan122"
+                   y="0"
+                   x="0 6.7399998 13.1 27.540001 37.099998 43.5 55.419998 61.82 68.18 74.540001 89.839996 101.76 108.16 114.56 127.36 136.92 143.32001 149.67999 156.03999 168.08 177.64 184 200.39999 213.2 225.03999 237.92 244.28 257.98001 269.89999 282.78">: Arial, Calibri, or Open Sans</tspan></text>
+<text
+                 id="text128"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(83,729.01406)"><tspan
+                   id="tspan126"
+                   y="0"
+                   x="0 13.92 20.879999 27.84 43.02 50.619999 61.880001 76.419998 89.379997 96.980003 103.94 119.18 126.78 139.5 160.66 173.38 187.92 197.16">4. Visual Elements</tspan></text>
+<text
+                 id="text132"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,779.11016)"><tspan
+                   id="tspan130"
+                   y="0"
+                   x="0 15.92 30.459999 43.419998 53.959999 63.200001">Charts</tspan></text>
+<text
+                 id="text136"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(197.45312,779.11016)"><tspan
+                   id="tspan134"
+                   y="0"
+                   x="0 6.7399998 13.1 26.799999 33.200001 52.16 64.959999 71.360001 83.199997 89.559998 97.360001 110.16 122.08 129.46001 135.82001 142.17999 148.58 154.98 167.86 179.7 186.06 192.42 205.22 211.62 223.46001 231.25999 237.62 243.98 255.17999 267.22 273.62 285.66 295.22 301.57999 312.78 324.82001 337.62 344.01999 356.89999 369.70001 376.06 387.26001 399.29999 412.17999 422.44 428.84 439.10001 447.14001 458.98001 471.85999 479.89999">: Simple (bar, line, pie), color coding consistent.</tspan></text>
+<text
+                 id="text140"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,802.60625)"><tspan
+                   id="tspan138"
+                   y="0"
+                   x="0 9.3599997 21.540001 34.880001 49.419998 60.68 67.639999 85.699997 92.660004 102.02 123.18 136.14 150.12 162.84">Icons &amp; Images</tspan></text>
+<text
+                 id="text144"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(297.10156,802.60625)"><tspan
+                   id="tspan142"
+                   y="0"
+                   x="0 6.7399998 13.1 29.959999 40.220001 52.060001 58.419998 71.760002 83.68 91.720001 98.080002 110.88 122.72 132.98 139.38 152.17999 165.06 171.42 177.78 190.66 197.06 209.86 222.74001 229.10001 238.66 250.5 260.76001 272.79999 279.20001 292.07999 300.12 306.51999 318.56 331.44">: Use fat design, high resolution,</tspan></text>
+<text
+                 id="text148"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,825.8875)"><tspan
+                   id="tspan146"
+                   y="0"
+                   x="0 18.959999 30.879999 37.279999 50.16 58.200001 70.120003 76.519997 89.400002 95.760002 105.32 117.16 123.56 135.48 143.52 149.92 161.96001 174.84 185.10001 197.98 204.38 217.17999 223.53999 231.58 243.62 249.98 261.17999 273.22 286.10001 294.14001 305.98001 318.85999 326.89999">maintain relationship to content.</tspan></text>
+<text
+                 id="text152"
+                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,849.38359)"><tspan
+                   id="tspan150"
+                   y="0"
+                   x="0 9.3599997 23.9 32.5 45.84 59.82 70.360001 83.32 97.300003 111.84 119.44 131.62">Infographics</tspan></text>
+<text
+                 id="text156"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(265.88086,849.38359)"><tspan
+                   id="tspan154"
+                   y="0"
+                   x="0 6.7399998 13.1 26.799999 33.200001 52.16 64.959999 71.360001 83.199997 89.559998 95.919998 113.04 119.44 127.48 140.36 146.72 158.64 168.2 177.75999 189.8 206.92 217.17999 223.53999 229.89999 237.94 244.34 263.29999 275.14001 281.54001 287.94 300.82001 312.66 322.92001 329.28 335.64001 342.04001 348.44 361.23999 374.12">: Simple, with arrows, timelines, light</tspan></text>
+<text
+                 id="text160"
+                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 transform="translate(123,872.66484)"><tspan
+                   id="tspan158"
+                   y="0"
+                   x="0 12.8 24.719999 35.919998 48.040001 60.84 70.400002 82.440002 95.32 108.2 121 131.25999">backgrounds.</tspan></text>
+<g
+                 transform="translate(-18.154297)"
+                 id="g162"><g
+                   id="g164"><text
+                     id="text168"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,221.15078)"><tspan
+                       id="tspan166"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g170"><g
+                   id="g172"><text
+                     id="text176"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,291.20937)"><tspan
+                       id="tspan174"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g178"><g
+                   id="g180"><text
+                     id="text184"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,337.98672)"><tspan
+                       id="tspan182"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g186"><g
+                   id="g188"><text
+                     id="text192"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,461.46016)"><tspan
+                       id="tspan190"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g194"><g
+                   id="g196"><text
+                     id="text200"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,508.2375)"><tspan
+                       id="tspan198"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g202"><g
+                   id="g204"><text
+                     id="text208"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,531.73359)"><tspan
+                       id="tspan206"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g210"><g
+                   id="g212"><text
+                     id="text216"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,655.20703)"><tspan
+                       id="tspan214"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g218"><g
+                   id="g220"><text
+                     id="text224"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,678.70312)"><tspan
+                       id="tspan222"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g226"><g
+                   id="g228"><text
+                     id="text232"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,778.89531)"><tspan
+                       id="tspan230"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g234"><g
+                   id="g236"><text
+                     id="text240"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,802.39141)"><tspan
+                       id="tspan238"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g><g
+                 transform="translate(-18.154297)"
+                 id="g242"><g
+                   id="g244"><text
+                     id="text248"
+                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                     transform="translate(123,849.16875)"><tspan
+                       id="tspan246"
+                       y="0"
+                       x="0 11.8">• </tspan></text>
+</g></g></g></g></g></g></g></g></svg>

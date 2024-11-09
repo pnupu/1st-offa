@@ -1,4 +1,4 @@
-### **PowerPoint Style Guide**
+### **BowerBoint Style Guide**
 
 #### **1. Slide Layouts & Structure**
 - **Title Slide**: Large, bold project title (80pt), project code and tagline (40pt), logo and date in the bottom-right corner.

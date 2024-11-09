@@ -1,4 +1,4 @@
-# File Naming and Organization Standards
+# File Naming Standards
 
 **Purpose:** To create a streamlined and consistent structure for project file storage, ensuring all team members can easily locate documents, track progress, and archive completed work.
 
@@ -21,8 +21,3 @@ Within each project folder, organize files by the specific project phase. Common
 - `Phase4_Evaluation`
 
 This helps to keep a clear workflow and allows team members to understand the project’s current phase at a glance.
-
-### Document Type Tags
-Include a tag indicating the type of document, such as:
-- `Report`, `Presentation`, `Invoice`, `Budget`, `Notes`, `Timeline`  
-**Example:** `PRJ5678_2023Q4_Presentation`
