@@ -64,7 +64,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         <div className="bg-black w-full h-[15px] text-white text-[11px]">
           <div className="justify-self-end mx-2">{timeAsString}</div>
         </div>      
-        <div className="bg-black w-full h-[353px] bg-[url('/assets/computer_backgrounds/kisse.png')]">
+        <div className="bg-black w-full h-[353px] text-black bg-[url('/assets/computer_backgrounds/kisse.png')]">
           {openApp ? (
             <div className="bg-white w-[655px] h-[315px] absolute top-[15px] rounded-md">
               <div className="bg-gray-400 w-full h-[30px] flex justify-between items-center px-2">
