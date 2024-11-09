@@ -8,6 +8,7 @@ import Mooz from "./apps/Mooz";
 import { AppStateProvider } from "./AppStateContext";
 import Bower from "./apps/Bower";
 import Browser from "./apps/Browser";
+import DinoGame from "./apps/DinoGame";
 
 interface OperatingSystemProps {
   isOn: boolean;
@@ -32,8 +33,10 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
         return <Bower />;
       case "Mooz":
         return <Mooz />;
-      case "Browser":
+      case "Interwebs Adventurer":
         return <Browser />;
+      case "Dinogame":
+        return <DinoGame />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
           <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
@@ -104,11 +107,23 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             />
           </div>
           <div 
-            onClick={() => setOpenApp("Browser")}
+            onClick={() => setOpenApp("Interwebs Adventurer")}
             className="cursor-pointer"
           >
             <Image 
-              src="/assets/apps/BowerApp.svg" 
+              src="/assets/apps/Adventurer.svg" 
+              alt="Koolout"
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div 
+            onClick={() => setOpenApp("Dinogame")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/Adventurer.svg" 
               alt="Koolout"
               width={20} 
               height={20}
