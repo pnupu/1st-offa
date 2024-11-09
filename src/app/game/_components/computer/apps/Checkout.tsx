@@ -44,6 +44,7 @@ export default function Checkout() {
   const [newPost, setNewPost] = useState("");
   const [error, setError] = useState<string | null>(null);
   const utils = api.useUtils();
+  const createGameEvent = api.gameEvent.create.useMutation();
 
   const { data, hasNextPage, fetchNextPage, isFetchingNextPage } =
     api.post.getAll.useInfiniteQuery(
@@ -60,7 +61,26 @@ export default function Checkout() {
       setNewPost("");
       setError(null);
       void utils.post.getAll.invalidate();
+
+      // Create a game event for successful post creation
+      createGameEvent.mutate({
+        type: "POST_CREATED",
+        oceanScores: {
+          extraversion: 0.1,      // Boost extraversion for social interaction
+          agreeableness: 0.05,    // Small boost to agreeableness for social participation
+        }
+      });
     },
+    onError: () => {
+      // Create a game event for post failure
+      createGameEvent.mutate({
+        type: "POST_FAILED",
+        oceanScores: {
+          neuroticism: 0.05,      // Slight increase in neuroticism due to failure
+          extraversion: -0.05,    // Small decrease in extraversion due to negative social experience
+        }
+      });
+    }
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -68,19 +88,39 @@ export default function Checkout() {
     const trimmedPost = newPost.trim();
     if (!trimmedPost) return;
     
-    // Content validation
+    // Content validation with OCEAN impacts
     if (trimmedPost.length < 3) {
       setError("Post is too short");
+      createGameEvent.mutate({
+        type: "POST_TOO_SHORT",
+        oceanScores: {
+          conscientiousness: -0.05,  // Decrease for not meeting minimum requirements
+        }
+      });
       return;
     }
 
     if (isSpam(trimmedPost)) {
       setError("This post looks like spam");
+      createGameEvent.mutate({
+        type: "POST_SPAM_ATTEMPT",
+        oceanScores: {
+          conscientiousness: -0.1,   // Larger decrease for attempting spam
+          agreeableness: -0.1,       // Decrease for antisocial behavior
+        }
+      });
       return;
     }
 
     if (containsProfanity(trimmedPost)) {
       setError("This post contains inappropriate language");
+      createGameEvent.mutate({
+        type: "POST_PROFANITY",
+        oceanScores: {
+          agreeableness: -0.15,      // Larger decrease for using inappropriate language
+          conscientiousness: -0.1,    // Decrease for lack of professional behavior
+        }
+      });
       return;
     }
     

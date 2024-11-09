@@ -13,9 +13,19 @@ interface DraggableItemProps {
     height: number;
     children: React.ReactNode;
     manualZ?: number;
+    onClick?: () => void;
 }
 
-const DraggableItem = ({ id, initialX, initialY, width, height, children, manualZ }: DraggableItemProps) => {
+const DraggableItem: React.FC<DraggableItemProps> = ({
+    id,
+    initialX,
+    initialY,
+    width,
+    height,
+    children,
+    manualZ,
+    onClick,
+}) => {
     const { positions, updatePosition } = useDragAndDropContext();
     const ref = useRef<HTMLDivElement>(null);
     const { x, y, updateMousePosition } = useMousePosition();
@@ -150,6 +160,7 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
                 zIndex: manualZ ? manualZ : baseZIndex + currentY, // Dynamic z-index based on y-coordinate
                 cursor: isDraggingRef.current ? 'grabbing' : 'grab',
             }}
+            onClick={onClick}
         >
             {children}
         </div>
