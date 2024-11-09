@@ -5,6 +5,8 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 interface GameTimeContextProps {
     timeAsNumber: number;
     timeAsString: string;
+    timeHours: number;
+    timeMinutes: number;
     startGameTime: () => void;
     pauseGameTime: () => void;
 }
@@ -27,6 +29,8 @@ export const GameTimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     };
 
     const timeAsString = formatTime(timeInMinutes);
+    const timeHours = Math.floor(timeInMinutes / 60);
+    const timeMinutes = timeInMinutes % 60;
 
     // Start the timer
     const startGameTime = useCallback(() => {
@@ -54,6 +58,8 @@ export const GameTimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             value={{
                 timeAsNumber: timeInMinutes,
                 timeAsString,
+                timeHours,
+                timeMinutes,
                 startGameTime,
                 pauseGameTime,
             }}

@@ -13,11 +13,11 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
   const [openApp, setOpenApp] = useState<string | undefined>(undefined);
 
   if (!isOn) {
-    return <div className="relative w-[655px] h-[367px] bg-black z-[80] top-[-438px] left-[312px] flex flex-col"></div>
+    return <div className="relative w-[655px] h-[367px] bg-black z-[80] top-[-438px] left-[312px] flex flex-col rounded-t-[15px]"></div>
   }
 
   return (
-    <div className="relative w-[655px] h-[367px] bg-white z-[80] top-[-438px] left-[312px] flex flex-col" id="computer-screen">
+    <div className="relative w-[655px] h-[367px] bg-white z-[80] top-[-438px] left-[312px] flex flex-col rounded-t-[15px] overflow-hidden" id="computer-screen">
       <div className="bg-black w-full h-[15px] text-white text-[11px]">
         <div className="justify-self-end mx-2">{timeAsString}</div>
       </div>      

@@ -15,6 +15,7 @@ import Wall from "./static_components/Wall";
 import Whiteboard from "./static_components/Whiteboard";
 import PowerButton from "./static_components/PowerButton";
 import { MousePositionProvider } from "./MousePositionContext";
+import ComputerLeg from "./static_components/ComputerLeg";
 
 const Game = () => {
 
@@ -39,12 +40,21 @@ const Game = () => {
             <Desk />
             <StaticItem
                 x={300}
-                y={48}
+                y={-7}
                 width={680}
                 height={520}
                 zIndex={30}
             >
                 <ComputerObject />
+            </StaticItem>
+            <StaticItem
+                x={528}
+                y={408}
+                width={231}
+                height={137}
+                zIndex={25}
+            >
+                <ComputerLeg />
             </StaticItem>
             <StaticItem
                 x={345}
