@@ -169,7 +169,7 @@ const Koolout = () => {
                 key={`reply-${selectedEmail.id}`}
                 value={replyContent}
                 onChange={(e) => setReplyContent(e.target.value)}
-                className="w-full h-24 p-2 border rounded text-white"
+                className="w-full h-24 p-2 border rounded text-black bg-white"
                 placeholder="Write your reply..."
               />
               <button

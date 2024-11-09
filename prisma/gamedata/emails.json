@@ -11,16 +11,6 @@
     },
     {
         "Sender": {
-            "Name": "Ravi Singh",
-            "Position": "IT Support"
-        },
-        "Subject": "Printer Issue in the Office",
-        "SentTime": 0,
-        "Greeting": "Hello",
-        "Body": ",\n\nWe received a report that the printer near the main conference room is not functioning properly. Before I come over, can you confirm if it\u2019s an issue with the paper jam, or if there\u2019s an error message showing? Any details you can provide will help me bring the right tools to fix the problem.\n\nLet me know when you have a moment to check.\n\nBest,\nRavi"
-    },
-    {
-        "Sender": {
             "Name": "Anna Torres",
             "Position": "HR Coordinator"
         },

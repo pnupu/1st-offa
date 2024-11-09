@@ -11,15 +11,24 @@ const CompanyLoginPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [secretKey, setSecretKey] = useState("");
   const [error, setError] = useState("");
 
   const { data: companies } = api.company.getAllCompanyNames.useQuery();
+  const verifySecretKey = api.company.verifySecretKey.useMutation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
+    // Verify secret key
     try {
+      const isValid = await verifySecretKey.mutateAsync({ secretKey });
+      if (!isValid) {
+        setError("Invalid company secret key");
+        return;
+      }
+
       const result = await signIn("credentials", {
         email,
         name,
@@ -27,7 +36,6 @@ const CompanyLoginPage = () => {
         redirect: false,
         callbackUrl: "/dashboard"
       });
-
 
       if (result?.error) {
         setError(result.error);
@@ -72,6 +80,20 @@ const CompanyLoginPage = () => {
                   </option>
                 ))}
               </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2">
+                Secret Key
+              </label>
+              <input
+                type="password"
+                value={secretKey}
+                onChange={(e) => setSecretKey(e.target.value)}
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
+                required
+                placeholder="Enter secret key"
+              />
             </div>
 
             <div>

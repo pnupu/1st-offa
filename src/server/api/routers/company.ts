@@ -2,6 +2,7 @@
 import { z } from "zod";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "@/server/api/trpc";
 import { TRPCError } from "@trpc/server";
+import { env } from "@/env";
 
 export const companyRouter = createTRPCRouter({
   create: protectedProcedure
@@ -130,5 +131,11 @@ export const companyRouter = createTRPCRouter({
           }
         }
       });
+    }),
+
+  verifySecretKey: publicProcedure
+    .input(z.object({ secretKey: z.string() }))
+    .mutation(async ({ input }) => {
+      return input.secretKey === env.COMPANY_SECRET_KEY;
     }),
 });
