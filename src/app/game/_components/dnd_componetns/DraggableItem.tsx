@@ -148,6 +148,7 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
                 width: `${width}px`,
                 height: `${height}px`,
                 zIndex: manualZ ? manualZ : baseZIndex + currentY, // Dynamic z-index based on y-coordinate
+                cursor: isDraggingRef.current ? 'grabbing' : 'grab',
             }}
         >
             {children}
