@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useDragAndDropContext } from '../DragAndDropContext';
 import Image from 'next/image';
 import ReactDOM from 'react-dom';
+import { useTasks } from '../TaskContext';
 
 interface DraggablePaperProps {
     id: string;
@@ -15,6 +16,9 @@ interface DraggablePaperProps {
 }
 
 const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: DraggablePaperProps) => {
+
+    const { completeAction } = useTasks();
+
     const { positions, updatePosition } = useDragAndDropContext();
     const ref = useRef<HTMLDivElement>(null);
     const isDraggingRef = useRef(false);
@@ -103,6 +107,17 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
                 zIndex: baseZIndex + 1000, // Bring to front
                 transition: 'left 0.5s ease, top 0.5s ease, transform 0.5s ease', // Smooth transition for opening
             });
+
+            if (id === 'namingconv') {
+                completeAction(8, 'openNamingConventions');
+            } else if (id === 'invoice') {
+                completeAction(7, 'openInvoice');
+            } else if (id === 'querterly') {
+                completeAction(3, 'openQ3Report');
+            } else if (id === 'styleguide') {
+                completeAction(5, 'openStyleGuide');
+            }
+            
         } else {
             // Close document: Reset position, apply skew and scale based on current position
             const currentX = positions[id]?.x ?? initialX;
@@ -123,7 +138,7 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
                 zIndex: baseZIndex + currentY,
                 transition: 'left 0.1s ease, top 0.1s ease, transform 0.1s ease',
             });
-        }
+        } 
     };
 
     // Apply skew and scale effect proportional to distance from center
@@ -157,6 +172,7 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
             style={{
                 left: isOpen ? '50%' : `${currentX}px`,
                 top: isOpen ? '50%' : `${currentY}px`,
+                border: isOpen ? 'none' : '1px solid #00000030',
                 width: `${width}px`,
                 height: `${height}px`,
                 zIndex: isOpen ? baseZIndex + 1000 : baseZIndex + currentY,

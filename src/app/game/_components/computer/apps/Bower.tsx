@@ -1,10 +1,31 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTasks } from "../../TaskContext";
 
 const Bower = () => {
 
+  let [slidesChecked, setSlidesChecked] = useState<number[]>([1]);
   const [ openSlideIndex, setOpenSlideIndex ] = useState<number>(1);
+  const { completeAction } = useTasks();
 
+  useEffect(() => {
+    completeAction(5, "openBowerBoint");
+  }, []);
+
+  useEffect(() => {
+    if (slidesChecked.length === 7) {
+      completeAction(5, "checkAllSlides");
+    }
+  } , [slidesChecked]);
+
+  const handleSlideClick = (slideIndex: number) => {
+    if (!slidesChecked.includes(slideIndex)) {
+      setSlidesChecked([...slidesChecked, slideIndex]);
+      setOpenSlideIndex(slideIndex);
+    } else {
+      setOpenSlideIndex(slideIndex);
+    }
+  }
 
   return (
     <div className="h-full flex flex-col">
@@ -30,31 +51,31 @@ const Bower = () => {
       </div>
       <div className="w-full h-[230px] bg-gray-100 flex">
         <div className="w-[140px] bg-gray-200 border-r border-gray-200 overflow-y-auto"> 
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(1)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(1)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">1.</p>
             <Image src={`/assets/img/Presentation/ProjectX_1.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(2)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(2)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">2.</p>
             <Image src={`/assets/img/Presentation/ProjectX_2.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(3)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(3)}>
            <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">3.</p>
             <Image src={`/assets/img/Presentation/ProjectX_3.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(4)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(4)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">4.</p>
             <Image src={`/assets/img/Presentation/ProjectX_4.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(5)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(5)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">5.</p>
             <Image src={`/assets/img/Presentation/ProjectX_5.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(6)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(6)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">6.</p>
             <Image src={`/assets/img/Presentation/ProjectX_6.png`} width={100} height={50} alt="Slide" />
           </div>
-          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => setOpenSlideIndex(7)}>
+          <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-gray-100" onClick={() => handleSlideClick(7)}>
             <p className="text-gray-900 text-xs ml-[-5px] mr-[5px]">7.</p>
             <Image src={`/assets/img/Presentation/ProjectX_7.png`} width={100} height={50} alt="Slide" />
           </div>
