@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useGameTime } from '../../GameTimeContext';
 import Image from 'next/image';
 import { useUser } from "@/hooks/useUser";
+import BossAnimation from './BossAnimation';
 
 interface Meeting {
   id: number;
@@ -12,7 +13,7 @@ interface Meeting {
 }
 
 const MEETINGS: Meeting[] = [
-  { id: 1, title: 'Daily Standup Meeting', time: '13:00', host: 'Team Lead' },
+  { id: 1, title: 'Meeting with Boss Man', time: '13:00', host: 'Team Lead' },
 ];
 
 const UserVideoPlaceholder = ({ initials }: { initials: string }) => (
@@ -45,6 +46,7 @@ const Mooz = () => {
 
   const canJoinMeeting = currentTimeInMinutes >= earliestJoinTime && currentTimeInMinutes < meetingEndTime;
   const meetingEnded = currentTimeInMinutes >= meetingEndTime;
+  const meetingStarted = currentTimeInMinutes >= meetingTime;
 
   const startWebcam = async () => {
     try {
@@ -162,13 +164,7 @@ const Mooz = () => {
             )}
           </div>
           <div className="bg-black rounded-lg overflow-hidden flex items-center justify-center">
-            {/* <Image 
-              src="/assets/computer_backgrounds/meeting-participant.png" 
-              alt="Meeting participant"
-              width={640}
-              height={480}
-              className="w-full h-full object-cover"
-            /> */}
+            {meetingStarted && <BossAnimation />}
           </div>
         </div>
         <audio ref={audioRef} src="/assets/audio/meeting-audio.mp3" loop />
@@ -238,7 +234,7 @@ const Mooz = () => {
               {hasWebcamPermission ? 'Granted' : 'Not Granted'}
             </p>
             <p>
-              <span className="font-semibold">Next Meeting:</span> Daily Standup at 13:00
+              <span className="font-semibold">Next Meeting:</span> Meeting with Boss Man at 13:00
             </p>
             {!canJoinMeeting && !meetingEnded && (
               <p className="text-sm text-gray-600">
