@@ -58,7 +58,7 @@ export default function SignInPage() {
           </div>
 
           <button
-            onClick={() => signIn("google", { callbackUrl: "/game" })}
+            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
             className="flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
           >
             <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">

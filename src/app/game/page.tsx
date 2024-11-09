@@ -1,22 +1,16 @@
-"use client";
+'use client';
 
-import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import { GameTimeProvider } from "./_components/GameTimeContext";
+import Game from "./_components/Game";
 
-export default function GamePage() {
-  const { data: session } = useSession();
-
-  // Redirect to sign in if not authenticated
-  if (!session?.user) {
-    redirect("/auth/signin");
-  }
-
+const GamePage = () => {
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="mb-8 font-chillax text-3xl font-bold">Game</h1>
-      <div className="flex flex-col w-full gap-6">
-        {/* Game content will go here */}
-      </div>
+    <div style={{ textAlign: 'center', height: "100vh", width: "100vw", display: "flex", alignItems: "center", justifyContent: "center", background: "black" }}>
+      <GameTimeProvider>
+        <Game />
+      </GameTimeProvider>
     </div>
   );
-}
+};
+
+export default GamePage;

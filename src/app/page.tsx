@@ -8,7 +8,7 @@ export default async function Home() {
   
   // Redirect to game if already signed in
   if (session?.user) {
-    redirect("/game");
+    redirect("/dashboard");
   }
 
   return (
