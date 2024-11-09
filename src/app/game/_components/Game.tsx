@@ -115,7 +115,7 @@ const Game = () => {
                 y={439}
                 width={10}
                 height={10}
-                zIndex={500}
+                zIndex={65}
             >
                 <PowerButton onClick={handlePowerButtonClick} />
             </StaticItem>

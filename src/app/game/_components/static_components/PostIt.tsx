@@ -53,6 +53,9 @@ const PostIt = ({ taskId, isOpen, toggle}: PostItProps) => {
         )}
         {task.status === "completed" && <Image src="/assets/computer_backgrounds/check.svg" alt="Completed" width={30} height={30} style={{position: "absolute", top: 118, left: 101}}/>}
         {task.status === "completed" && <Image src="/assets/computer_backgrounds/trash.svg" alt="Completed" onClick={() => setDiscarded(true)} width={22} height={22} style={{position: "absolute", top: 5, left: 110, cursor: "pointer"}}/>}
+        <div className='absolute bottom-0'>
+          <p className='text-xs text-black'>Click to close</p>
+        </div>
       </div>
     </div>
   );

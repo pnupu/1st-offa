@@ -1,4 +1,3 @@
-// TaskContext.tsx
 'use client';
 
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
@@ -12,6 +11,7 @@ export interface Task {
   actionsRequired: string[]; // Array of action names required to complete the task
   completedActions: { action: string; time: string }[]; // To track order and time of completed actions
   startTime?: Date | null; // Track the start time of the task
+  completedAt?: Date | null; // Track the completion time of the task
 }
 
 interface TaskContextProps {
@@ -87,7 +87,7 @@ const initialTasks: Task[] = [
     actionsRequired: ["openNamingConventions", "replyToSophie"],
     completedActions: [],
   },
-];
+];;
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
@@ -151,12 +151,18 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
               }
             });
           }
+          // If all actions are completed, set the status to "completed" and add completedAt time
+          const isCompleted = remainingActions.length === 0;
+          const completedAt = isCompleted ? new Date() : task.completedAt;
+
+          console.log("Completed action:", action, "Time:", actionTime);
 
           return {
             ...task,
             actionsRequired: remainingActions,
             completedActions: updatedCompletedActions,
-            status: remainingActions.length === 0 ? "completed" : task.status,
+            status: isCompleted ? "completed" : task.status,
+            completedAt,
           };
         }
         return task;

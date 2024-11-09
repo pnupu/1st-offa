@@ -48,6 +48,7 @@ const Koolout = () => {
   // Reset reply content when selected email changes
   useEffect(() => {
     setReplyContent("");
+    console.log('selectedEmail', selectedEmail);
   }, [selectedEmail?.id]);
 
   // Filter emails based on current game time
@@ -87,6 +88,38 @@ const Koolout = () => {
         emailId: selectedEmail.id,
         content: replyContent,
       });
+
+      switch (selectedEmail.from) {
+        case "Julia Chen":
+          completeAction(1, "answerMeetingEmail");
+          break;
+        case "Anna Torres":
+          completeAction(2, "respondInternEmail");
+          break;
+        case "Derek Hall":
+          completeAction(3, "sendSummaryDerek");
+          break;
+        case "Carlos Mendes":
+          completeAction(4, "respondEventEmail");
+          break;
+        case "Paula Edwards":
+          completeAction(5, "respondToPaula");
+          break;
+        case "Lisa Bauer":
+          completeAction(5, "respondToLisa");
+          break;
+        case "Sean Matthews":
+          completeAction(6, "sendPinnacleReply");
+          break;
+        case "Thomas Yoo":
+          completeAction(7, "sendThomasReply");
+          break;
+        case "Sophie Nguyen":
+          completeAction(8, "sendSophieReply");
+          break;
+        default:
+          break;
+      }
     }
   };
 
@@ -136,7 +169,7 @@ const Koolout = () => {
                 key={`reply-${selectedEmail.id}`}
                 value={replyContent}
                 onChange={(e) => setReplyContent(e.target.value)}
-                className="w-full h-24 p-2 border rounded"
+                className="w-full h-24 p-2 border rounded text-white"
                 placeholder="Write your reply..."
               />
               <button
