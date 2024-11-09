@@ -1,420 +1,229 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 793.70081 1122.5197"
-   height="1122.5197"
-   width="793.70081"
-   xml:space="preserve"
-   id="svg2"
-   version="1.1"><metadata
-     id="metadata8"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-     id="defs6" /><g
-     transform="matrix(1.3333333,0,0,1.3333333,0,4.2729659e-5)"
-     id="g10"><g
-       transform="scale(0.75)"
-       id="g12"><g
-         id="g14"><g
-           id="g16"><g
-             id="g18"><g
-               id="g20"><text
-                 id="text24"
-                 style="font-variant:normal;font-weight:bold;font-size:40px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,139.35859)"><tspan
-                   id="tspan22"
-                   y="0"
-                   x="0 34.84 63.919998 89.839996 110.92 129.39999 154.84 175.92 191.12 214.36 228.28 256.67999 271.88 300.95999 326.88 355.95999 380.32001 395.51999 421.44 436.64001 450.56 483.79999 509.23999 537.20001 563.88 584.96002">Quarterly Financial Report</tspan></text>
-<text
-                 id="text28"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,194.37148)"><tspan
-                   id="tspan26"
-                   y="0"
-                   x="0 13.12 26.459999 37 43.959999 53.200001 67.739998 80.459999 87.419998 104.84 119.38 132.34 142.88 152.12 164.84 175.38 182.34 197.58 212.12 226.10001 233.7 248.24001 262.22 269.17999 283.62 296.34 310.32001 319.56 332.28 353.44 367.42001 380.14001 390.67999 397.64001 411.56 425.48001 432.44 439.39999 453.32001 467.23999 481.16">For the Quarter Ending September 30, 2024</tspan></text>
-<text
-                 id="text32"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,252.15723)"><tspan
-                   id="tspan30"
-                   y="0"
-                   x="0 20.879999 31.32">1. </tspan></text>
-<text
-                 id="text36"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(124.7627,252.15723)"><tspan
-                   id="tspan34"
-                   y="0"
-                   x="0 24.93 44.009998 61.439999 80.519997 102.33 124.14">Revenue</tspan></text>
-<text
-                 id="text40"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,302.69687)"><tspan
-                   id="tspan38"
-                   y="0"
-                   x="0 13.46 23.02 35.060001 47.860001 60.740002 71.940002 79.980003 86.339996 100.04 111.96 118.36 130.2 140.46001 147.2 153.56 166.28 179 185.36 198.08 210.8 223.52 229.88 242.60001 255.32001">Product Sales: $1,250,000</tspan></text>
-<text
-                 id="text44"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,325.97812)"><tspan
-                   id="tspan42"
-                   y="0"
-                   x="0 13.7 25.540001 35.099998 46.400002 52.799999 64 75.839996 82.199997 97.260002 109.1 120.4 132.24001 145.12 158 169.84 176.58 182.94 195.66 208.38 221.10001 233.82001 240.17999 252.89999 265.62">Service Revenue: $550,000</tspan></text>
-<text
-                 id="text48"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,349.25937)"><tspan
-                   id="tspan46"
-                   y="0"
-                   x="0 16.4 24.440001 37.32 49.16 58.720001 65.080002 72.980003 85.860001 97.059998 109.1 128.06 139.89999 146.64 153 165.72 178.44 191.16 197.52 210.24001 222.96001">Other Income: $80,000</tspan></text>
-<text
-                 id="text52"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,372.75547)"><tspan
-                   id="tspan50"
-                   y="0"
-                   x="0 12.6 25.940001 35.18 48.139999 55.740002 62.700001 79.32 92.040001 103.66 116.38 130.92 145.46001 158.17999">Total Revenue:</tspan></text>
-<text
-                 id="text56"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(294.92641,372.75547)"><tspan
-                   id="tspan54"
-                   y="0"
-                   x="0 12.72 25.440001 31.799999 44.52 57.240002 69.959999 76.32 89.040001 101.76">$1,880,000</tspan></text>
-<text
-                 id="text60"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,430.54121)"><tspan
-                   id="tspan58"
-                   y="0"
-                   x="0 20.879999 31.32">2. </tspan></text>
-<text
-                 id="text64"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(124.7627,430.54121)"><tspan
-                   id="tspan62"
-                   y="0"
-                   x="0 22.860001 40.740002 61.709999 80.790001 102.6 119.49 138.57001">Expenses</tspan></text>
-<text
-                 id="text68"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,481.08086)"><tspan
-                   id="tspan66"
-                   y="0"
-                   x="0 15.3 27.34 37.599998 45.639999 52 64.040001 71.440002 77.800003 93.779999 105.82 117.86 130.66 140.92 147.28 160.98 173.02 179.42 192.22 198.96001 205.32001 218.03999 230.75999 243.48 256.20001 262.56 275.28 288">Cost of Goods Sold: $780,000</tspan></text>
-<text
-                 id="text72"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,504.36211)"><tspan
-                   id="tspan70"
-                   y="0"
-                   x="0 13.7 25.620001 32.02 43.939999 53.5 59.900002 71.739998 82 88.360001 106.16 112.52 127.22 139.06 151.94 163.78 177.12 185.16 195.42 202.16 208.52 221.24001 233.96001 246.67999 259.39999 265.76001 278.48001 291.20001">Salaries &amp; Benefts: $450,000</tspan></text>
-<text
-                 id="text76"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,527.64336)"><tspan
-                   id="tspan74"
-                   y="0"
-                   x="0 15.06 26.9 39.779999 47.82 54.18 71.980003 78.339996 95.199997 103.24 109.64 116.04 122.44 130.48 136.88 148.72 158.98 165.72 172.08 184.8 197.52 210.24001 222.96001 229.32001 242.03999 254.75999">Rent &amp; Utilities: $120,000</tspan></text>
-<text
-                 id="text80"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,550.92461)"><tspan
-                   id="tspan78"
-                   y="0"
-                   x="0 20.48 32.400002 41.959999 54.080002 65.919998 73.959999 80.360001 93.239998 106.04 112.78 119.14 131.86 144.58 157.3 163.66 176.38 189.10001">Marketing: $75,000</tspan></text>
-<text
-                 id="text84"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,574.20586)"><tspan
-                   id="tspan82"
-                   y="0"
-                   x="0 15.06 32.860001 48.900002 55.639999 62 74.720001 87.440002 100.16 106.52 119.24 131.96001">R&amp;D: $90,000</tspan></text>
-<text
-                 id="text88"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,597.48711)"><tspan
-                   id="tspan86"
-                   y="0"
-                   x="0 14.44 27.24 46.200001 52.599998 65.480003 71.879997 82.139999 90.18 99.739998 111.66 119.7 126.1 137.39999 149.24001 155.98 162.34 175.06 187.78 200.5 206.86 219.58 232.3">Administrative: $60,000</tspan></text>
-<text
-                 id="text92"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,620.9832)"><tspan
-                   id="tspan90"
-                   y="0"
-                   x="0 12.6 25.940001 35.18 48.139999 55.740002 62.700001 77.940002 89.860001 103.84 116.56 131.10001 142.36 155.08 166.34">Total Expenses:</tspan></text>
-<text
-                 id="text96"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(303.09047,620.9832)"><tspan
-                   id="tspan94"
-                   y="0"
-                   x="0 12.72 25.440001 31.799999 44.52 57.240002 69.959999 76.32 89.040001 101.76">$1,575,000</tspan></text>
-<text
-                 id="text100"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,678.76895)"><tspan
-                   id="tspan98"
-                   y="0"
-                   x="0 20.879999 31.32">3. </tspan></text>
-<text
-                 id="text104"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(124.7627,678.76895)"><tspan
-                   id="tspan102"
-                   y="0"
-                   x="0 27.42 46.5 60.360001 70.800003 84.839996 106.65 124.92 144.92999 176.67">Net Income</tspan></text>
-<text
-                 id="text108"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,729.52344)"><tspan
-                   id="tspan106"
-                   y="0"
-                   x="0 12.6 25.940001 35.18 48.139999 55.740002 62.700001 79.32 92.040001 103.66 116.38 130.92 145.46001 158.17999">Total Revenue:</tspan></text>
-<text
-                 id="text112"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(294.92641,729.52344)"><tspan
-                   id="tspan110"
-                   y="0"
-                   x="0 12.72 25.440001 31.799999 44.52 57.240002 69.959999 76.32 89.040001 101.76">$1,880,000</tspan></text>
-<text
-                 id="text116"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,753.01953)"><tspan
-                   id="tspan114"
-                   y="0"
-                   x="0 12.6 25.940001 35.18 48.139999 55.740002 62.700001 77.940002 89.860001 103.84 116.56 131.10001 142.36 155.08 166.34">Total Expenses:</tspan></text>
-<text
-                 id="text120"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(303.09047,753.01953)"><tspan
-                   id="tspan118"
-                   y="0"
-                   x="0 12.72 25.440001 31.799999 44.52 57.240002 69.959999 76.32 89.040001 101.76">$1,575,000</tspan></text>
-<text
-                 id="text124"
-                 style="font-variant:normal;font-weight:bold;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,776.51562)"><tspan
-                   id="tspan122"
-                   y="0"
-                   x="0 18.280001 31 40.240002 47.200001 56.560001 71.099998 83.279999 96.620003 117.78 130.5">Net Income:</tspan></text>
-<text
-                 id="text128"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(267.25063,776.51562)"><tspan
-                   id="tspan126"
-                   y="0"
-                   x="0 12.72 25.440001 38.16 50.880001 57.240002 69.959999 82.68">$305,000</tspan></text>
-<text
-                 id="text132"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,834.30137)"><tspan
-                   id="tspan130"
-                   y="0"
-                   x="0 20.879999 31.32">4. </tspan></text>
-<text
-                 id="text136"
-                 style="font-variant:normal;font-weight:bold;font-size:30px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif-Bold;writing-mode:lr-tb;fill:#191970;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(124.7627,834.30137)"><tspan
-                   id="tspan134"
-                   y="0"
-                   x="0 25.440001 44.52 61.950001 72.389999 93.690002 105.09 126.9 146.34 168.14999 186.42 197.82001 217.25999 228.66 239.10001 264.72 284.16 298.01999 309.42001 329.42999">Key Financial Ratios</tspan></text>
-<text
-                 id="text140"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,884.84102)"><tspan
-                   id="tspan138"
-                   y="0"
-                   x="0 15.98 25.540001 37.580002 47.84 58.099998 64.459999 77.919998 87.480003 99.519997 112.86 120.9 127.26 147.74001 159.66 169.22 182.02 188.42 201.3 208.03999 214.39999 227.12 239.84 246.2 258.92001">Gross Proft Margin: 58.5%</tspan></text>
-<text
-                 id="text144"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,908.12227)"><tspan
-                   id="tspan142"
-                   y="0"
-                   x="0 17.5 29.34 37.380001 43.740002 57.200001 66.760002 78.800003 92.139999 100.18 106.54 127.02 138.94 148.5 161.3 167.7 180.58 187.32001 193.67999 206.39999 219.12 225.48 238.2">Net Proft Margin: 16.2%</tspan></text>
-<text
-                 id="text148"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,931.40352)"><tspan
-                   id="tspan146"
-                   y="0"
-                   x="0 16.4 29.200001 41.040001 50.599998 62.52 70.559998 76.959999 89.839996 102.64 109 123.6 134.88 147.67999 159.52 172.39999 182.66 194.5 200.86 216.36 228.28 236.32001 242.72 254.75999 261.5 267.85999 280.57999 293.29999 299.66 312.38">Operating Expense Ratio: 21.4%</tspan></text>
-<text
-                 id="text152"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(123,954.68477)"><tspan
-                   id="tspan150"
-                   y="0"
-                   x="0 15.3 28.18 37.740002 47.299999 59.139999 72.019997 80.059998 86.419998 101.92 113.84 121.88 128.28 140.32001 147.06 153.42 166.14 172.5">Current Ratio: 1.5</tspan></text>
-<text
-                 id="text156"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,997.96602)"><tspan
-                   id="tspan154"
-                   y="0"
-                   x="0 13.46 23.02 34.860001 47.66 59.580002 69.139999 80.980003 93.779999 100.14 112.94 124.24 130.60001 138.64 151.52 163.36 169.72 183.60001 190 202.88 214.8 227.67999 238.88 250.72 257.07999 268.88 280.72 292.64001 311.60001 317.95999 324.32001 337.66 350.54001 362.45999 370.5 376.85999 392.16 404.20001 423.16 435.95999 447.88 460.76001 469.42001 475.78 482.14001 499.64001 511.67999 522.97998 534.82001 553.78003 566.58002 578.41998">Prepared by the Finance Team, That Company, November</tspan></text>
-<text
-                 id="text160"
-                 style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                 transform="translate(83,1021.2473)"><tspan
-                   id="tspan158"
-                   y="0"
-                   x="0 12.72 25.440001 38.16">2024</tspan></text>
-<g
-                 transform="translate(-18.154297)"
-                 id="g162"><g
-                   id="g164"><text
-                     id="text168"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,302.69687)"><tspan
-                       id="tspan166"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g170"><g
-                   id="g172"><text
-                     id="text176"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,325.97812)"><tspan
-                       id="tspan174"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g178"><g
-                   id="g180"><text
-                     id="text184"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,349.25937)"><tspan
-                       id="tspan182"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g186"><g
-                   id="g188"><text
-                     id="text192"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,481.08086)"><tspan
-                       id="tspan190"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g194"><g
-                   id="g196"><text
-                     id="text200"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,504.36211)"><tspan
-                       id="tspan198"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g202"><g
-                   id="g204"><text
-                     id="text208"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,527.64336)"><tspan
-                       id="tspan206"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g210"><g
-                   id="g212"><text
-                     id="text216"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,550.92461)"><tspan
-                       id="tspan214"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g218"><g
-                   id="g220"><text
-                     id="text224"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,574.20586)"><tspan
-                       id="tspan222"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g226"><g
-                   id="g228"><text
-                     id="text232"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,597.48711)"><tspan
-                       id="tspan230"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g234"><g
-                   id="g236"><text
-                     id="text240"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,729.30859)"><tspan
-                       id="tspan238"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g242"><g
-                   id="g244"><text
-                     id="text248"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,752.80469)"><tspan
-                       id="tspan246"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g250"><g
-                   id="g252"><text
-                     id="text256"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,884.84102)"><tspan
-                       id="tspan254"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g258"><g
-                   id="g260"><text
-                     id="text264"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,908.12227)"><tspan
-                       id="tspan262"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g266"><g
-                   id="g268"><text
-                     id="text272"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,931.40352)"><tspan
-                       id="tspan270"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g><g
-                 transform="translate(-18.154297)"
-                 id="g274"><g
-                   id="g276"><text
-                     id="text280"
-                     style="font-variant:normal;font-size:20px;font-family:'DejaVu Serif';-inkscape-font-specification:DejaVu-Serif;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-                     transform="translate(123,954.68477)"><tspan
-                       id="tspan278"
-                       y="0"
-                       x="0 11.8">• </tspan></text>
-</g></g></g></g></g></g></g></g></svg>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 794 1123" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="g10" transform="matrix(1.33333,0,0,1.33333,0,4.27297e-05)">
+        <g transform="matrix(0.75,0,0,0.75,0,-3.20472e-05)">
+            <rect x="0" y="0" width="793.701" height="1122.52" style="fill:#fff;"/>
+        </g>
+        <g id="g12" transform="matrix(0.75,0,0,0.75,0,0)">
+            <g id="g14">
+                <g id="g16">
+                    <g id="g18">
+                        <g id="g20">
+                            <g id="text24" transform="matrix(1,0,0,1,83,139.359)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:40px;fill:#191970;">Quarterly Financial Report</text>
+                            </g>
+                            <g id="text28" transform="matrix(1,0,0,1,83,194.371)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">F<tspan x="13.105px 26.445px " y="0px 0px ">or</tspan> the Quarter Ending September 30, 2024</text>
+                            </g>
+                            <g id="text32" transform="matrix(1,0,0,1,83,252.157)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">1.</text>
+                            </g>
+                            <g id="text36" transform="matrix(1,0,0,1,124.763,252.157)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Revenue</text>
+                            </g>
+                            <g id="text40" transform="matrix(1,0,0,1,123,302.697)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Product Sales: $1,250,000</text>
+                            </g>
+                            <g id="text44" transform="matrix(1,0,0,1,123,325.978)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Service Revenue: $550,000</text>
+                            </g>
+                            <g id="text48" transform="matrix(1,0,0,1,123,349.259)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Other Income: $80,000</text>
+                            </g>
+                            <g id="text52" transform="matrix(1,0,0,1,123,372.755)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Revenue:</text>
+                            </g>
+                            <g id="text56" transform="matrix(1,0,0,1,294.926,372.755)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,880,000</text>
+                            </g>
+                            <g id="text60" transform="matrix(1,0,0,1,83,430.541)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">2.</text>
+                            </g>
+                            <g id="text64" transform="matrix(1,0,0,1,124.763,430.541)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Expenses</text>
+                            </g>
+                            <g id="text68" transform="matrix(1,0,0,1,123,481.081)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Cost of Goods Sold: $780,000</text>
+                            </g>
+                            <g id="text72" transform="matrix(1,0,0,1,123,504.362)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Salaries &amp; Benefts: $450,000</text>
+                            </g>
+                            <g id="text76" transform="matrix(1,0,0,1,123,527.643)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Rent &amp; Utilities: $120,000</text>
+                            </g>
+                            <g id="text80" transform="matrix(1,0,0,1,123,550.925)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Marketing: $75,000</text>
+                            </g>
+                            <g id="text84" transform="matrix(1,0,0,1,123,574.206)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">R&amp;D: $90,000</text>
+                            </g>
+                            <g id="text88" transform="matrix(1,0,0,1,123,597.487)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Administrative: $60,000</text>
+                            </g>
+                            <g id="text92" transform="matrix(1,0,0,1,123,620.983)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Expenses:</text>
+                            </g>
+                            <g id="text96" transform="matrix(1,0,0,1,303.09,620.983)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,575,000</text>
+                            </g>
+                            <g id="text100" transform="matrix(1,0,0,1,83,678.769)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">3.</text>
+                            </g>
+                            <g id="text104" transform="matrix(1,0,0,1,124.763,678.769)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">Net Income</text>
+                            </g>
+                            <g id="text108" transform="matrix(1,0,0,1,123,729.523)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Revenue:</text>
+                            </g>
+                            <g id="text112" transform="matrix(1,0,0,1,294.926,729.523)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,880,000</text>
+                            </g>
+                            <g id="text116" transform="matrix(1,0,0,1,123,753.02)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">T<tspan x="12.588px 25.928px " y="0px 0px ">ot</tspan>al Expenses:</text>
+                            </g>
+                            <g id="text120" transform="matrix(1,0,0,1,303.09,753.02)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$1,575,000</text>
+                            </g>
+                            <g id="text124" transform="matrix(1,0,0,1,123,776.516)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:20px;">Net Income:</text>
+                            </g>
+                            <g id="text128" transform="matrix(1,0,0,1,267.251,776.516)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">$305,000</text>
+                            </g>
+                            <g id="text132" transform="matrix(1,0,0,1,83,834.301)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">4.</text>
+                            </g>
+                            <g id="text136" transform="matrix(1,0,0,1,124.763,834.301)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif-Bold', 'DejaVu Serif';font-weight:700;font-size:30px;fill:#191970;">K<tspan x="25.415px 44.502px " y="0px 0px ">ey</tspan> Financial R<tspan x="264.697px 284.136px " y="0px 0px ">at</tspan>ios</text>
+                            </g>
+                            <g id="text140" transform="matrix(1,0,0,1,123,884.841)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Gross Proft Margin: 58.5%</text>
+                            </g>
+                            <g id="text144" transform="matrix(1,0,0,1,123,908.122)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Net Proft Margin: 16.2%</text>
+                            </g>
+                            <g id="text148" transform="matrix(1,0,0,1,123,931.404)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Operating Expense R<tspan x="216.367px 228.291px " y="0px 0px ">at</tspan>io: 21.4%</text>
+                            </g>
+                            <g id="text152" transform="matrix(1,0,0,1,123,954.685)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Current R<tspan x="101.934px 113.857px " y="0px 0px ">at</tspan>io: 1.5</text>
+                            </g>
+                            <g id="text156" transform="matrix(1,0,0,1,83,997.966)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">Prepared by the Finance T<tspan x="268.848px 280.684px " y="0px 0px ">ea</tspan>m, That Company<tspan x="469.385px 475.742px " y="0px 0px ">, </tspan>November</text>
+                            </g>
+                            <g id="text160" transform="matrix(1,0,0,1,83,1021.25)">
+                                <text x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">2024</text>
+                            </g>
+                            <g id="text168" transform="matrix(1,0,0,1,104.846,302.697)">
+                                <g id="g162">
+                                    <g id="g164">
+                                        <text id="text1681" serif:id="text168" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text176" transform="matrix(1,0,0,1,104.846,325.978)">
+                                <g id="g170">
+                                    <g id="g172">
+                                        <text id="text1761" serif:id="text176" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text184" transform="matrix(1,0,0,1,104.846,349.259)">
+                                <g id="g178">
+                                    <g id="g180">
+                                        <text id="text1841" serif:id="text184" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text192" transform="matrix(1,0,0,1,104.846,481.081)">
+                                <g id="g186">
+                                    <g id="g188">
+                                        <text id="text1921" serif:id="text192" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text200" transform="matrix(1,0,0,1,104.846,504.362)">
+                                <g id="g194">
+                                    <g id="g196">
+                                        <text id="text2001" serif:id="text200" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text208" transform="matrix(1,0,0,1,104.846,527.643)">
+                                <g id="g202">
+                                    <g id="g204">
+                                        <text id="text2081" serif:id="text208" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text216" transform="matrix(1,0,0,1,104.846,550.925)">
+                                <g id="g210">
+                                    <g id="g212">
+                                        <text id="text2161" serif:id="text216" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text224" transform="matrix(1,0,0,1,104.846,574.206)">
+                                <g id="g218">
+                                    <g id="g220">
+                                        <text id="text2241" serif:id="text224" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text232" transform="matrix(1,0,0,1,104.846,597.487)">
+                                <g id="g226">
+                                    <g id="g228">
+                                        <text id="text2321" serif:id="text232" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text240" transform="matrix(1,0,0,1,104.846,729.309)">
+                                <g id="g234">
+                                    <g id="g236">
+                                        <text id="text2401" serif:id="text240" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text248" transform="matrix(1,0,0,1,104.846,752.805)">
+                                <g id="g242">
+                                    <g id="g244">
+                                        <text id="text2481" serif:id="text248" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text256" transform="matrix(1,0,0,1,104.846,884.841)">
+                                <g id="g250">
+                                    <g id="g252">
+                                        <text id="text2561" serif:id="text256" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text264" transform="matrix(1,0,0,1,104.846,908.122)">
+                                <g id="g258">
+                                    <g id="g260">
+                                        <text id="text2641" serif:id="text264" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text272" transform="matrix(1,0,0,1,104.846,931.404)">
+                                <g id="g266">
+                                    <g id="g268">
+                                        <text id="text2721" serif:id="text272" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="text280" transform="matrix(1,0,0,1,104.846,954.685)">
+                                <g id="g274">
+                                    <g id="g276">
+                                        <text id="text2801" serif:id="text280" x="0px" y="0px" style="font-family:'DejaVuSerif', 'DejaVu Serif';font-size:20px;">•</text>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
