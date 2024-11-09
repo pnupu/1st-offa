@@ -2,6 +2,7 @@
 
 import CoffeeCup from "../dnd_componetns/CoffeeCup";
 import DraggableItem from "../dnd_componetns/DraggableItem";
+import DraggablePaper from "../dnd_componetns/DraggablePaper";
 import Keyboard from "../dnd_componetns/Keyboard";
 import Mouse from "../dnd_componetns/Mouse";
 import { DragAndDropProvider } from "../DragAndDropContext";
@@ -19,6 +20,7 @@ const Desk = () => {
                 <DraggableItem id="mouse" initialX={1180} initialY={97} width={70} height={70}>
                     <Mouse />
                 </DraggableItem>
+                <DraggablePaper id="namingconv" initialX={500} initialY={-10} width={150} height={212} imagePath="/assets/desktop/testipdf.svg" />
             </div>
         </DragAndDropProvider>
     );

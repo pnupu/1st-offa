@@ -121,6 +121,7 @@ const Game = () => {
             </StaticItem>
             <DeskImage />
             <OperatingSystem isOn={computerOn} />
+            <div id="portal-root" style={{ position: 'relative', zIndex: 9999 }}></div>
         </MousePositionProvider>  
         </div>
     );
