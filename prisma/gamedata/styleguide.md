@@ -19,11 +19,7 @@
 - **Icons & Images**: Use flat design, high resolution, maintain relationship to content.
 - **Infographics**: Simple, with arrows, timelines, light backgrounds.
 
-#### **5. Animation & Transitions**
-- **Transitions**: Subtle (e.g., Fade).
-- **Animations**: Simple (Appear, Fade In), limit to key information.
-
-#### **6. Data Presentation**
+#### **7. Data Presentation**
 - **Consistency**: Use uniform layout for similar data.
 - **Clarity**: Use easy-to-read charts with clear labels.
 

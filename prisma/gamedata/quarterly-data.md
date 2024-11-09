@@ -33,4 +33,4 @@ Quarterly Financial Report
 - Operating Expense Ratio: 21.4%
 - Current Ratio: 1.5
 
-Prepared by the Finance Team, Company Name, November 2024
+Prepared by the Finance Team, That Company, November 2024
