@@ -51,7 +51,7 @@ const PostIt = ({ taskId, isOpen, toggle}: PostItProps) => {
             Start
           </button>
         )}
-        {task.status === "completed" && <Image src="/assets/computer_backgrounds/check.svg" alt="Completed" width={22} height={22} style={{position: "absolute", top: 5, left: 70}}/>}
+        {task.status === "completed" && <Image src="/assets/computer_backgrounds/check.svg" alt="Completed" width={30} height={30} style={{position: "absolute", top: 118, left: 101}}/>}
         {task.status === "completed" && <Image src="/assets/computer_backgrounds/trash.svg" alt="Completed" onClick={() => setDiscarded(true)} width={22} height={22} style={{position: "absolute", top: 5, left: 110, cursor: "pointer"}}/>}
       </div>
     </div>
@@ -60,8 +60,8 @@ const PostIt = ({ taskId, isOpen, toggle}: PostItProps) => {
   return (
   <div className="w-full h-full flex-col flex p-1 cursor-pointer" onClick={() => toggle()} style={{ backgroundImage: 'url(/assets/desktop/Post-it.svg)' }}>
       <div className="flex p-1">
-        <p className="text-xs text-black" style={task.status === "completed" ? {textDecoration: 'line-through'} : {}}>Task: {taskId}</p>
-        {task.status === "completed" && <Image src="/assets/computer_backgrounds/check.svg" alt="Completed" width={18} height={18} style={{position: "absolute", top: 5, left: 46}}/>}
+        <p className="text-[10px] text-black" style={task.status === "completed" ? {textDecoration: 'line-through'} : {}}>{task.title}</p>
+        {task.status === "completed" && <Image src="/assets/computer_backgrounds/check.svg" alt="Completed" width={18} height={18} style={{position: "absolute", top: 48, left: 46}}/>}
       </div>
       <div>
         <p className='text-xs text-black'>Click to open</p>

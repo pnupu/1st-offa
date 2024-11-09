@@ -4,6 +4,7 @@ import { useGameTime } from '../../GameTimeContext';
 import Image from 'next/image';
 import { useUser } from "@/hooks/useUser";
 import BossAnimation from './BossAnimation';
+import { useTasks } from '../../TaskContext';
 
 interface Meeting {
   id: number;
@@ -38,6 +39,8 @@ const Mooz = () => {
   const { getInitials } = useUser();
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const { completeAction } = useTasks();
 
   const meetingTime = 13 * 60; // 13:00
   const meetingEndTime = meetingTime + 20; // 13:20
@@ -87,6 +90,7 @@ const Mooz = () => {
 
   const joinMeeting = () => {
     setInCall(true);
+    completeAction(1, 'attendMeeting');
     void startWebcam();
     if (audioRef.current) {
       void audioRef.current.play();
