@@ -14,34 +14,40 @@ interface OceanGraphProps {
   companyData: OceanData;
   userData?: OceanData | null;
   className?: string;
+  showCompanyData?: boolean;
 }
 
-export function OceanGraph({ companyData, userData, className }: OceanGraphProps) {
+export function OceanGraph({ 
+  companyData, 
+  userData, 
+  className,
+  showCompanyData = true
+}: OceanGraphProps) {
   const chartData = [
     { 
       trait: "Openness", 
-      company: companyData.openness * 100,
-      user: userData?.openness ? userData.openness * 100 : undefined
+      profile: companyData.openness * 100,
+      comparison: userData?.openness ? userData.openness * 100 : undefined
     },
     { 
       trait: "Conscientiousness", 
-      company: companyData.conscientiousness * 100,
-      user: userData?.conscientiousness ? userData.conscientiousness * 100 : undefined
+      profile: companyData.conscientiousness * 100,
+      comparison: userData?.conscientiousness ? userData.conscientiousness * 100 : undefined
     },
     { 
       trait: "Extraversion", 
-      company: companyData.extraversion * 100,
-      user: userData?.extraversion ? userData.extraversion * 100 : undefined
+      profile: companyData.extraversion * 100,
+      comparison: userData?.extraversion ? userData.extraversion * 100 : undefined
     },
     { 
       trait: "Agreeableness", 
-      company: companyData.agreeableness * 100,
-      user: userData?.agreeableness ? userData.agreeableness * 100 : undefined
+      profile: companyData.agreeableness * 100,
+      comparison: userData?.agreeableness ? userData.agreeableness * 100 : undefined
     },
     { 
       trait: "Neuroticism", 
-      company: companyData.neuroticism * 100,
-      user: userData?.neuroticism ? userData.neuroticism * 100 : undefined
+      profile: companyData.neuroticism * 100,
+      comparison: userData?.neuroticism ? userData.neuroticism * 100 : undefined
     },
   ];
 
@@ -65,16 +71,16 @@ export function OceanGraph({ companyData, userData, className }: OceanGraphProps
           className="font-chillax font-bold"
         />
         <Radar
-          name="Company"
-          dataKey="company"
+          name={showCompanyData ? "Company" : "Your Profile"}
+          dataKey="profile"
           stroke="hsl(var(--primary))"
           fill="hsl(var(--primary))"
           fillOpacity={0.2}
         />
-        {userData && (
+        {userData && showCompanyData && (
           <Radar
             name="Your Profile"
-            dataKey="user"
+            dataKey="comparison"
             stroke="hsl(var(--destructive))"
             fill="hsl(var(--destructive))"
             fillOpacity={0.2}

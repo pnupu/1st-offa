@@ -152,7 +152,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           >
             <Image 
               src="/assets/apps/CheckOut.svg" 
-              className="absolute top-[3px] left-[51px]"
+              className="absolute top-[3px] left-[100px]"
               alt="Checkout" 
               width={20} 
               height={20}

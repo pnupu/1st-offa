@@ -1,9 +1,13 @@
+// app/layout.tsx
 import "@/styles/globals.css";
-
+import { type Metadata } from "next";
 import localFont from "next/font/local";
-
 import { Providers } from './providers'
 
+export const metadata: Metadata = {
+  title: "Company Culture Match",
+  description: "Find your perfect company culture match through our personality assessment game",
+};
 
 const chillax = localFont({
   src: [
