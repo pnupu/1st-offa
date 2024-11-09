@@ -73,7 +73,6 @@ export const authConfig: NextAuthConfig = {
   },
   callbacks: {
     async session({ session, token, user }) {
-      console.log("Session Callback:", { session, token, user });
       if (token) {
         session.user.id = token.sub!;
         session.user.role = token.role!;
@@ -85,7 +84,6 @@ export const authConfig: NextAuthConfig = {
       return session;
     },
     async jwt({ token, user, account }) {
-      console.log("JWT Callback:", { token, user, account });
       if (account && user) {
         return {
           ...token,

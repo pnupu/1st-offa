@@ -28,7 +28,6 @@ const CompanyLoginPage = () => {
         callbackUrl: "/dashboard"
       });
 
-      console.log("Sign in result:", result);
 
       if (result?.error) {
         setError(result.error);

@@ -139,7 +139,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           >
             <Image 
               src="/assets/apps/MoozApp.svg" 
-              className="absolute top-[3px]"
+              className="top-[3px]"
               alt="Mooz" 
               width={20} 
               height={20}
@@ -152,7 +152,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
           >
             <Image 
               src="/assets/apps/CheckOut.svg" 
-              className="absolute top-[3px] left-[100px]"
+              className="top-[3px]"
               alt="Checkout" 
               width={20} 
               height={20}
