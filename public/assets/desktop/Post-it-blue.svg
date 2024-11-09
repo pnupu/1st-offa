@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 44 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-1617,-263)">
+        <g id="Post-it-blue" transform="matrix(0.337822,0.0586245,-0.0636732,0.366914,1496.51,3.22437)">
+            <rect x="496.604" y="630.863" width="107.697" height="107.697" style="fill:#9cb1f2;"/>
+            <clipPath id="_clip1">
+                <rect x="496.604" y="630.863" width="107.697" height="107.697"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(1,0,0,1,-9.51339,-45.1207)">
+                    <rect x="506.118" y="675.984" width="107.697" height="17.399" style="fill:#a0a0ff;"/>
+                </g>
+                <g transform="matrix(3.35989,0,0,3.25816,-1458.05,-1814.8)">
+                    <path d="M608.767,783.681L613.815,779.662L613.815,783.681" style="fill:#9c97ff;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
