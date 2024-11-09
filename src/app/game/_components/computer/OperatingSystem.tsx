@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMousePosition } from "../MousePositionContext";
 import Image from "next/image";
 import Koolout from "./apps/Koolout";
+import Mooz from "./apps/Mooz";
 import { AppStateProvider } from "./AppStateContext";
 
 interface OperatingSystemProps {
@@ -25,6 +26,8 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
     switch (openApp) {
       case "Koolout":
         return <Koolout />;
+      case "Mooz":
+        return <Mooz />;
       default:
         return <div className="w-full h-[285px] flex flex-col justify-between items-center">
           <div className="w-full h-[280px] bg-gray-200 flex justify-center items-center">
@@ -73,6 +76,19 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             <Image 
               src="/assets/apps/KooloutApp.svg" 
               alt="Koolout" 
+              width={20} 
+              height={20}
+              unoptimized
+            />
+          </div>
+          <div 
+            onClick={() => setOpenApp("Mooz")}
+            className="cursor-pointer"
+          >
+            <Image 
+              src="/assets/apps/MoozApp.svg" 
+              className="absolute top-[3px]"
+              alt="Mooz" 
               width={20} 
               height={20}
               unoptimized
