@@ -61,10 +61,6 @@ const Koolout = () => {
     }
   });
 
-  useEffect(() => {
-    completeAction(1, 'openEmail');
-  }, [completeAction]);
-
   const { mutate: evaluateResponse } = api.openai.evaluateResponse.useMutation();
   
   const { mutate: sendReply } = api.email.reply.useMutation({

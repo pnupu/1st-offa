@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 101 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-1483,-860)">
-        <g id="Mouse" transform="matrix(-0.889007,0.457894,-0.457894,-0.889007,3231.15,963.088)">
+    <g transform="matrix(1,0,0,1,-1400,-860)">
+        <g id="Mouse" transform="matrix(-0.889007,0.457894,-0.457894,-0.889007,3148.36,963.245)">
             <path d="M1488.05,761.165C1514.57,761.165 1533.61,780.417 1533.61,817.49C1533.61,854.562 1515.04,877.748 1488.52,877.748C1462,877.748 1443.84,851.067 1443.84,813.995C1443.84,776.922 1461.53,761.165 1488.05,761.165Z" style="fill:#909090;"/>
             <clipPath id="_clip1">
                 <path d="M1488.05,761.165C1514.57,761.165 1533.61,780.417 1533.61,817.49C1533.61,854.562 1515.04,877.748 1488.52,877.748C1462,877.748 1443.84,851.067 1443.84,813.995C1443.84,776.922 1461.53,761.165 1488.05,761.165Z"/>
