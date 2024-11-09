@@ -19,7 +19,7 @@ import { MousePositionProvider } from "./MousePositionContext";
 const Game = () => {
 
     const { startGameTime, pauseGameTime } = useGameTime();
-    const [computerOn, setComputerOn] = useState(false);
+    const [computerOn, setComputerOn] = useState(true);
 
     useEffect(() => {
         startGameTime();
