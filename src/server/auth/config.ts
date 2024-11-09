@@ -60,7 +60,13 @@ type Credentials = {
   companyId: string;
 };
 
+const isDev = process.env.NODE_ENV === "development";
+const baseUrl = isDev ? "http://localhost:3000" : "https://1statoffa.com";
+
 export const authConfig: NextAuthConfig = {
+  debug: isDev,
+  trustHost: true,
+
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -157,7 +163,18 @@ export const authConfig: NextAuthConfig = {
     }),
   ],
   pages: {
-    signIn: '/company/login',
-    error: '/auth/error',
+    signIn: `${baseUrl}/auth/signin`,
+    error: `${baseUrl}/auth/signin`,
+  },
+  cookies: {
+    pkceCodeVerifier: {
+      name: "next-auth.pkce.code_verifier",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: !isDev,
+      },
+    },
   },
 };

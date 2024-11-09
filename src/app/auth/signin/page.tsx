@@ -3,14 +3,28 @@
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 
 export default function SignInPage() {
   const { data: session } = useSession();
+  const [error, setError] = useState<string | null>(null);
   
-  // Redirect to game if already signed in
+  // Redirect to dashboard if already signed in
   if (session?.user) {
     redirect("/dashboard");
   }
+
+  const handleGoogleSignIn = async () => {
+    try {
+      setError(null);
+      await signIn("google", { 
+        callbackUrl: "/dashboard"
+      });
+    } catch (err) {
+      console.error("Sign in error:", err);
+      setError("An unexpected error occurred. Please try again.");
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -21,44 +35,15 @@ export default function SignInPage() {
           </h2>
         </div>
         
-        <div className="space-y-4">
-          {/* <form
-            className="space-y-4"
-            action={async (formData: FormData) => {
-              "use server";
-              const email = formData.get("email");
-              if (!email) return;
-              
-              await signIn("email", { email, redirect: true, callbackUrl: "/game" });
-            }}
-          >
-            <input
-              type="email"
-              name="email"
-              autoComplete="email"
-              required
-              className="relative block w-full rounded-lg border-0 p-3 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-purple-600"
-              placeholder="Email address"
-            />
-            <button
-              type="submit"
-              className="w-full rounded-lg bg-purple-600 px-4 py-3 font-semibold text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-            >
-              Sign in with Email
-            </button>
-          </form> */}
-
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              {/* <div className="w-full border-t border-white/10"></div> */}
-            </div>
-            <div className="relative flex justify-center text-sm">
-              {/* <span className="bg-[#15162c] px-2 text-white">Or continue with</span> */}
-            </div>
+        {error && (
+          <div className="rounded-md bg-red-500/10 p-4 text-sm text-red-400">
+            {error}
           </div>
+        )}
 
+        <div className="space-y-4">
           <button
-            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            onClick={handleGoogleSignIn}
             className="flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
           >
             <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">
