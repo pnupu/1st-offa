@@ -1,6 +1,6 @@
 // src/server/api/routers/company.ts
 import { z } from "zod";
-import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "@/server/api/trpc";
 import { TRPCError } from "@trpc/server";
 
 export const companyRouter = createTRPCRouter({
@@ -60,6 +60,16 @@ export const companyRouter = createTRPCRouter({
         include: {
           oceanProfile: true,
           logo: true,
+        },
+      });
+    }),
+
+  getAllCompanyNames: publicProcedure
+    .query(async ({ ctx }) => {
+      return ctx.db.company.findMany({
+        select: {
+          name: true,
+          id: true,
         },
       });
     }),

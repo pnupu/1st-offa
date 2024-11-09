@@ -43,7 +43,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Two cards side by side */}
-      <div className="grid grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-2 gap-4">
         <Card>
           <CardHeader>
             <CardTitle>Quick Stats</CardTitle>
@@ -81,7 +81,7 @@ export default function DashboardPage() {
             </Button>
           </CardContent>
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 } 

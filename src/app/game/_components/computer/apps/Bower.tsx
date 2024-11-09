@@ -4,7 +4,7 @@ import { useTasks } from "../../TaskContext";
 
 const Bower = () => {
 
-  let [slidesChecked, setSlidesChecked] = useState<number[]>([1]);
+  const [slidesChecked, setSlidesChecked] = useState<number[]>([1]);
   const [ openSlideIndex, setOpenSlideIndex ] = useState<number>(1);
   const { completeAction } = useTasks();
 
