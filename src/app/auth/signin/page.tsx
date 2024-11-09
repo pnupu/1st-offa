@@ -2,6 +2,7 @@
 
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { useState } from "react";
 
@@ -27,8 +28,9 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-      <div className="w-full max-w-md space-y-8 rounded-xl bg-white/10 p-8 text-white">
+    <div className="flex min-h-screen flex-col items-center justify-center text-[#42669B]" style={{backgroundImage: "url(/assets/lander/Background.svg)", backgroundSize: "cover"}}>
+      <Image src="/assets/lander/Logo.svg" style={{position: "fixed", top: 20, left: 20}} width={100} height={100} alt="Company Culture Match Logo" />
+      <div className="w-full max-w-md space-y-8 rounded-xl bg-[#42669B60] p-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight">
             Sign in to your account
@@ -44,7 +46,7 @@ export default function SignInPage() {
         <div className="space-y-4">
           <button
             onClick={handleGoogleSignIn}
-            className="flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+            className="flex w-full items-center justify-center rounded-lg bg-white px-4 py-3 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
             <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">
               <path
