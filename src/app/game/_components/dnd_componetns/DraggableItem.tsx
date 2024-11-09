@@ -2,6 +2,8 @@
 
 import React, { useRef, useEffect } from 'react';
 import { useDragAndDropContext } from '../DragAndDropContext';
+import Mouse from './Mouse';
+import { useMousePosition } from '../MousePositionContext';
 
 interface DraggableItemProps {
     id: string;
@@ -10,11 +12,16 @@ interface DraggableItemProps {
     width: number;
     height: number;
     children: React.ReactNode;
+    manualZ?: number;
 }
 
-const DraggableItem = ({ id, initialX, initialY, width, height, children }: DraggableItemProps) => {
+const DraggableItem = ({ id, initialX, initialY, width, height, children, manualZ }: DraggableItemProps) => {
     const { positions, updatePosition } = useDragAndDropContext();
     const ref = useRef<HTMLDivElement>(null);
+
+    const { updateMousePosition } = useMousePosition();
+
+    const isMouseComponent = React.isValidElement(children) && children.type === Mouse;
 
     const baseZIndex = 200;
     const isDraggingRef = useRef(false);
@@ -51,18 +58,24 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
         if (!isDraggingRef.current || !ref.current?.parentElement) return;
 
         isClickRef.current = false;
-
+        
+        
         const parentRect = ref.current.parentElement.getBoundingClientRect();
         let newX = e.clientX - offsetRef.current.x;
         let newY = e.clientY - offsetRef.current.y;
-
+        
+        
         // Boundaries within parent container
         newX = Math.max(0, Math.min(newX, parentRect.width - width));
         newY = Math.max(0, Math.min(newY, parentRect.height - height));
+        
+        if (isMouseComponent) {
+            updateMousePosition(newX, newY);
+        }
 
         updatePosition(id, newX, newY);
     };
-
+    
     const onMouseUp = () => {
         isDraggingRef.current = false;
         document.removeEventListener('mousemove', onMouseMove);
@@ -89,7 +102,7 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children }: Drag
                 top: `${currentY}px`,
                 width: `${width}px`,
                 height: `${height}px`,
-                zIndex: baseZIndex + currentY, // Dynamic z-index based on y-coordinate
+                zIndex: manualZ ? manualZ : baseZIndex + currentY, // Dynamic z-index based on y-coordinate
             }}
         >
             {children}
