@@ -17,6 +17,8 @@ import PowerButton from "./static_components/PowerButton";
 import { MousePositionProvider } from "./MousePositionContext";
 import ComputerLeg from "./static_components/ComputerLeg";
 import { api } from "@/trpc/react";
+import { WebcamProvider } from "./WebcamContext";
+import Webcam from "./static_components/Webcam";
 
 const Game = () => {
 
@@ -99,6 +101,7 @@ const Game = () => {
 
     return (
         <div className="bg-white w-[1280px] h-[720px] relative overflow-hidden">
+        <WebcamProvider>
         <MousePositionProvider>
             <Desk />
             <StaticItem
@@ -212,7 +215,15 @@ const Game = () => {
             >
                 <PostIt taskId={4} toggle={() => handleToggleOpenTask(4)} isOpen={openTask === 4} />
             </StaticItem>
-
+            <StaticItem
+                x={610}
+                y={10}
+                width={65}
+                height={65}
+                zIndex={50}
+            >
+                <Webcam />
+            </StaticItem>
             {/* Leave Work Button */}
             <div className="absolute top-4 right-4 z-[100]">
                 <button
@@ -232,6 +243,7 @@ const Game = () => {
                 </div>
             )}
         </MousePositionProvider>  
+        </WebcamProvider>
         {isPaused && <div className="absolute bottom-0 right-0 p-4 text-white text-xs bg-black bg-opacity-50">Press ESC to pause</div> }
         </div>
     );
