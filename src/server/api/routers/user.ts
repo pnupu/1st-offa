@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "@/server/api/trpc";
 
 export const userRouter = createTRPCRouter({
   updateProfile: protectedProcedure
@@ -38,6 +38,7 @@ export const userRouter = createTRPCRouter({
 
   getProfile: protectedProcedure
     .query(async ({ ctx }) => {
+      console.log(ctx.session);
       return ctx.db.user.findUnique({
         where: { id: ctx.session.user.id },
         include: {
@@ -55,5 +56,22 @@ export const userRouter = createTRPCRouter({
           employeeAt: true,
         },
       });
+    }),
+
+  registerCompanyUser: publicProcedure
+    .input(z.object({
+      name: z.string(),
+      email: z.string().email(),
+      companyId: z.string(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const user = await ctx.db.user.create({
+        data: {
+          name: input.name,
+          email: input.email,
+          companyId: input.companyId,
+        },
+      });
+      return user;
     }),
 }); 
