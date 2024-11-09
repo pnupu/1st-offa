@@ -1,6 +1,6 @@
 // src/server/api/routers/game.ts
 import { z } from "zod";
-import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "@/server/api/trpc";
 
 // Define specific types for game settings and scores
 const gameSettingsSchema = z.object({
@@ -58,5 +58,55 @@ export const gameRouter = createTRPCRouter({
         where: { userId: ctx.session.user.id },
         include: { task: true }
       });
+    }),
+
+  getDinoLeaderboard: publicProcedure
+    .query(async ({ ctx }) => {
+      // Get the highest score for each user
+      const highestScores = await ctx.db.gameEvent.groupBy({
+        by: ['userId'],
+        where: {
+          type: "DINO_GAME_PLAYED",
+          score: { not: null }, // Only include events with scores
+        },
+        _max: {
+          score: true,
+          createdAt: true,
+        },
+      });
+
+      // Get the full records for these highest scores
+      const userIds = highestScores.map(score => score.userId);
+      const gameEvents = await ctx.db.gameEvent.findMany({
+        where: {
+          type: "DINO_GAME_PLAYED",
+          userId: { in: userIds },
+          score: {
+            in: highestScores.map(score => score._max.score).filter((score): score is number => score !== null)
+          }
+        },
+        select: {
+          id: true,
+          score: true,
+          user: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          createdAt: true,
+        },
+        orderBy: {
+          score: 'desc',
+        },
+        take: 10,
+      });
+
+      return gameEvents.map(event => ({
+        id: event.id,
+        score: event.score ?? 0,
+        user: event.user,
+        date: event.createdAt,
+      }));
     }),
 });

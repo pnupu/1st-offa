@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 57 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-940,-35)">
+        <g id="WebcamOff">
+            <g transform="matrix(0.613684,0,0,0.842103,407.504,-5.51172)">
+                <rect x="868.356" y="48.228" width="91.644" height="31.176" style="fill:#d5c9bd;"/>
+            </g>
+            <g transform="matrix(1.01316,0,0,1.01316,8.79807,-1.12491)">
+                <circle cx="947.256" cy="48.712" r="8.808" style="fill:#493131;"/>
+            </g>
+        </g>
+    </g>
+</svg>

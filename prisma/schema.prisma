@@ -47,6 +47,7 @@ model User {
 
   // Add this relation to the User model
   posts         Post[]         // Add this line
+  gameEvents    GameEvent[]  // Add this line
 }
 
 model Company {
@@ -236,4 +237,32 @@ model Post {
 
   @@index([authorId])
   @@index([createdAt])
+}
+
+// Add this model after the existing models
+model GameEvent {
+  id        String   @id @default(cuid())
+  type      String   // e.g., "COFFEE_CLICK", "PAPER_ORGANIZE", "TASK_STARTED", "TASK_COMPLETED"
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  
+  // OCEAN impact scores
+  openness          Float?    @db.DoublePrecision
+  conscientiousness Float?    @db.DoublePrecision
+  extraversion      Float?    @db.DoublePrecision
+  agreeableness     Float?    @db.DoublePrecision
+  neuroticism       Float?    @db.DoublePrecision
+
+  // Task-related fields
+  taskId          String?   // Store as string to maintain flexibility
+  taskTitle       String?   // Store task title for easier querying
+  score           Int?      // Add this field for game scores
+  completionTime  Float?    @db.DoublePrecision  // Store completion time in seconds
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([type])
+  @@index([taskId])
+  @@index([score]) // Add index for score queries
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
+import { api } from "@/trpc/react";
 
 export interface Task {
   id: number;
@@ -90,13 +91,26 @@ const initialTasks: Task[] = [
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  const createGameEvent = api.gameEvent.create.useMutation();
 
   const startTask = (id: number) => {
     const startTime = new Date();
     setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === id ? { ...task, status: "in_progress", startTime } : task
-      )
+      prevTasks.map((task) => {
+        if (task.id === id) {
+          // Create game event for starting task
+          createGameEvent.mutate({
+            type: "TASK_STARTED",
+            taskId: id,
+            taskTitle: task.title,
+            oceanScores: {
+              conscientiousness: 0.05, // Small boost for initiative
+            }
+          });
+          return { ...task, status: "in_progress", startTime };
+        }
+        return task;
+      })
     );
   };
 
@@ -104,10 +118,8 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) => {
         if (task.id === taskId) {
-          // Check if action is already completed
           if (!task.actionsRequired.includes(action)) return task;
 
-          // Calculate the relative time if task has started, otherwise set as "immediately"
           const actionTime = task.startTime
             ? `${((new Date().getTime() - task.startTime.getTime()) / 1000).toFixed(1)} seconds after start`
             : "immediately";
@@ -117,11 +129,28 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
             { action, time: actionTime },
           ];
 
-          // Remove the completed action from actionsRequired
           const remainingActions = task.actionsRequired.filter(
             (reqAction) => reqAction !== action
           );
 
+          // If task is completed (no remaining actions)
+          if (remainingActions.length === 0) {
+            const completionTime = task.startTime 
+              ? (new Date().getTime() - task.startTime.getTime()) / 1000
+              : 0;
+
+            // Create game event for completing task
+            createGameEvent.mutate({
+              type: "TASK_COMPLETED",
+              taskId: task.id,
+              taskTitle: task.title,
+              completionTime,
+              oceanScores: {
+                conscientiousness: 0.1,  // Base completion bonus
+                neuroticism: -0.05,      // Small confidence boost
+              }
+            });
+          }
           // If all actions are completed, set the status to "completed" and add completedAt time
           const isCompleted = remainingActions.length === 0;
           const completedAt = isCompleted ? new Date() : task.completedAt;

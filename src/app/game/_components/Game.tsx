@@ -16,12 +16,16 @@ import Whiteboard from "./static_components/Whiteboard";
 import PowerButton from "./static_components/PowerButton";
 import { MousePositionProvider } from "./MousePositionContext";
 import ComputerLeg from "./static_components/ComputerLeg";
+import { api } from "@/trpc/react";
 
 const Game = () => {
 
-    const { startGameTime, pauseGameTime } = useGameTime();
+    const { startGameTime, pauseGameTime, timeAsNumber } = useGameTime();
     const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
+    const [isLeaving, setIsLeaving] = useState(false);
+    const calculateFinalScores = api.gameEvent.calculateFinalScores.useMutation();
+    const createGameEvent = api.gameEvent.create.useMutation();
     const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
@@ -67,6 +71,31 @@ const Game = () => {
     const handlePowerButtonClick = () => {
         setComputerOn(!computerOn);
     }
+
+    const handleLeaveWork = async () => {
+        setIsLeaving(true);
+        
+        // Check if leaving early (before 8 hours)
+        const workDayInSeconds = 8 * 60 * 60 + 8 * 60 * 60;
+        if (timeAsNumber < workDayInSeconds) {
+            // Create event for leaving early
+            createGameEvent.mutate({
+                type: "LEFT_WORK_EARLY",
+                oceanScores: {
+                    conscientiousness: -0.1,  // Penalty for leaving early
+                    neuroticism: 0.05        // Slight increase in neuroticism
+                }
+            });
+        }
+
+        // Calculate final scores
+        await calculateFinalScores.mutateAsync();
+        
+        // Redirect to dashboard after 2 seconds
+        setTimeout(() => {
+            window.location.href = '/dashboard';
+        }, 2000);
+    };
 
     return (
         <div className="bg-white w-[1280px] h-[720px] relative overflow-hidden">
@@ -183,6 +212,25 @@ const Game = () => {
             >
                 <PostIt taskId={4} toggle={() => handleToggleOpenTask(4)} isOpen={openTask === 4} />
             </StaticItem>
+
+            {/* Leave Work Button */}
+            <div className="absolute top-4 right-4 z-[100]">
+                <button
+                    onClick={handleLeaveWork}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
+                    disabled={isLeaving}
+                >
+                    Leave Work
+                </button>
+            </div>
+
+            {/* Loading overlay */}
+            {isLeaving && (
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center z-[101]">
+                    <div className="text-white text-2xl mb-4">Calculating Performance...</div>
+                    <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            )}
         </MousePositionProvider>  
         {isPaused && <div className="absolute bottom-0 right-0 p-4 text-white text-xs bg-black bg-opacity-50">Press ESC to pause</div> }
         </div>

@@ -89,13 +89,35 @@ const Browser = () => {
 
       {/* Browser Content Area */}
       <div className="flex-grow bg-white">
-        <iframe
-          src={url}
-          width="100%"
-          height="100%"
-          className="border-none"
-          title="Browser"
-        />
+        {url === "https://rwbk.fi" ? (
+          <iframe
+            src={url}
+            width="100%"
+            height="100%"
+            className="border-none"
+            title="Browser"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="space-y-2 text-sm text-gray-500">
+              <p className="font-medium text-red-600">
+                This website has been blocked by your IT department.
+              </p>
+              <p>
+                Access to this site is restricted during work hours (8:00 - 17:00).
+                <br />
+                Please contact IT Support if you believe this is a mistake.
+              </p>
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <p className="text-xs text-gray-400">
+                  Policy Reference: AUP-2024-01
+                  <br />
+                  Category: Social Media & Entertainment
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

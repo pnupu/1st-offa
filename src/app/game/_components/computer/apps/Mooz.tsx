@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useUser } from "@/hooks/useUser";
 import BossAnimation from './BossAnimation';
 import { useTasks } from '../../TaskContext';
+import { api } from "@/trpc/react";
 
 interface Meeting {
   id: number;
@@ -51,6 +52,8 @@ const Mooz = () => {
   const meetingEnded = currentTimeInMinutes >= meetingEndTime;
   const meetingStarted = currentTimeInMinutes >= meetingTime;
 
+  const createGameEvent = api.gameEvent.create.useMutation();
+
   const startWebcam = async () => {
     try {
       if (webcamStream) {
@@ -68,10 +71,29 @@ const Mooz = () => {
       setWebcamStream(stream);
       setHasWebcamPermission(true);
       localStorage.setItem('webcamPermission', 'true');
+
+      // Create game event for enabling webcam
+      createGameEvent.mutate({
+        type: "WEBCAM_ENABLED",
+        oceanScores: {
+          extraversion: 0.1,        // Boost for being willing to be on camera
+          openness: 0.05,           // Small boost for embracing technology
+          neuroticism: -0.05        // Slight decrease for being comfortable on camera
+        }
+      });
     } catch (error) {
       console.error('Error accessing webcam:', error);
       setHasWebcamPermission(false);
       localStorage.setItem('webcamPermission', 'false');
+
+      // Create game event for webcam denial
+      createGameEvent.mutate({
+        type: "WEBCAM_DENIED",
+        oceanScores: {
+          neuroticism: 0.1,         // Increase for anxiety about camera
+          extraversion: -0.05       // Slight decrease for avoiding visibility
+        }
+      });
     }
   };
 
@@ -95,6 +117,26 @@ const Mooz = () => {
     if (audioRef.current) {
       void audioRef.current.play();
     }
+
+    // Create game event for joining meeting
+    createGameEvent.mutate({
+      type: "MEETING_JOINED",
+      oceanScores: {
+        conscientiousness: 0.15,    // Good boost for attending meetings
+        extraversion: 0.1,          // Boost for social participation
+        neuroticism: -0.05          // Slight decrease for handling professional situations
+      }
+    });
+
+    // If joined early, give extra conscientiousness boost
+    if (currentTimeInMinutes < meetingTime) {
+      createGameEvent.mutate({
+        type: "MEETING_EARLY",
+        oceanScores: {
+          conscientiousness: 0.1,   // Additional boost for being early
+        }
+      });
+    }
   };
 
   const leaveMeeting = () => {
@@ -103,6 +145,25 @@ const Mooz = () => {
     if (audioRef.current) {
       void audioRef.current.pause();
       audioRef.current.currentTime = 0;
+    }
+
+    // Only create event if leaving before meeting ends
+    if (!meetingEnded) {
+      createGameEvent.mutate({
+        type: "MEETING_LEFT_EARLY",
+        oceanScores: {
+          conscientiousness: -0.15,  // Penalty for leaving early
+          agreeableness: -0.05      // Small penalty for being inconsiderate
+        }
+      });
+    } else {
+      createGameEvent.mutate({
+        type: "MEETING_COMPLETED",
+        oceanScores: {
+          conscientiousness: 0.1,    // Bonus for completing the meeting
+          extraversion: 0.05         // Small boost for social engagement
+        }
+      });
     }
   };
 
