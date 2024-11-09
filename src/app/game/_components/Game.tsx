@@ -20,6 +20,7 @@ import ComputerLeg from "./static_components/ComputerLeg";
 const Game = () => {
 
     const { startGameTime, pauseGameTime } = useGameTime();
+    const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
 
     useEffect(() => {
@@ -29,6 +30,14 @@ const Game = () => {
         }
     }
     , []);
+
+    const handleToggleOpenTask = (id: number) => {
+        if (openTask === id) {
+            setOpenTask(null);
+        } else {
+            setOpenTask(id);
+        }
+    }
 
     const handlePowerButtonClick = () => {
         setComputerOn(!computerOn);
@@ -55,15 +64,6 @@ const Game = () => {
                 zIndex={25}
             >
                 <ComputerLeg />
-            </StaticItem>
-            <StaticItem
-                x={345}
-                y={435}
-                width={65}
-                height={65}
-                zIndex={31}
-            >
-                <PostIt />
             </StaticItem>
             <StaticItem
                 x={1030}
@@ -122,6 +122,42 @@ const Game = () => {
             <DeskImage />
             <OperatingSystem isOn={computerOn} />
             <div id="portal-root" style={{ position: 'relative', zIndex: 9999 }}></div>
+            <StaticItem
+                x={345}
+                y={435}
+                width={65}
+                height={65}
+                zIndex={openTask === 1 ? 70 : 60}
+            >
+                <PostIt taskId={1} toggle={() => handleToggleOpenTask(1)} isOpen={openTask === 1} />
+            </StaticItem>
+            <StaticItem
+                x={439}
+                y={430}
+                width={65}
+                height={65}
+                zIndex={openTask === 2 ? 70 : 60}
+            >
+                <PostIt taskId={2} toggle={() => handleToggleOpenTask(2)} isOpen={openTask === 2} />
+            </StaticItem>
+            <StaticItem
+                x={757}
+                y={435}
+                width={65}
+                height={65}
+                zIndex={openTask === 3 ? 70 : 60}
+            >
+                <PostIt taskId={3} toggle={() => handleToggleOpenTask(3)} isOpen={openTask === 3} />
+            </StaticItem>
+            <StaticItem
+                x={828}
+                y={435}
+                width={65}
+                height={65}
+                zIndex={openTask === 4 ? 70 : 60}
+            >
+                <PostIt taskId={4} toggle={() => handleToggleOpenTask(4)} isOpen={openTask === 4} />
+            </StaticItem>
         </MousePositionProvider>  
         </div>
     );
