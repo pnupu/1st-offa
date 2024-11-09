@@ -1,6 +1,6 @@
 'use client';
 import { useGameTime } from "../GameTimeContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMousePosition } from "../MousePositionContext";
 import Image from "next/image";
 import Koolout from "./apps/Koolout";
@@ -11,17 +11,14 @@ interface OperatingSystemProps {
 }
 
 const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
-
   const { timeAsString } = useGameTime();
   const [openApp, setOpenApp] = useState<string | undefined>(undefined);
+  const [isMouseInside, setIsMouseInside] = useState(false);
+
   const { x, y } = useMousePosition();
 
-  useEffect(() => {
-    console.log(x, y);
-  }, [x, y]);
-    
   if (!isOn) {
-    return <div className="relative w-[655px] h-[367px] bg-black z-[80] top-[-438px] left-[312px] flex flex-col"></div>
+    return <div className="relative w-[655px] h-[367px] bg-black z-[80] top-[-438px] left-[312px] flex flex-col rounded-t-[15px]"></div>
   }
 
   const renderApp = () => {
@@ -37,18 +34,26 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
     }
   };
 
+
   return (
-    <div className="relative w-[655px] h-[367px] bg-white z-[80] top-[-438px] left-[312px] flex flex-col">
+    <div 
+      className="relative w-[655px] h-[367px] bg-white z-[80] top-[-438px] left-[312px] flex flex-col rounded-t-[15px] overflow-hidden"
+      id="computer-screen"
+      onMouseEnter={() => setIsMouseInside(true)}
+      onMouseLeave={() => setIsMouseInside(false)}
+      style={{
+        cursor: isMouseInside ? `url('/assets/computer_backgrounds/mouse.svg'), auto` : 'auto',
+      }}
+    >
       <AppStateProvider>
         <div className="bg-black w-full h-[15px] text-white text-[11px]">
           <div className="justify-self-end mx-2">{timeAsString}</div>
         </div>      
         <div className="bg-black w-full h-[353px] bg-[url('/assets/computer_backgrounds/kisse.png')]">
-        {
-          openApp ? (
+          {openApp ? (
             <div className="bg-white w-[655px] h-[315px] absolute top-[15px] rounded-md">
               <div className="bg-gray-400 w-full h-[30px] flex justify-between items-center px-2">
-                <div>{openApp}</div>
+                <div>{openApp} App</div>
                 <div 
                   className="h-[20px] w-[20px] bg-red-500 rounded-md cursor-pointer" 
                   onClick={() => setOpenApp(undefined)}
@@ -58,9 +63,7 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
                 {renderApp()}
               </div>
             </div>
-          ) : 
-          null
-        }
+          ) : null}
         </div>
         <div className="absolute top-[333px] left-[180px] p-[4px] h-[28px] w-[300px] bg-white/40 backdrop-blur-sm border-white/40 border rounded-md flex gap-1">
           <div 
@@ -76,10 +79,21 @@ const OperatingSystem = ({ isOn }: OperatingSystemProps) => {
             />
           </div>
         </div>
-        <div 
-          className={`absolute size-[10px]`} 
-          style={{ top: y, left: x, backgroundImage: 'url(/assets/desktop/Table.svg)' }} 
-        />
+        {!isMouseInside && (
+          <div 
+            className="absolute size-[10px]"
+            style={{ 
+              top: y,
+              left: x,
+              width: '15px',
+              height: '15px',
+              pointerEvents: 'none',
+              backgroundImage: 'url(/assets/computer_backgrounds/mouse.svg)',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat'
+            }} 
+          />
+        )}
       </AppStateProvider>
     </div>
   );

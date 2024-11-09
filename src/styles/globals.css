@@ -64,3 +64,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none; /* Prevent image context menu on long tap on mobile */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
