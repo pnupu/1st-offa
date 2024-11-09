@@ -16,7 +16,7 @@ const CoffeeCup = () => {
 
     return (
         <div className="w-full h-full flex items-center justify-center z-40" onClick={() => setCoffeeLevel(coffeeLevel - 1)}>
-            <Image src="/assets/desktop/Mug.svg" alt="Coffee Cup" className="w-full h-full object-contain" draggable="false" layout="fill" />
+            <Image src={`/assets/desktop/${coffeeLevel === 5 ? "Mug" : coffeeLevel === 4 ? "Mug-half" : "Mug-empty"}.svg`} alt="Coffee Cup" className="w-full h-full object-contain" draggable="false" layout="fill" />
         </div>
     );
 };
