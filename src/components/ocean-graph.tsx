@@ -62,7 +62,7 @@ export function OceanGraph({ companyData, userData, className }: OceanGraphProps
             fontSize: 12,
           }}
           tickSize={15}
-          className="font-chillax"
+          className="font-chillax font-bold"
         />
         <Radar
           name="Company"

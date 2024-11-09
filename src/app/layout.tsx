@@ -1,14 +1,9 @@
 import "@/styles/globals.css";
 
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Providers } from './providers'
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 const chillax = localFont({
   src: [
@@ -27,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`font-sans ${inter.variable} ${chillax.variable}`}>
+      <body suppressHydrationWarning className={`font-chillax ${chillax.variable}`}>
         <Providers>
           {children}
         </Providers>
