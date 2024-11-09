@@ -175,7 +175,6 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
                 zIndex: manualZ ? manualZ : baseZIndex + currentY,
                 cursor: isDraggingRef.current ? 'grabbing' : 'grab',
             }}
-            onClick={onClick}
         >
             {children}
         </div>
