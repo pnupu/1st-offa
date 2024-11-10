@@ -30,7 +30,8 @@ const Game = () => {
     const { startGameTime, timeAsNumber } = useGameTime();
     const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
-    const [computerCanSound, setComputerCanSound] = useState(true);
+    const [showInstructions, setShowInstructions] = useState(true);
+    const [computerCanSound, setComputerCanSound] = useState(false);
     const [isLeaving, setIsLeaving] = useState(false);
     const calculateFinalScores = api.gameEvent.calculateFinalScores.useMutation();
     const createGameEvent = api.gameEvent.create.useMutation();
@@ -44,7 +45,6 @@ const Game = () => {
     }, [computerOn, computerCanSound]);
 
     useEffect(() => {
-        startGameTime();
         setTimeout(() => {
             setComputerCanSound(true);
         } , 500);
@@ -56,6 +56,11 @@ const Game = () => {
         } else {
             setOpenTask(id);
         }
+    }
+
+    const handleGotIt = () => {
+        setShowInstructions(false);
+        startGameTime();
     }
 
     const handlePowerButtonClick = () => {
@@ -233,6 +238,19 @@ const Game = () => {
             )}
         </MousePositionProvider>  
         </WebcamProvider>
+        {showInstructions && (
+            <div className="fixed width-[400px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#42669B] p-4 rounded-lg z-[1000] text-left" style={{ opacity: 0.9 }}>
+                <div className="text-white text-2xl mb-4">Instructions</div>
+                <div className="text-white text-lg mb-4">Hello! It&apos;s your 1st day at the Offa, so I left you some notes about tasks that need to be completed. </div>
+                <div className="text-white text-lg mb-4">Make sure to also look at your email. Remember that you should not be running from responsibilities.</div>
+                <div className="text-white text-lg mb-4">Good luck!</div>
+                <br />
+                <div className="text-white text-lg mb-4">Interact with items using left click</div>
+                <div className="text-white text-lg mb-4">Some items can be dragged around by holding the D-key</div>
+                <div className="text-white text-lg mb-4">You can use the computer with your own mosue</div>
+                <button onClick={() => handleGotIt()} className="bg-white text-[#42669B] font-semibold py-2 px-4 rounded-md">Got it!</button>
+            </div>
+        )}
         </div>
     );
 }
