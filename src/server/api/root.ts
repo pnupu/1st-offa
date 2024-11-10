@@ -7,6 +7,7 @@ import { openaiRouter } from "./routers/openai";
 import { emailRouter } from "./routers/email";
 import { postRouter } from "./routers/post";
 import { gameEventRouter } from "./routers/gameEvent";
+import { fileRouter } from "./routers/file";
 /**
  * This is the primary router for your server.
  *
@@ -21,6 +22,7 @@ export const appRouter = createTRPCRouter({
   email: emailRouter,
   post: postRouter,
   gameEvent: gameEventRouter,
+  file: fileRouter,
 });
 
 // export type definition of API

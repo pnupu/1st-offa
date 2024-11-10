@@ -9,8 +9,28 @@ interface DrawingFile {
   dataUrl: string;
 }
 
-const Folder = () => {
+interface NotificationModalProps {
+  message: string;
+  onClose: () => void;
+}
+
+const NotificationModal = ({ message, onClose }: NotificationModalProps) => (
+  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm">
+      <h3 className="text-lg font-semibold mb-4">{message}</h3>
+      <button
+        onClick={onClose}
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+);
+
+const XFiles = () => {
   const [selectedImage, setSelectedImage] = useState<DrawingFile | null>(null);
+  const [notification, setNotification] = useState<string | null>(null);
   const { data: images = [] } = api.gameEvent.getDrawings.useQuery(undefined, {
     refetchOnWindowFocus: false
   });
@@ -18,9 +38,8 @@ const Folder = () => {
   const createPost = api.post.create.useMutation();
 
   const handleSetBackground = (dataUrl: string) => {
-    console.log("Setting background");
-    // Convert base64 to blob
     setBackground(dataUrl);
+    setNotification("Background updated successfully!");
   };
 
   const handleShareToCheckedout = async (dataUrl: string) => {
@@ -29,13 +48,15 @@ const Folder = () => {
         content: "Check out my latest artwork! 🎨",
         imageData: dataUrl
       });
+      setNotification("Image shared to CheckedOut successfully!");
     } catch (error) {
       console.error('Error sharing to CheckedOut:', error);
+      setNotification("Failed to share image to CheckedOut. Please try again.");
     }
   };
 
   return (
-    <div className="h-full flex">
+    <div className="h-full flex relative">
       <div className="w-2/3 p-4 overflow-y-auto">
         <h2 className="text-lg font-bold mb-4">My Drawings</h2>
         <div className="grid grid-cols-3 gap-4">
@@ -94,8 +115,15 @@ const Folder = () => {
           </div>
         </div>
       )}
+
+      {notification && (
+        <NotificationModal
+          message={notification}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </div>
   );
 };
 
-export default Folder;
+export default XFiles;

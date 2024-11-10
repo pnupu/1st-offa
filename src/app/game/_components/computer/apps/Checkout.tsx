@@ -1,8 +1,9 @@
 'use client';
 
 import { api } from "@/trpc/react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const BLACKLISTED_PATTERNS = {
   profanity: /\b(fuck|shit|ass|damn|bitch|perkele|vittu|paska|saatana|helvetti)\b/gi,
@@ -171,7 +172,19 @@ export default function Checkout() {
                   <span className="font-semibold">{post.author.name}</span>
                 </div>
                 <p className="mt-2">{post.content}</p>
-                <span className="mt-2 text-sm text-gray-500">
+                {post.file && (
+                  <div className="mt-2">
+                    <Image
+                      src={post.file.dataUrl}
+                      alt="Post attachment"
+                      width={200}
+                      height={150}
+                      className="rounded-lg object-cover"
+                      unoptimized
+                    />
+                  </div>
+                )}
+                <span className="mt-2 text-sm text-gray-500 block">
                   {new Date(post.createdAt).toLocaleString()}
                 </span>
               </div>

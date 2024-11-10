@@ -50,9 +50,9 @@ const Goal = () => {
     const context = canvas.getContext('2d');
     if (!context) return;
 
-    // Set white background
+    // Set white background with correct dimensions
     context.fillStyle = '#ffffff';
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.fillRect(0, 0, 623, 360);
   }, []);
 
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -151,16 +151,18 @@ const Goal = () => {
           Clear
         </button>
       </div>
-      <canvas
-        ref={canvasRef}
-        width={655}
-        height={245}
-        onMouseDown={startDrawing}
-        onMouseMove={draw}
-        onMouseUp={stopDrawing}
-        onMouseLeave={stopDrawing}
-        className="cursor-crosshair"
-      />
+      <div className="overflow-auto">
+        <canvas
+          ref={canvasRef}
+          width={623}
+          height={360}
+          onMouseDown={startDrawing}
+          onMouseMove={draw}
+          onMouseUp={stopDrawing}
+          onMouseLeave={stopDrawing}
+          className="cursor-crosshair"
+        />
+      </div>
       {showNotification && (
         <Notification 
           message="Drawing saved successfully!"

@@ -11,7 +11,7 @@ import Bower from "./apps/Bower";
 import Browser from "./apps/Browser";
 import DinoGame from "./apps/DinoGame";
 import Goal from "./apps/Goal";
-import Folder from "./apps/Folder";
+import Folder from "./apps/X-files";
 
 interface OperatingSystemProps {
   isOn: boolean;
@@ -69,12 +69,13 @@ const OperatingSystemContent = ({ isOn }: OperatingSystemProps) => {
         <div className="justify-self-end mx-2">{timeAsString}</div>
       </div>      
       <div 
-        className="bg-black w-full h-[353px] text-black bg-cover" 
+        className="bg-black w-full h-[353px] text-black" 
         style={{
           backgroundImage: appState.background 
             ? `url('${appState.background}')`
             : "url('/assets/computer_backgrounds/kisse.png')",
-          backgroundPositionY: "-15px"
+          backgroundPositionY: "-15px",
+          backgroundSize: "cover"
         }}
       >
         {openApp ? (
@@ -188,7 +189,7 @@ const OperatingSystemContent = ({ isOn }: OperatingSystemProps) => {
           className="cursor-pointer"
         >
           <Image 
-            src="/assets/apps/Folder.svg" 
+            src="/assets/apps/Files.svg" 
             alt="Folder"
             width={20} 
             height={20}

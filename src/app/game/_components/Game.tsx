@@ -19,6 +19,9 @@ import ComputerLeg from "./static_components/ComputerLeg";
 import { api } from "@/trpc/react";
 import { WebcamProvider } from "./WebcamContext";
 import Webcam from "./static_components/Webcam";
+import {
+    DoorOpen,
+  } from "lucide-react";
 
 const Game = () => {
 
@@ -224,13 +227,14 @@ const Game = () => {
             >
                 <Webcam />
             </StaticItem>
-            {/* Leave Work Button */}
+
             <div className="absolute top-4 right-4 z-[100]">
                 <button
                     onClick={handleLeaveWork}
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
+                    className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-md flex items-center gap-2"
                     disabled={isLeaving}
                 >
+                    <DoorOpen />
                     Leave Work
                 </button>
             </div>
