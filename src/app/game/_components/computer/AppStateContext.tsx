@@ -1,36 +1,68 @@
 'use client';
-import { createContext, useContext, useState, useEffect } from 'react';
+
+import { createContext, useContext, useState, useCallback } from 'react';
 
 interface AppState {
-  background: string | null;
-  setBackground: (imageUrl: string) => void;
+  isOpen: boolean;
+  isMinimized: boolean;
+  zIndex: number;
+  position?: { x: number; y: number };
+  selectedEmailId?: string;
 }
 
-const AppStateContext = createContext<AppState | null>(null);
+interface AppStates {
+  Calculator: AppState;
+  Koolout: AppState;
+  // Add other app states here as needed
+}
 
-export function AppStateProvider({ children }: { children: React.ReactNode }) {
-  const [background, setBackground] = useState<string | null>(null);
+interface AppStateContextType {
+  appStates: AppStates;
+  updateAppState: (appName: keyof AppStates, newState: Partial<AppState>) => void;
+}
 
-  useEffect(() => {
-    console.log("Background set to", background);
-  }, [background]);
+const initialState: AppStates = {
+  Calculator: {
+    isOpen: false,
+    isMinimized: false,
+    zIndex: 0,
+  },
+  Koolout: {
+    isOpen: false,
+    isMinimized: false,
+    zIndex: 0,
+  },
+};
+
+const AppStateContext = createContext<AppStateContextType | undefined>(undefined);
+
+export const AppStateProvider = ({ children }: { children: React.ReactNode }) => {
+  const [appStates, setAppStates] = useState<AppStates>(initialState);
+
+  const updateAppState = useCallback((
+    appName: keyof AppStates,
+    newState: Partial<AppState>
+  ) => {
+    setAppStates(prev => ({
+      ...prev,
+      [appName]: {
+        ...prev[appName],
+        ...newState,
+      },
+    }));
+  }, []);
 
   return (
-    <AppStateContext.Provider
-      value={{
-        background,
-        setBackground,
-      }}
-    >
+    <AppStateContext.Provider value={{ appStates, updateAppState }}>
       {children}
     </AppStateContext.Provider>
   );
-}
+};
 
-export function useAppState() {
+export const useAppState = () => {
   const context = useContext(AppStateContext);
   if (!context) {
-    throw new Error("useAppState must be used within an AppStateProvider");
+    throw new Error('useAppState must be used within AppStateProvider');
   }
   return context;
-} 
+};

@@ -6,7 +6,8 @@ import Image from "next/image";
 import Koolout from "./apps/Koolout";
 import Mooz from "./apps/Mooz";
 import Checkout from "./apps/Checkout";
-import { AppStateProvider, useAppState } from "./AppStateContext";
+import { AppStateProvider } from "./AppStateContext";
+import { BackgroundProvider, useBackground } from "./BackgroundContext";
 import Bower from "./apps/Bower";
 import Browser from "./apps/Browser";
 import DinoGame from "./apps/DinoGame";
@@ -22,7 +23,7 @@ const OperatingSystemContent = ({ isOn }: OperatingSystemProps) => {
   const [openApp, setOpenApp] = useState<string | undefined>(undefined);
   const [isMouseInside, setIsMouseInside] = useState(false);
   const { x, y } = useMousePosition();
-  const appState = useAppState();
+  const { background } = useBackground();
 
   if (!isOn) {
     return <div className="relative w-[655px] h-[367px] bg-black z-[80] top-[-438px] left-[312px] flex flex-col rounded-t-[15px]"></div>
@@ -71,8 +72,8 @@ const OperatingSystemContent = ({ isOn }: OperatingSystemProps) => {
       <div 
         className="bg-black w-full h-[353px] text-black" 
         style={{
-          backgroundImage: appState.background 
-            ? `url('${appState.background}')`
+          backgroundImage: background 
+            ? `url('${background}')`
             : "url('/assets/computer_backgrounds/kisse.png')",
           backgroundPositionY: "-15px",
           backgroundSize: "cover"
@@ -219,7 +220,9 @@ const OperatingSystemContent = ({ isOn }: OperatingSystemProps) => {
 const OperatingSystem = (props: OperatingSystemProps) => {
   return (
     <AppStateProvider>
-      <OperatingSystemContent {...props} />
+      <BackgroundProvider>
+        <OperatingSystemContent {...props} />
+      </BackgroundProvider>
     </AppStateProvider>
   );
 }

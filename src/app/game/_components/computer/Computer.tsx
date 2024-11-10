@@ -1,7 +1,7 @@
-import { useAppState } from "./AppStateContext";
+import { useBackground } from "./BackgroundContext";
 
 export function Computer() {
-  const { background } = useAppState();
+  const { background } = useBackground();
 
   return (
     <div 

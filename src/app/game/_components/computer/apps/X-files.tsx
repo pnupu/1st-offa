@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { api } from "@/trpc/react";
 import Image from 'next/image';
-import { useAppState } from '../AppStateContext';
+import { useBackground } from '../BackgroundContext';
 
 interface DrawingFile {
   id: string;
@@ -34,7 +34,7 @@ const XFiles = () => {
   const { data: images = [] } = api.gameEvent.getDrawings.useQuery(undefined, {
     refetchOnWindowFocus: false
   });
-  const { setBackground } = useAppState();
+  const { setBackground } = useBackground();
   const createPost = api.post.create.useMutation();
 
   const handleSetBackground = (dataUrl: string) => {
