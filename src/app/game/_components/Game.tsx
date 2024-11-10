@@ -22,38 +22,33 @@ import Webcam from "./static_components/Webcam";
 import {
     DoorOpen,
   } from "lucide-react";
+import { playSound } from "./services";
+import { set } from "date-fns";
 
 const Game = () => {
 
-    const { startGameTime, pauseGameTime, timeAsNumber } = useGameTime();
+    const { startGameTime, timeAsNumber } = useGameTime();
     const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
+    const [showInstructions, setShowInstructions] = useState(true);
+    const [computerCanSound, setComputerCanSound] = useState(false);
     const [isLeaving, setIsLeaving] = useState(false);
     const calculateFinalScores = api.gameEvent.calculateFinalScores.useMutation();
     const createGameEvent = api.gameEvent.create.useMutation();
-    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-        startGameTime();
-
-        addEventListener('keydown', (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                handleTogglePause();
-            }
-        });
-
-        return () => {
-            pauseGameTime()
-
-            removeEventListener('keydown', (e: KeyboardEvent) => {
-                if (e.key === 'Escape') {
-                    handleTogglePause();
-                }
-            });
-
+        if (computerOn && computerCanSound) {
+            playSound('assets/sounds/computeron.mp3');
+        } else if (computerCanSound) {
+            playSound('assets/sounds/computeroff.mp3');
         }
-    }
-    , []);
+    }, [computerOn, computerCanSound]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setComputerCanSound(true);
+        } , 500);
+    }, []);
 
     const handleToggleOpenTask = (id: number) => {
         if (openTask === id) {
@@ -63,15 +58,10 @@ const Game = () => {
         }
     }
 
-    const handleTogglePause = () => {
-        setIsPaused(!isPaused);
-        if (isPaused) {
-            startGameTime();
-        } else {
-            pauseGameTime();
-        }
+    const handleGotIt = () => {
+        setShowInstructions(false);
+        startGameTime();
     }
-
 
     const handlePowerButtonClick = () => {
         setComputerOn(!computerOn);
@@ -248,7 +238,19 @@ const Game = () => {
             )}
         </MousePositionProvider>  
         </WebcamProvider>
-        {isPaused && <div className="absolute bottom-0 right-0 p-4 text-white text-xs bg-black bg-opacity-50">Press ESC to pause</div> }
+        {showInstructions && (
+            <div className="fixed width-[400px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#42669B] p-4 rounded-lg z-[1000] text-left" style={{ opacity: 0.9 }}>
+                <div className="text-white text-2xl mb-4">Instructions</div>
+                <div className="text-white text-lg mb-4">Hello! It&apos;s your 1st day at the Offa, so I left you some notes about tasks that need to be completed. </div>
+                <div className="text-white text-lg mb-4">Make sure to also look at your email. Remember that you should not be running from responsibilities.</div>
+                <div className="text-white text-lg mb-4">Good luck!</div>
+                <br />
+                <div className="text-white text-lg mb-4">Interact with items using left click</div>
+                <div className="text-white text-lg mb-4">Some items can be dragged around by holding the D-key</div>
+                <div className="text-white text-lg mb-4">You can use the computer with your own mosue</div>
+                <button onClick={() => handleGotIt()} className="bg-white text-[#42669B] font-semibold py-2 px-4 rounded-md">Got it!</button>
+            </div>
+        )}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useGameTime } from "../../GameTimeContext";
 import { useAppState } from "../AppStateContext";
 import { useTasks } from "../../TaskContext";
+import { playSound } from "../../services";
 
 interface EmailReply {
   id: string;
@@ -91,6 +92,8 @@ const Koolout = () => {
       });
 
       // Task completion logic remains the same...
+      playSound('assets/sounds/emailsend.mp3');
+
       switch (selectedEmail.from) {
         case "Julia Chen":
           completeAction(1, "answerMeetingEmail");

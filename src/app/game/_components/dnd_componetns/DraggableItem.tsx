@@ -3,7 +3,9 @@
 import React, { useRef, useEffect } from 'react';
 import { useDragAndDropContext } from '../DragAndDropContext';
 import Mouse from './Mouse';
+import Keyboard from './Keyboard';
 import { useMousePosition } from '../MousePositionContext';
+import { playSound } from '../services';
 
 interface DraggableItemProps {
     id: string;
@@ -104,6 +106,12 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
         if (e.button === 0 && React.isValidElement(children) && children.type === Mouse) {
             e.preventDefault();
             simulateClickAtMousePosition(x, y);
+            playSound('assets/sounds/mouseclick.mp3');
+        }
+
+        if (e.button === 0 && React.isValidElement(children) && children.type === Keyboard) {
+            e.preventDefault();
+            playSound('assets/sounds/keyboardclick.mp3');
         }
     };
 
