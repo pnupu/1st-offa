@@ -41,6 +41,15 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
         }
 
         const handleKeyDown = (e: KeyboardEvent) => {
+            const activeElement = document.activeElement;
+            if (activeElement && (
+                activeElement.tagName === 'TEXTAREA' || 
+                activeElement.tagName === 'INPUT' ||
+                activeElement.getAttribute('contenteditable') === 'true'
+            )) {
+                return;
+            }
+
             if ((e.key === 'D' || e.key === 'd') && isHoveringRef.current && !isDraggingRef.current && !globalIsDraggingRef.current) {
                 startDragging();
                 setGlobalIsDragging(true);
@@ -48,6 +57,15 @@ const DraggableItem = ({ id, initialX, initialY, width, height, children, manual
         };
 
         const handleKeyUp = (e: KeyboardEvent) => {
+            const activeElement = document.activeElement;
+            if (activeElement && (
+                activeElement.tagName === 'TEXTAREA' || 
+                activeElement.tagName === 'INPUT' ||
+                activeElement.getAttribute('contenteditable') === 'true'
+            )) {
+                return;
+            }
+
             if (e.key === 'D' || e.key === 'd') {
                 stopDragging();
                 setGlobalIsDragging(false);
