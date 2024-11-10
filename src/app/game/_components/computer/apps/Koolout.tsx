@@ -28,6 +28,7 @@ interface Email {
   position: string;
   sentTime: number;
   archived: boolean;
+  read: boolean;
   reads: Array<{ userId: string }>;
   replies: EmailReply[];
 }
@@ -79,7 +80,7 @@ const Koolout = () => {
 
   const handleEmailClick = (email: Email) => {
     updateAppState('Koolout', { selectedEmailId: email.id });
-    if (!email.reads.length) {
+    if (!email.read) {
       markAsRead({ id: email.id });
     }
   };
@@ -137,7 +138,7 @@ const Koolout = () => {
             key={email.id}
             onClick={() => handleEmailClick(email)}
             className={`p-2 cursor-pointer hover:bg-gray-100 ${
-              !email.reads.length ? 'font-bold' : ''
+              !email.read ? 'font-bold' : ''
             } ${selectedEmail?.id === email.id ? 'bg-gray-100' : ''}`}
           >
             <div className="text-sm truncate">{email.from}</div>

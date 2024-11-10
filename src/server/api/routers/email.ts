@@ -24,6 +24,7 @@ export const emailRouter = createTRPCRouter({
 
       return emails.map((email) => ({
         ...email,
+        read: email.reads.length > 0,
         replies: email.replies.map((reply) => ({
           ...reply,
           createdAt: reply.createdAt.getTime(),
@@ -34,13 +35,25 @@ export const emailRouter = createTRPCRouter({
   markAsRead: protectedProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      // Create a read record for this user and email
-      return ctx.db.gameEmailRead.create({
-        data: {
+      // Check if already read to avoid duplicates
+      const existingRead = await ctx.db.gameEmailRead.findFirst({
+        where: {
           emailId: input.id,
           userId: ctx.session.user.id,
         },
       });
+
+      if (!existingRead) {
+        // Create a read record for this user and email
+        return ctx.db.gameEmailRead.create({
+          data: {
+            emailId: input.id,
+            userId: ctx.session.user.id,
+          },
+        });
+      }
+
+      return existingRead;
     }),
 
   reply: protectedProcedure
