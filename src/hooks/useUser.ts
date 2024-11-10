@@ -1,7 +1,7 @@
 import { api } from "@/trpc/react";
 
 export const useUser = () => {
-  const { data: user, isLoading } = api.user.getProfile.useQuery();
+  const { data: user, isLoading, error } = api.user.getProfile.useQuery();
 
   const getInitials = () => {
     if (!user?.name) return ":)";
@@ -20,6 +20,7 @@ export const useUser = () => {
   return {
     user,
     isLoading,
+    error,
     getInitials,
   };
 };

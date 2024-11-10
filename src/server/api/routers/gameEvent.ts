@@ -170,7 +170,9 @@ export const gameEventRouter = createTRPCRouter({
                         data: {
                             type: input.type,
                             userId: ctx.session.user.id,
-                            fileId: file.id
+                            fileId: file.id,
+                            openness: 0.1,
+                            conscientiousness: 0.05
                         }
                     });
 
