@@ -71,7 +71,15 @@ const DinoGame = () => {
     if (isGameOver) return;
 
     const obstacleTimer = setInterval(() => {
-      const resetObstacle = (prevPos: number, otherObstaclePositions: number[], setHeight: (height: number) => void, setIsDouble: (isDouble: boolean) => void) => {
+      // Adjust minDistanceBetweenObstacles based on speed
+      const minDistanceBetweenObstacles = 200 + (speed - 10) * 10;
+
+      const resetObstacle = (
+        prevPos: number,
+        otherObstaclePositions: number[],
+        setHeight: (height: number) => void,
+        setIsDouble: (isDouble: boolean) => void
+      ) => {
         if (prevPos > -50) return prevPos - speed;
 
         let newPosition: number;
@@ -106,6 +114,22 @@ const DinoGame = () => {
     return () => clearInterval(obstacleTimer);
   }, [isGameOver, speed, score, obstacle1Position, obstacle2Position, obstacle3Position]);
 
+  useEffect(() => {
+    // Initialize background music
+    const backgroundMusic = new Audio('/assets/sounds/dinobot/NeuroticDinobot.mp3');
+    backgroundMusic.loop = true;
+
+    // Play the music when component mounts
+    backgroundMusic.play().catch((error) => {
+      console.error("Failed to play audio:", error);
+    });
+
+    // Pause and reset the music when component unmounts
+    return () => {
+      backgroundMusic.pause();
+      backgroundMusic.currentTime = 0;
+    };
+  }, []);
   // Jump logic, independent of obstacle movement
   useEffect(() => {
     if (!isJumping) return;
