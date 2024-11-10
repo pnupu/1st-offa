@@ -51,7 +51,7 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
         }
 
         const handleKeyDown = (e: KeyboardEvent) => {
-            if ((e.key === 'D' || e.key === 'd') && isHoveringRef.current && !isDraggingRef.current && !globalIsDraggingRef.current) {
+            if ((e.key === 'D' || e.key === 'd') && isHoveringRef.current && !isDraggingRef.current && !globalIsDraggingRef.current && !isOpen) {
                 startDragging();
                 setGlobalIsDragging(true);
             }
@@ -110,6 +110,8 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
     };
 
     const toggleOpen = () => {
+        stopDragging();
+        setGlobalIsDragging(false);
         setIsOpen(!isOpen);
         if (!isOpen) {
             setWarpStyle({
