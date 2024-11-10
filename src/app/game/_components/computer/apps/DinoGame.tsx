@@ -7,6 +7,7 @@ const DinoGame = () => {
   const [isJumping, setIsJumping] = useState(false);
   const [dinoPosition, setDinoPosition] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [speed, setSpeed] = useState(10);
 
@@ -66,53 +67,53 @@ const DinoGame = () => {
     }
   }, [isGameOver]);
 
-  // Move each obstacle independently and reset if off-screen
-  useEffect(() => {
-    if (isGameOver) return;
+// Move each obstacle independently and reset if off-screen
+useEffect(() => {
+  if (isGameOver) return;
 
-    const obstacleTimer = setInterval(() => {
-      // Adjust minDistanceBetweenObstacles based on speed
-      const minDistanceBetweenObstacles = 200 + (speed - 10) * 10;
+  const obstacleTimer = setInterval(() => {
+    // Adjust minDistanceBetweenObstacles based on speed
+    const minDistanceBetweenObstacles = 200 + (speed - 10) * 10;
 
-      const resetObstacle = (
-        prevPos: number,
-        otherObstaclePositions: number[],
-        setHeight: (height: number) => void,
-        setIsDouble: (isDouble: boolean) => void
-      ) => {
-        if (prevPos > -50) return prevPos - speed;
+    const resetObstacle = (
+      prevPos: number,
+      otherObstaclePositions: number[],
+      setHeight: (height: number) => void,
+      setIsDouble: (isDouble: boolean) => void
+    ) => {
+      if (prevPos > -50) return prevPos - speed;
 
-        let newPosition: number;
-        do {
-          newPosition = Math.random() * 200 + 800;
-        } while (
-          otherObstaclePositions.some(
-            (pos) => Math.abs(pos - newPosition) < minDistanceBetweenObstacles
-          )
-        );
-
-        setHeight(Math.random() * 30 + 30);
-        setIsDouble(score >= 20 && Math.random() < 0.5);
-
-        setScore((prevScore) => prevScore + 1);
-        return newPosition;
-      };
-
-      setObstacle1Position((prev) =>
-        resetObstacle(prev, [obstacle2Position, obstacle3Position], setObstacle1Height, setObstacle1IsDouble)
-      );
-      setObstacle2Position((prev) =>
-        resetObstacle(prev, [obstacle1Position, obstacle3Position], setObstacle2Height, setObstacle2IsDouble)
-      );
-      setObstacle3Position((prev) =>
-        resetObstacle(prev, [obstacle1Position, obstacle2Position], setObstacle3Height, setObstacle3IsDouble)
+      let newPosition: number;
+      do {
+        newPosition = Math.random() * 200 + 800;
+      } while (
+        otherObstaclePositions.some(
+          (pos) => Math.abs(pos - newPosition) < minDistanceBetweenObstacles
+        )
       );
 
-      setSpeed((prevSpeed) => Math.min(prevSpeed + 0.01, 20));
-    }, 20);
+      setHeight(Math.random() * 30 + 30);
+      setIsDouble(score >= 20 && Math.random() < 0.5);
 
-    return () => clearInterval(obstacleTimer);
-  }, [isGameOver, speed, score, obstacle1Position, obstacle2Position, obstacle3Position]);
+      setScore((prevScore) => prevScore + 1);
+      return newPosition;
+    };
+
+    setObstacle1Position((prev) =>
+      resetObstacle(prev, [obstacle2Position, obstacle3Position], setObstacle1Height, setObstacle1IsDouble)
+    );
+    setObstacle2Position((prev) =>
+      resetObstacle(prev, [obstacle1Position, obstacle3Position], setObstacle2Height, setObstacle2IsDouble)
+    );
+    setObstacle3Position((prev) =>
+      resetObstacle(prev, [obstacle1Position, obstacle2Position], setObstacle3Height, setObstacle3IsDouble)
+    );
+
+    setSpeed((prevSpeed) => Math.min(prevSpeed + 0.01, 20));
+  }, 20);
+
+  return () => clearInterval(obstacleTimer);
+}, [isGameOver, speed, score, obstacle1Position, obstacle2Position, obstacle3Position]);
 
   useEffect(() => {
     // Initialize background music
@@ -158,7 +159,9 @@ const DinoGame = () => {
   useEffect(() => {
     const checkCollision = (position: number, height: number) => {
       if (position > 20 && position < 80 && dinoPosition < height) {
-        setIsGameOver(true);
+        if (hasStarted) {
+          setIsGameOver(true);
+        }
       }
     };
 
@@ -167,19 +170,22 @@ const DinoGame = () => {
     checkCollision(obstacle3Position, obstacle3Height);
   }, [obstacle1Position, obstacle2Position, obstacle3Position, dinoPosition]);
 
-  // Handle jump on spacebar press, considering jump threshold
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.code === 'Space') {
-         if (!isJumping || dinoPosition <= jumpThreshold) {
+        if (!hasStarted) {
+          setHasStarted(true); // Start the game on first spacebar press
+          restartGame();
+        }
+        if (!isJumping || dinoPosition <= jumpThreshold) {
           setIsJumping(true);
         }
       }
     };
-
+  
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isJumping, isGameOver, dinoPosition]);
+  }, [isJumping, isGameOver, dinoPosition, hasStarted]);
 
   // Restart the game
   const restartGame = () => {
@@ -297,6 +303,13 @@ const DinoGame = () => {
           </button>
         </div>
       )}
+
+      {!hasStarted && !isGameOver && (
+        <div className="absolute top-1/3 w-full text-center z-[51]">
+          <h2 className="text-3xl font-bold text-gray-800">Press Space bar to jump</h2>
+        </div>
+      )}
+
       </div>
       <div 
         className='absolute top-0 left-0 w-full h-full bg-[#f7f7f7] z-[49]'
