@@ -2,36 +2,58 @@ import { z } from "zod";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const emailRouter = createTRPCRouter({
-  getAll: protectedProcedure.query(async ({ ctx }) => {
-    const emails = await ctx.db.gameEmail.findMany({
-      orderBy: [{ order: 'asc' }],
-      include: {
-        replies: true,
-        reads: {
-          where: {
-            userId: ctx.session.user.id
-          }
-        }
-      },
-    });
+  getAll: protectedProcedure
+    .query(async ({ ctx }) => {
+      const emails = await ctx.db.gameEmail.findMany({
+        include: {
+          reads: {
+            where: {
+              userId: ctx.session.user.id,
+            },
+          },
+          replies: {
+            where: {
+              userId: ctx.session.user.id,
+            },
+          },
+        },
+        orderBy: {
+          order: 'asc',
+        },
+      });
 
-    // Transform the data to include a simple read boolean
-    return emails.map(email => ({
-      ...email,
-      read: email.reads.length > 0
-    }));
-  }),
+      return emails.map((email) => ({
+        ...email,
+        read: email.reads.length > 0,
+        replies: email.replies.map((reply) => ({
+          ...reply,
+          createdAt: reply.createdAt.getTime(),
+        })),
+      }));
+    }),
 
   markAsRead: protectedProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      // Create a read record for this user and email
-      return ctx.db.gameEmailRead.create({
-        data: {
+      // Check if already read to avoid duplicates
+      const existingRead = await ctx.db.gameEmailRead.findFirst({
+        where: {
           emailId: input.id,
           userId: ctx.session.user.id,
         },
       });
+
+      if (!existingRead) {
+        // Create a read record for this user and email
+        return ctx.db.gameEmailRead.create({
+          data: {
+            emailId: input.id,
+            userId: ctx.session.user.id,
+          },
+        });
+      }
+
+      return existingRead;
     }),
 
   reply: protectedProcedure
@@ -44,6 +66,7 @@ export const emailRouter = createTRPCRouter({
         data: {
           emailId: input.emailId,
           content: input.content,
+          userId: ctx.session.user.id,
         },
       });
     }),

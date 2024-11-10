@@ -7,6 +7,19 @@ import { useAppState } from "../AppStateContext";
 import { useTasks } from "../../TaskContext";
 import { playSound } from "../../services";
 
+interface EmailReply {
+  id: string;
+  content: string;
+  openness: number | null;
+  conscientiousness: number | null;
+  extraversion: number | null;
+  agreeableness: number | null;
+  neuroticism: number | null;
+  createdAt: number;
+  emailId: string;
+  userId: string;
+}
+
 interface Email {
   id: string;
   subject: string;
@@ -16,24 +29,14 @@ interface Email {
   sentTime: number;
   archived: boolean;
   read: boolean;
-  replies: Array<{
-    id: string;
-    content: string;
-    openness: number | null;
-    conscientiousness: number | null;
-    extraversion: number | null;
-    agreeableness: number | null;
-    neuroticism: number | null;
-    createdAt: Date;
-    emailId: string;
-  }>;
+  reads: Array<{ userId: string }>;
+  replies: EmailReply[];
 }
 
 const Koolout = () => {
   const { timeAsNumber } = useGameTime();
   const { appStates, updateAppState } = useAppState();
   const [replyContent, setReplyContent] = useState("");
-
   const { completeAction } = useTasks();
 
   const { data: allEmails, refetch } = api.email.getAll.useQuery(undefined, {
@@ -89,6 +92,7 @@ const Koolout = () => {
         content: replyContent,
       });
 
+      // Task completion logic remains the same...
       playSound('assets/sounds/emailsend.mp3');
 
       switch (selectedEmail.from) {
@@ -153,34 +157,39 @@ const Koolout = () => {
               <div className="mt-2 whitespace-pre-wrap">{selectedEmail.content}</div>
             </div>
 
-            {/* Replies */}
+            {/* Only show user's own reply if it exists */}
             {selectedEmail.replies.length > 0 && (
               <div className="mt-4 border-t pt-4">
-                <div className="font-bold mb-2">Replies:</div>
+                <div className="font-bold mb-2">Your Reply:</div>
                 {selectedEmail.replies.map((reply) => (
                   <div key={reply.id} className="mb-2 pl-4 border-l-2">
                     <div className="whitespace-pre-wrap">{reply.content}</div>
+                    <div className="text-sm text-gray-500 mt-1">
+                      {new Date(reply.createdAt).toLocaleString()}
+                    </div>
                   </div>
                 ))}
               </div>
             )}
 
-            {/* Reply Form */}
-            <div className="mt-4 border-t pt-4">
-              <textarea
-                key={`reply-${selectedEmail.id}`}
-                value={replyContent}
-                onChange={(e) => setReplyContent(e.target.value)}
-                className="w-full h-24 p-2 border rounded text-black bg-white"
-                placeholder="Write your reply..."
-              />
-              <button
-                onClick={handleSendReply}
-                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Send Reply
-              </button>
-            </div>
+            {/* Only show reply form if user hasn't replied yet */}
+            {selectedEmail.replies.length === 0 && (
+              <div className="mt-4 border-t pt-4">
+                <textarea
+                  key={`reply-${selectedEmail.id}`}
+                  value={replyContent}
+                  onChange={(e) => setReplyContent(e.target.value)}
+                  className="w-full h-24 p-2 border rounded text-black bg-white"
+                  placeholder="Write your reply..."
+                />
+                <button
+                  onClick={handleSendReply}
+                  className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                >
+                  Send Reply
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <div className="text-center text-gray-500 mt-10">

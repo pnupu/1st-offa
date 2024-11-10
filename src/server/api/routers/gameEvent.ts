@@ -55,6 +55,18 @@ export const gameEventRouter = createTRPCRouter({
                             }
                         }
                     },
+                    include: {
+                        email: {
+                            select: {
+                                id: true,
+                                reads: {
+                                    where: {
+                                        userId: ctx.session.user.id,
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }),
                 ctx.db.gameEvent.findMany({
                     where: {
