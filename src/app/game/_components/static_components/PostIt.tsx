@@ -53,7 +53,7 @@ const PostIt = ({ taskId, isOpen, toggle}: PostItProps) => {
         {!isTaskStarted && (
           <button
             onClick={(e) => handleStartTask(e)}
-            className="mt-2 px-3 py-1 bg-gray-800 text-white rounded"
+            className="mt-1 px-2 py-[2px] bg-gray-800 text-white rounded"
           >
             Start
           </button>
