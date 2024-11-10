@@ -5,6 +5,7 @@ import { useDragAndDropContext } from '../DragAndDropContext';
 import Image from 'next/image';
 import ReactDOM from 'react-dom';
 import { useTasks } from '../TaskContext';
+import { playSound } from '../services';
 
 interface DraggablePaperProps {
     id: string;
@@ -133,6 +134,8 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
                 completeAction(5, 'openStyleGuide');
             }
 
+            playSound('assets/sounds/paperup.mp3');
+
         } else {
             const currentX = positions[id]?.x ?? initialX;
             const currentY = positions[id]?.y ?? initialY;
@@ -151,6 +154,8 @@ const DraggablePaper = ({ id, initialX, initialY, imagePath, width, height }: Dr
                 zIndex: baseZIndex + currentY,
                 transition: 'left 0.1s ease, top 0.1s ease, transform 0.1s ease',
             });
+
+            playSound('assets/sounds/paperdown.mp3');
         } 
     };
 

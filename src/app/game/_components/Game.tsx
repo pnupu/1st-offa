@@ -22,6 +22,7 @@ import Webcam from "./static_components/Webcam";
 import {
     DoorOpen,
   } from "lucide-react";
+import { playSound } from "./services";
 
 const Game = () => {
 
@@ -32,6 +33,14 @@ const Game = () => {
     const calculateFinalScores = api.gameEvent.calculateFinalScores.useMutation();
     const createGameEvent = api.gameEvent.create.useMutation();
     const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (computerOn) {
+            playSound('assets/sounds/computeron.mp3');
+        } else {
+            playSound('assets/sounds/computeroff.mp3');
+        }
+    }, [computerOn]);
 
     useEffect(() => {
         startGameTime();

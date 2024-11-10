@@ -42,6 +42,7 @@ const Mooz = () => {
   const { getInitials } = useUser();
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const bossAudioRef = useRef<HTMLAudioElement>(null); // Boss audio
 
   const { completeAction } = useTasks();
 
@@ -79,9 +80,9 @@ const Mooz = () => {
       createGameEvent.mutate({
         type: "WEBCAM_ENABLED",
         oceanScores: {
-          extraversion: 0.1,        // Boost for being willing to be on camera
-          openness: 0.05,           // Small boost for embracing technology
-          neuroticism: -0.05        // Slight decrease for being comfortable on camera
+          extraversion: 0.1,
+          openness: 0.05,
+          neuroticism: -0.05
         }
       });
     } catch (error) {
@@ -93,8 +94,8 @@ const Mooz = () => {
       createGameEvent.mutate({
         type: "WEBCAM_DENIED",
         oceanScores: {
-          neuroticism: 0.1,         // Increase for anxiety about camera
-          extraversion: -0.05       // Slight decrease for avoiding visibility
+          neuroticism: 0.1,
+          extraversion: -0.05
         }
       });
     }
@@ -125,9 +126,9 @@ const Mooz = () => {
     createGameEvent.mutate({
       type: "MEETING_JOINED",
       oceanScores: {
-        conscientiousness: 0.15,    // Good boost for attending meetings
-        extraversion: 0.1,          // Boost for social participation
-        neuroticism: -0.05          // Slight decrease for handling professional situations
+        conscientiousness: 0.15,
+        extraversion: 0.1,
+        neuroticism: -0.05
       }
     });
 
@@ -136,7 +137,7 @@ const Mooz = () => {
       createGameEvent.mutate({
         type: "MEETING_EARLY",
         oceanScores: {
-          conscientiousness: 0.1,   // Additional boost for being early
+          conscientiousness: 0.1,
         }
       });
     }
@@ -150,21 +151,27 @@ const Mooz = () => {
       audioRef.current.currentTime = 0;
     }
 
+    // Stop boss audio if leaving before it completes
+    if (bossAudioRef.current) {
+      bossAudioRef.current.pause();
+      bossAudioRef.current.currentTime = 0;
+    }
+
     // Only create event if leaving before meeting ends
     if (!meetingEnded) {
       createGameEvent.mutate({
         type: "MEETING_LEFT_EARLY",
         oceanScores: {
-          conscientiousness: -0.15,  // Penalty for leaving early
-          agreeableness: -0.05      // Small penalty for being inconsiderate
+          conscientiousness: -0.15,
+          agreeableness: -0.05
         }
       });
     } else {
       createGameEvent.mutate({
         type: "MEETING_COMPLETED",
         oceanScores: {
-          conscientiousness: 0.1,    // Bonus for completing the meeting
-          extraversion: 0.05         // Small boost for social engagement
+          conscientiousness: 0.1,
+          extraversion: 0.05
         }
       });
     }
@@ -175,7 +182,6 @@ const Mooz = () => {
       leaveMeeting();
     }
   }, [meetingEnded, inCall]);
-
 
   useEffect(() => {
     return () => {
@@ -191,6 +197,15 @@ const Mooz = () => {
       });
     }
   }, [webcamStream]);
+
+  // Play boss audio once when meeting starts and user is in call
+  useEffect(() => {
+    if (meetingStarted && inCall) {
+      bossAudioRef.current?.play().catch((error) => console.error("Error playing boss audio:", error));
+    } else {
+      bossAudioRef.current?.pause();
+    }
+  }, [meetingStarted, inCall]);
 
   const showPermissionModal = (message: string) => {
     setModalMessage(message);
@@ -211,7 +226,6 @@ const Mooz = () => {
       </div>
     </div>
   ) : null;
-
 
   if (inCall) {
     return (
@@ -236,6 +250,7 @@ const Mooz = () => {
           </div>
         </div>
         <audio ref={audioRef} src="/assets/audio/meeting-audio.mp3" loop />
+        <audio ref={bossAudioRef} src="/assets/sounds/bossman.mp3" />
         <button
           onClick={leaveMeeting}
           className="absolute bottom-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg"
@@ -315,4 +330,4 @@ const Mooz = () => {
     </div>
   );
 };
-export default Mooz; 
+export default Mooz;

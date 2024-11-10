@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useGameTime } from "../../GameTimeContext";
 import { useAppState } from "../AppStateContext";
 import { useTasks } from "../../TaskContext";
+import { playSound } from "../../services";
 
 interface Email {
   id: string;
@@ -88,6 +89,8 @@ const Koolout = () => {
         emailId: selectedEmail.id,
         content: replyContent,
       });
+
+      playSound('assets/sounds/emailsend.mp3');
 
       switch (selectedEmail.from) {
         case "Julia Chen":

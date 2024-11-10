@@ -1,9 +1,10 @@
 // PostIt.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTasks } from '../TaskContext';
 import Image from 'next/image';
+import { playSound } from '../services';
 
 interface PostItProps {
   taskId: number;
@@ -16,6 +17,12 @@ const PostIt = ({ taskId, isOpen, toggle}: PostItProps) => {
   const [isTaskStarted, setIsTaskStarted] = useState(false);
   const task = tasks.find((t) => t.id === taskId);
   const [discarded, setDiscarded] = useState(false);
+
+  useEffect(() => {
+    if (task?.status === 'completed') {
+      playSound('assets/sounds/success.mp3');
+    }
+  }, [task]);
 
   if (!task) {
     return <div className="p-4 bg-yellow-300">Task not found</div>;
