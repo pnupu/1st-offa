@@ -118,6 +118,8 @@ function InsightCard({ title, trait, difference, insight }: {
 export function CompanyCard({ company }: CompanyCardProps) {
   const { data: userProfile } = api.profile.getUserProfile.useQuery();
 
+  console.log(company.oceanProfile);
+
   const traitDifferences = userProfile && company.oceanProfile
     ? calculateTraitDifferences(company.oceanProfile, userProfile)
     : null;

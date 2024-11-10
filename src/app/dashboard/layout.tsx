@@ -33,7 +33,7 @@ export default function DashboardLayout({
           <div className="flex h-[88px] items-center justify-between px-8">
             <h1 className="font-chillax text-2xl font-semibold">Welcome to the <span className="text-[#2A4060]">OFFA</span></h1>
             {/* Play button */}
-            <Button variant="outline" size="sm" className="text-xs" onClick={() => router.push('/game')}>Play</Button>
+            <Button  size="sm" className="text-xs bg-[#2A4060]" onClick={() => router.push('/game')}>Play</Button>
           </div>
             <Separator />
           <div className="p-8">

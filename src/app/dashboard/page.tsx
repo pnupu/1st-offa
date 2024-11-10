@@ -24,7 +24,7 @@ export default function DashboardPage() {
     <div className="space-y-8">
       {/* Banner/Welcome Section */}
       <div className="relative">
-        <div className="relative">
+        <div className="relative group">
           <Image
             src="../../desktop.svg"
             alt="Welcome Banner"
@@ -32,7 +32,7 @@ export default function DashboardPage() {
             height={1200}
             className="w-full rounded-lg"
           />
-          <div className="absolute inset-0 bg-orange-500/30 rounded-lg" />
+          <div className="absolute inset-0 bg-black/30 rounded-lg group-hover:opacity-10 transition-all duration-300" />
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-6">
           <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
