@@ -1,92 +1,92 @@
 [
-    {
-        "Sender": {
-            "Name": "Julia Chen",
-            "Position": "Project Manager"
-        },
-        "Subject": "Update on the Team Meeting",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nWe\u2019re planning to hold a team meeting to discuss the upcoming project deadlines and workload distribution. Can you confirm your availability for 1:00 p.m. today? If there\u2019s anything specific you\u2019d like to discuss, feel free to let me know so I can add it to the agenda.\n\nThanks,\nJulia"
+  {
+    "Sender": {
+      "Name": "Julia Chen",
+      "Position": "Project Manager"
     },
-    {
-        "Sender": {
-            "Name": "Anna Torres",
-            "Position": "HR Coordinator"
-        },
-        "Subject": "New Intern Introduction",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nI\u2019m pleased to let you know that our new intern, Jordan Lee, is starting on Monday! As you\u2019ll be working closely with them, I\u2019d appreciate it if you could take a few minutes to introduce yourself and help them get oriented. If you have any tips on projects they can begin with, please share those with them as well.\n\nLet me know if you have any questions, or feel free to drop by my office for more information.\n\nThanks for your support!\nAnna"
+    "Subject": "Update on the Team Meeting",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nWe\u2019re planning to hold a team meeting to discuss the upcoming project deadlines and workload distribution. Can you confirm your availability for 1:00 p.m. today? If there\u2019s anything specific you\u2019d like to discuss, feel free to let me know so I can add it to the agenda.\n\nThanks,\nJulia"
+  },
+  {
+    "Sender": {
+      "Name": "Anna Torres",
+      "Position": "HR Coordinator"
     },
-    {
-        "Sender": {
-            "Name": "Derek Hall",
-            "Position": "Senior Analyst"
-        },
-        "Subject": "Last-Minute Report Request",
-        "SentTime": 0,
-        "Greeting": "Hey",
-        "Body": ",\n\nI know this is last-minute, but I could really use your help with the quarterly financial report. Could you confirm if you have the latest figures for the last quarter? If so, could you send the key numbers over to me by the end of the day? Otherwise, let me know if there\u2019s a delay, and I\u2019ll follow up with the finance team.\n\nThanks in advance for your help!\n\nBest,\nDerek"
+    "Subject": "New Intern Introduction",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nI\u2019m pleased to let you know that our new intern, Jordan Lee, is starting on Monday! As you\u2019ll be working closely with them, I\u2019d appreciate it if you could take a few minutes to introduce yourself and help them get oriented. If you have any tips on projects they can begin with, please share those with them as well.\n\nLet me know if you have any questions, or feel free to drop by my office for more information.\n\nThanks for your support!\nAnna"
+  },
+  {
+    "Sender": {
+      "Name": "Derek Hall",
+      "Position": "Senior Analyst"
     },
-    {
-        "Sender": {
-            "Name": "Carlos Mendes",
-            "Position": "Office Manager"
-        },
-        "Subject": "Reminder: Friday\u2019s Office Event",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nThis is a quick reminder about the upcoming team-building event on Friday. We\u2019re planning a casual lunch in the office lounge starting at noon, followed by a few team activities. Let me know if you\u2019ll be joining us, and if you have any dietary preferences or restrictions, so I can pass the information to catering.\n\nLooking forward to seeing you there!\nCarlos"
+    "Subject": "Last-Minute Report Request",
+    "SentTime": 0,
+    "Greeting": "Hey",
+    "Body": ",\n\nI know this is last-minute, but I could really use your help with the quarterly financial report. Could you confirm if you have the latest figures for the last quarter? If so, could you send the key numbers over to me by the end of the day? Otherwise, let me know if there\u2019s a delay, and I\u2019ll follow up with the finance team.\n\nThanks in advance for your help!\n\nBest,\nDerek"
+  },
+  {
+    "Sender": {
+      "Name": "Carlos Mendes",
+      "Position": "Office Manager"
     },
-    {
-        "Sender": {
-            "Name": "Lisa Bauer",
-            "Position": "Team Lead"
-        },
-        "Subject": "Quick Check-in: Project Status",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nI wanted to check in on the status of the presentation materials for the client review next week. Are we on track to have everything ready by Wednesday? If there are any challenges or adjustments to the timeline, please let me know.\n\nAppreciate the update!\n\nThanks,\nLisa"
+    "Subject": "Reminder: Friday\u2019s Office Event",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nThis is a quick reminder about the upcoming team-building event on Friday. We\u2019re planning a casual lunch in the office lounge starting at noon, followed by a few team activities. Let me know if you\u2019ll be joining us, and if you have any dietary preferences or restrictions, so I can pass the information to catering.\n\nLooking forward to seeing you there!\nCarlos"
+  },
+  {
+    "Sender": {
+      "Name": "Lisa Bauer",
+      "Position": "Team Lead"
     },
-    {
-        "Sender": {
-            "Name": "Sean Matthews",
-            "Position": "Account Manager"
-        },
-        "Subject": "Client Feedback Needed",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nOne of our clients, Pinnacle Group, recently completed their Q3 service cycle with us, and I\u2019d like to reach out for feedback. Could you draft a polite email we can send them asking about their experience? Keep it open-ended so we can get insights into any areas for improvement.\n\nIf you have any questions, let me know!\n\nBest,\nSean"
+    "Subject": "Quick Check-in: Project Status",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nI wanted to check in on the status of the presentation materials for the client review next week. Are we on track to have everything ready by Wednesday? If there are any challenges or adjustments to the timeline, please let me know.\n\nAppreciate the update!\n\nThanks,\nLisa"
+  },
+  {
+    "Sender": {
+      "Name": "Sean Matthews",
+      "Position": "Account Manager"
     },
-    {
-        "Sender": {
-            "Name": "Paula Edwards",
-            "Position": "Marketing Team"
-        },
-        "Subject": "Document Formatting Issue",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nI noticed that a couple of the slides in our presentation file you seem to have some formatting issues. Could you send me a list of issues that need to be fixed in the presentation? \n\nThanks so much!\nPaula"
+    "Subject": "Client Feedback Needed",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nOne of our clients, Pinnacle Group, recently completed their Q3 service cycle with us, and I\u2019d like to reach out for feedback. Could you draft a polite email we can send them asking about their experience? Keep it open-ended so we can get insights into any areas for improvement.\n\nIf you have any questions, let me know!\n\nBest,\nSean"
+  },
+  {
+    "Sender": {
+      "Name": "Paula Edwards",
+      "Position": "Marketing Team"
     },
-    {
-        "Sender": {
-            "Name": "Thomas Yoo",
-            "Position": "Finance Department"
-        },
-        "Subject": "Invoice Question from Vendor",
-        "SentTime": 0,
-        "Greeting": "Hello",
-        "Body": ",\n\nOne of our vendors reached out about a recent invoice they received, which had a few discrepancies. Could you double-check the invoice for any errors and let me know what needs updating? We\u2019d like to avoid any back-and-forth, so I\u2019d appreciate it if you could handle it quickly.\n\nThanks,\nThomas"
+    "Subject": "Document Formatting Issue",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nI noticed that a couple of the slides in our presentation file seem to have some formatting issues. Could you send me a list of issues that need to be fixed in the presentation? \n\nThanks so much!\nPaula"
+  },
+  {
+    "Sender": {
+      "Name": "Thomas Yoo",
+      "Position": "Finance Department"
     },
-    {
-        "Sender": {
-            "Name": "Sophie Nguyen",
-            "Position": "Admin Assistant"
-        },
-        "Subject": "Assistance with Filing System",
-        "SentTime": 0,
-        "Greeting": "Hi",
-        "Body": ",\n\nI\u2019m working on reorganizing our digital filing system. It would save me a lot of time if you could point me to the most accurate names or file structure we should use.\n\nThanks so much for your help!\nSophie"
-    }
+    "Subject": "Invoice Question from Vendor",
+    "SentTime": 0,
+    "Greeting": "Hello",
+    "Body": ",\n\nOne of our vendors reached out about a recent invoice they received, which had a few discrepancies. Could you double-check the invoice for any errors and let me know what needs updating? We\u2019d like to avoid any back-and-forth, so I\u2019d appreciate it if you could handle it quickly.\n\nThanks,\nThomas"
+  },
+  {
+    "Sender": {
+      "Name": "Sophie Nguyen",
+      "Position": "Admin Assistant"
+    },
+    "Subject": "Assistance with Filing System",
+    "SentTime": 0,
+    "Greeting": "Hi",
+    "Body": ",\n\nI\u2019m working on reorganizing our digital filing system. It would save me a lot of time if you could point me to the most accurate names or file structure we should use.\n\nThanks so much for your help!\nSophie"
+  }
 ]
