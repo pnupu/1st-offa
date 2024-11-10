@@ -37,7 +37,7 @@ export const gameEventRouter = createTRPCRouter({
 
     calculateFinalScores: protectedProcedure
         .mutation(async ({ ctx }) => {
-            // Get all events, email replies, and task completions
+            // Get all events, email replies, and task events
             const [events, emailReplies, taskEvents] = await Promise.all([
                 ctx.db.gameEvent.findMany({
                     where: {
@@ -103,17 +103,46 @@ export const gameEventRouter = createTRPCRouter({
                 neuroticism: updateScore(scores.neuroticism, reply.neuroticism),
             }), scores);
 
-            // Process task events with special handling for completion times
+            // Track tasks that were started but not completed
+            const taskStatus = new Map<string, { started: boolean, completed: boolean }>();
+            
+            // First pass to identify incomplete tasks
+            taskEvents.forEach(event => {
+                const taskId = event.taskId;
+                if (!taskId) return;
+                
+                if (!taskStatus.has(taskId)) {
+                    taskStatus.set(taskId, { started: false, completed: false });
+                }
+                
+                const status = taskStatus.get(taskId)!;
+                if (event.type === 'TASK_STARTED') {
+                    status.started = true;
+                } else if (event.type === 'TASK_COMPLETED') {
+                    status.completed = true;
+                }
+            });
+
+            // Process task events with special handling for completion times and penalties
             scores = taskEvents.reduce((scores, event) => {
                 let conscientiousnessModifier = 0;
                 
-                // Add conscientiousness bonus for completing tasks
                 if (event.type === 'TASK_COMPLETED') {
                     conscientiousnessModifier = 0.1; // Base completion bonus
                     
                     // Add efficiency bonus for quick completions
                     if (event.completionTime && event.completionTime < 300) { // Less than 5 minutes
                         conscientiousnessModifier += 0.05;
+                    }
+                } else if (event.type === 'TASK_STARTED') {
+                    // Check if this task was never completed
+                    const taskId = event.taskId;
+                    if (taskId && taskStatus.has(taskId)) {
+                        const status = taskStatus.get(taskId)!;
+                        if (status.started && !status.completed) {
+                            conscientiousnessModifier = -0.15; // Penalty for unfinished task
+                            scores.neuroticism = updateScore(scores.neuroticism, 0.1);
+                        }
                     }
                 }
 

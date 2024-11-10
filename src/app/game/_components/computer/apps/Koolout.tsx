@@ -48,7 +48,6 @@ const Koolout = () => {
   // Reset reply content when selected email changes
   useEffect(() => {
     setReplyContent("");
-    console.log('selectedEmail', selectedEmail);
   }, [selectedEmail?.id]);
 
   // Filter emails based on current game time

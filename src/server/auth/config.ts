@@ -72,7 +72,7 @@ export const authConfig: NextAuthConfig = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       if (token) {
         session.user.id = token.sub!;
         session.user.role = token.role!;
@@ -80,18 +80,35 @@ export const authConfig: NextAuthConfig = {
         session.user.email = token.email ?? "";
         session.user.name = token.name;
         session.user.image = token.picture;
+
+        // Create or update session in database
+        await db.session.upsert({
+          where: {
+            sessionToken: token.jti ?? '',
+          },
+          create: {
+            sessionToken: token.jti ?? '',
+            userId: token.sub!,
+            expires: new Date(token.exp! * 1000),
+          },
+          update: {
+            expires: new Date(token.exp! * 1000),
+          },
+        });
       }
       return session;
     },
     async jwt({ token, user, account }) {
       if (account && user) {
-        return {
+        token = {
           ...token,
           role: user.role,
           companyId: user.companyId,
           email: user.email,
           name: user.name,
           picture: user.image,
+          jti: crypto.randomUUID(), // Add a unique session ID
+          exp: Math.floor(Date.now() / 1000) + (30 * 24 * 60 * 60), // 30 days from now
         };
       }
       return token;
@@ -118,40 +135,45 @@ export const authConfig: NextAuthConfig = {
         }
 
         try {
-          const user = await db.user.upsert({
-            where: { email: creds.email },
-            update: {
-              name: creds.name ?? null,
-              employeeAt: {
-                connect: { id: creds.companyId }
+          // Start a transaction to ensure data consistency
+          const result = await db.$transaction(async (tx) => {
+            const user = await tx.user.upsert({
+              where: { email: creds.email },
+              update: {
+                name: creds.name ?? null,
+                employeeAt: {
+                  connect: { id: creds.companyId }
+                },
+                role: "COMPANY_EMPLOYEE",
               },
-              role: "COMPANY_EMPLOYEE",
-            },
-            create: {
-              email: creds.email,
-              name: creds.name ?? null,
-              employeeAt: {
-                connect: { id: creds.companyId }
+              create: {
+                email: creds.email,
+                name: creds.name ?? null,
+                employeeAt: {
+                  connect: { id: creds.companyId }
+                },
+                role: "COMPANY_EMPLOYEE",
               },
-              role: "COMPANY_EMPLOYEE",
-            },
-            include: {
-              employeeAt: true,
-            },
+              include: {
+                employeeAt: true,
+              },
+            });
+
+            if (!user) {
+              throw new Error("Failed to create user");
+            }
+
+            return user;
           });
 
-          if (!user) {
-            throw new Error("Failed to create user");
-          }
-
           return {
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            image: user.image,
-            emailVerified: user.emailVerified,
-            role: user.role,
-            companyId: user.companyId,
+            id: result.id,
+            email: result.email,
+            name: result.name,
+            image: result.image,
+            emailVerified: result.emailVerified,
+            role: result.role,
+            companyId: result.companyId,
           };
         } catch (error) {
           console.error("Authorize error:", error);

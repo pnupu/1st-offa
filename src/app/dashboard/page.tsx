@@ -2,15 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { useUser } from "@/hooks/useUser";  
+import { useUser } from "@/hooks/useUser";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function DashboardPage() {
   const router = useRouter();
   const { user } = useUser();
 
+  useEffect(() => {
+    if (!user?.name) {
+      router.push("/dashboard/profile");
+    }
+  }, [user?.name, router]);
+
   if (!user?.name) {
-    router.push("/dashboard/profile");
     return null;
   }
 
@@ -79,4 +85,4 @@ export default function DashboardPage() {
       </div> */}
     </div>
   );
-} 
+}
