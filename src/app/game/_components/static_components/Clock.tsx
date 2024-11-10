@@ -2,9 +2,11 @@ import Image from "next/image";
 import { useGameTime } from "../GameTimeContext";
 import { useState } from "react";
 import { playSound } from "../services";
+import { api } from "@/trpc/react";
 
 const Clock = () => {
   const { timeHours, timeMinutes } = useGameTime();
+  const createGameEvent = api.gameEvent.create.useMutation();
 
   const [timeOffset, setTimeOffset] = useState({ h: 0, m: 0 });
 
@@ -12,6 +14,17 @@ const Clock = () => {
     setTimeOffset(prevOffset => {
       const newMinutes = prevOffset.m + 15;
       const additionalHours = Math.floor(newMinutes / 60);
+      
+      // Create game event for changing time
+      createGameEvent.mutate({
+        type: "CLOCK_CHANGED",
+        oceanScores: {
+          conscientiousness: -0.1,  // Significant negative impact on conscientiousness
+          neuroticism: 0.05,       // Slight increase in neuroticism (anxiety about cheating)
+          agreeableness: -0.05     // Small decrease in agreeableness (being dishonest)
+        }
+      });
+
       return {
         h: prevOffset.h + additionalHours,
         m: newMinutes % 60

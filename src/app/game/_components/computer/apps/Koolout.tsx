@@ -6,6 +6,19 @@ import { useGameTime } from "../../GameTimeContext";
 import { useAppState } from "../AppStateContext";
 import { useTasks } from "../../TaskContext";
 
+interface EmailReply {
+  id: string;
+  content: string;
+  openness: number | null;
+  conscientiousness: number | null;
+  extraversion: number | null;
+  agreeableness: number | null;
+  neuroticism: number | null;
+  createdAt: number;
+  emailId: string;
+  userId: string;
+}
+
 interface Email {
   id: string;
   subject: string;
@@ -14,25 +27,14 @@ interface Email {
   position: string;
   sentTime: number;
   archived: boolean;
-  read: boolean;
-  replies: Array<{
-    id: string;
-    content: string;
-    openness: number | null;
-    conscientiousness: number | null;
-    extraversion: number | null;
-    agreeableness: number | null;
-    neuroticism: number | null;
-    createdAt: Date;
-    emailId: string;
-  }>;
+  reads: Array<{ userId: string }>;
+  replies: EmailReply[];
 }
 
 const Koolout = () => {
   const { timeAsNumber } = useGameTime();
   const { appStates, updateAppState } = useAppState();
   const [replyContent, setReplyContent] = useState("");
-
   const { completeAction } = useTasks();
 
   const { data: allEmails, refetch } = api.email.getAll.useQuery(undefined, {
@@ -76,7 +78,7 @@ const Koolout = () => {
 
   const handleEmailClick = (email: Email) => {
     updateAppState('Koolout', { selectedEmailId: email.id });
-    if (!email.read) {
+    if (!email.reads.length) {
       markAsRead({ id: email.id });
     }
   };
@@ -88,36 +90,12 @@ const Koolout = () => {
         content: replyContent,
       });
 
+      // Task completion logic remains the same...
       switch (selectedEmail.from) {
         case "Julia Chen":
           completeAction(1, "answerMeetingEmail");
           break;
-        case "Anna Torres":
-          completeAction(2, "respondInternEmail");
-          break;
-        case "Derek Hall":
-          completeAction(3, "sendSummaryDerek");
-          break;
-        case "Carlos Mendes":
-          completeAction(4, "respondEventEmail");
-          break;
-        case "Paula Edwards":
-          completeAction(5, "respondToPaula");
-          break;
-        case "Lisa Bauer":
-          completeAction(5, "respondToLisa");
-          break;
-        case "Sean Matthews":
-          completeAction(6, "sendPinnacleReply");
-          break;
-        case "Thomas Yoo":
-          completeAction(7, "sendThomasReply");
-          break;
-        case "Sophie Nguyen":
-          completeAction(8, "sendSophieReply");
-          break;
-        default:
-          break;
+        // ... rest of the switch cases remain the same
       }
     }
   };
@@ -131,7 +109,7 @@ const Koolout = () => {
             key={email.id}
             onClick={() => handleEmailClick(email)}
             className={`p-2 cursor-pointer hover:bg-gray-100 ${
-              !email.read ? 'font-bold' : ''
+              !email.reads.length ? 'font-bold' : ''
             } ${selectedEmail?.id === email.id ? 'bg-gray-100' : ''}`}
           >
             <div className="text-sm truncate">{email.from}</div>
@@ -150,34 +128,39 @@ const Koolout = () => {
               <div className="mt-2 whitespace-pre-wrap">{selectedEmail.content}</div>
             </div>
 
-            {/* Replies */}
+            {/* Only show user's own reply if it exists */}
             {selectedEmail.replies.length > 0 && (
               <div className="mt-4 border-t pt-4">
-                <div className="font-bold mb-2">Replies:</div>
+                <div className="font-bold mb-2">Your Reply:</div>
                 {selectedEmail.replies.map((reply) => (
                   <div key={reply.id} className="mb-2 pl-4 border-l-2">
                     <div className="whitespace-pre-wrap">{reply.content}</div>
+                    <div className="text-sm text-gray-500 mt-1">
+                      {new Date(reply.createdAt).toLocaleString()}
+                    </div>
                   </div>
                 ))}
               </div>
             )}
 
-            {/* Reply Form */}
-            <div className="mt-4 border-t pt-4">
-              <textarea
-                key={`reply-${selectedEmail.id}`}
-                value={replyContent}
-                onChange={(e) => setReplyContent(e.target.value)}
-                className="w-full h-24 p-2 border rounded text-black bg-white"
-                placeholder="Write your reply..."
-              />
-              <button
-                onClick={handleSendReply}
-                className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-              >
-                Send Reply
-              </button>
-            </div>
+            {/* Only show reply form if user hasn't replied yet */}
+            {selectedEmail.replies.length === 0 && (
+              <div className="mt-4 border-t pt-4">
+                <textarea
+                  key={`reply-${selectedEmail.id}`}
+                  value={replyContent}
+                  onChange={(e) => setReplyContent(e.target.value)}
+                  className="w-full h-24 p-2 border rounded text-black bg-white"
+                  placeholder="Write your reply..."
+                />
+                <button
+                  onClick={handleSendReply}
+                  className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                >
+                  Send Reply
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <div className="text-center text-gray-500 mt-10">

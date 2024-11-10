@@ -34,7 +34,7 @@ model User {
   gameScores   GameScore[]
   oceanProfile OceanProfile?
   files        File[]
-  emailReads   GameEmailRead[] // Added relation for email reads
+  emailReads   GameEmailRead[]
 
   // Company relations
   employeeAt     Company? @relation("CompanyEmployees", fields: [companyId], references: [id])
@@ -48,6 +48,7 @@ model User {
   // Add this relation to the User model
   posts         Post[]         // Add this line
   gameEvents    GameEvent[]  // Add this line
+  GameEmailReply GameEmailReply[]
 }
 
 model Company {
@@ -211,6 +212,7 @@ model GameEmailRead {
 model GameEmailReply {
   id        String    @id @default(cuid())
   content   String    @db.Text
+  userId    String    // Add this field
   
   // OCEAN scores for this reply
   openness          Float?    @db.DoublePrecision
@@ -222,10 +224,12 @@ model GameEmailReply {
   // Relations
   email     GameEmail @relation(fields: [emailId], references: [id])
   emailId   String
+  user      User      @relation(fields: [userId], references: [id]) 
   
   createdAt DateTime  @default(now())
 
   @@index([emailId])
+  @@index([userId])  // Add this index
 }
 
 // Add this model after the existing models
