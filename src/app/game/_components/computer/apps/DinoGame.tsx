@@ -69,7 +69,7 @@ const DinoGame = () => {
 
 // Move each obstacle independently and reset if off-screen
 useEffect(() => {
-  if (isGameOver) return;
+  if (isGameOver || !hasStarted) return;
 
   const obstacleTimer = setInterval(() => {
     // Adjust minDistanceBetweenObstacles based on speed
@@ -113,7 +113,7 @@ useEffect(() => {
   }, 20);
 
   return () => clearInterval(obstacleTimer);
-}, [isGameOver, speed, score, obstacle1Position, obstacle2Position, obstacle3Position]);
+}, [isGameOver, speed, score, obstacle1Position, obstacle2Position, obstacle3Position, hasStarted]);
 
   useEffect(() => {
     // Initialize background music
