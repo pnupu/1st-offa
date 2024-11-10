@@ -51,7 +51,6 @@ export const userRouter = createTRPCRouter({
       return ctx.db.user.findUnique({
         where: { id: ctx.session.user.id },
         include: {
-          files: true,
           gameScores: {
             include: {
               task: true,

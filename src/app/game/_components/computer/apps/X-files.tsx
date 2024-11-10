@@ -35,23 +35,56 @@ const XFiles = () => {
     refetchOnWindowFocus: false
   });
   const { setBackground } = useBackground();
-  const createPost = api.post.create.useMutation();
+  const createPost = api.post.create.useMutation({
+    onSuccess: () => {
+      setIsSharing(false);
+      setNotification("Image shared to CheckedOut successfully!");
+    },
+    onError: (error) => {
+      console.error('Error sharing to CheckedOut:', error);
+      setNotification("Failed to share image to CheckedOut. Please try again.");
+    }
+  });
+  const createGameEvent = api.gameEvent.create.useMutation();
+  const [isSharing, setIsSharing] = useState(false);
 
-  const handleSetBackground = (dataUrl: string) => {
+  const handleSetBackground = async (dataUrl: string) => {
     setBackground(dataUrl);
+    
+    // Create game event for personalizing workspace
+    await createGameEvent.mutateAsync({
+      type: "SET_BACKGROUND",
+      oceanScores: {
+        openness: 0.05,      // Small increase for customization
+        extraversion: 0.02   // Tiny increase for self-expression
+      }
+    });
+    
     setNotification("Background updated successfully!");
   };
 
   const handleShareToCheckedout = async (dataUrl: string) => {
+    if (isSharing) return;
+
     try {
+      setIsSharing(true);
       await createPost.mutateAsync({
         content: "Check out my latest artwork! 🎨",
         imageData: dataUrl
       });
-      setNotification("Image shared to CheckedOut successfully!");
+
+      // Create game event for sharing artwork
+      await createGameEvent.mutateAsync({
+        type: "SHARED_ARTWORK",
+        oceanScores: {
+          extraversion: 0.1,  // Increase extraversion for social sharing
+          openness: 0.05      // Small increase for artistic expression
+        }
+      });
     } catch (error) {
       console.error('Error sharing to CheckedOut:', error);
       setNotification("Failed to share image to CheckedOut. Please try again.");
+      setIsSharing(false);
     }
   };
 
@@ -67,7 +100,7 @@ const XFiles = () => {
               onClick={() => setSelectedImage(image)}
               onContextMenu={(e) => {
                 e.preventDefault();
-                handleSetBackground(image.dataUrl);
+                void handleSetBackground(image.dataUrl);
               }}
             >
               <Image
@@ -108,9 +141,12 @@ const XFiles = () => {
             </button>
             <button
               onClick={() => handleShareToCheckedout(selectedImage.dataUrl)}
-              className="w-full px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+              disabled={isSharing}
+              className={`w-full px-4 py-2 bg-green-500 text-white rounded-lg ${
+                isSharing ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'
+              }`}
             >
-              Share to CheckedOut
+              {isSharing ? 'Sharing...' : 'Share to CheckedOut'}
             </button>
           </div>
         </div>

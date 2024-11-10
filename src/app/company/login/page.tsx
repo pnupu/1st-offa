@@ -93,7 +93,6 @@ const CompanyLoginPage = () => {
                   Secret Key
                 </label>
                 <input
-                  type="password"
                   value={secretKey}
                   onChange={(e) => setSecretKey(e.target.value)}
                   className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"

@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { api } from "@/trpc/react";
+import { useTasks } from "../../TaskContext";
 
 interface Point {
   x: number;
@@ -33,13 +34,17 @@ const Goal = () => {
   const [brushSize, setBrushSize] = useState(5);
   const [lastPoint, setLastPoint] = useState<Point | null>(null);
   const [showNotification, setShowNotification] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const { completeAction } = useTasks();
   
   const saveDrawing = api.gameEvent.saveDrawing.useMutation({
     onSuccess: () => {
       setShowNotification(true);
+      setIsSaving(false);
     },
     onError: (error) => {
       console.error('Error saving drawing:', error);
+      setIsSaving(false);
     }
   });
 
@@ -98,16 +103,20 @@ const Goal = () => {
 
   const handleSave = async () => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || isSaving) return;
 
     try {
+      setIsSaving(true);
       const base64Data = canvas.toDataURL('image/png');
       await saveDrawing.mutateAsync({
         imageData: base64Data,
         type: "GOAL_DRAWING"
       });
+
+      completeAction(1, "createArtwork");
     } catch (error) {
       console.error('Error saving drawing:', error);
+      setIsSaving(false);
     }
   };
 
@@ -140,9 +149,12 @@ const Goal = () => {
         />
         <button
           onClick={() => void handleSave()}
-          className="px-2 py-1 bg-blue-500 text-white rounded"
+          disabled={isSaving}
+          className={`px-2 py-1 bg-blue-500 text-white rounded ${
+            isSaving ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+          }`}
         >
-          Save
+          {isSaving ? 'Saving...' : 'Save'}
         </button>
         <button
           onClick={handleClear}

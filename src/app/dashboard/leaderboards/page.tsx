@@ -48,7 +48,7 @@ export default function LeaderboardsPage() {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {leaderboardData?.map((entry, index) => (
-              <tr key={entry.id} className={index < 3 ? 'bg-yellow-50' : ''}>
+              <tr key={entry.id} className={index < 3 ? '' : ''}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm font-medium text-gray-900">
                     {index + 1}

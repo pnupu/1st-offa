@@ -1,21 +1,22 @@
 "use client";
 
-import { api } from "@/trpc/react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/hooks/useUser";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { data: profile, isLoading } = api.user.getProfile.useQuery();
+  const { user } = useUser();
 
-  if (isLoading) {
-    return <div className="flex h-full items-center justify-center">Loading...</div>;
-  }
+  useEffect(() => {
+    if (!user?.name) {
+      router.push("/dashboard/profile");
+    }
+  }, [user?.name, router]);
 
-  if (!profile?.name) {
-    router.push("/dashboard/profile");
+  if (!user?.name) {
     return null;
   }
 
@@ -31,7 +32,7 @@ export default function DashboardPage() {
             height={1200}
             className="w-full rounded-lg"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-orange-500/50 to-transparent rounded-lg" />
+          <div className="absolute inset-0 bg-orange-500/30 rounded-lg" />
         </div>
         <div className="absolute inset-0 flex items-center justify-between p-6">
           <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
@@ -84,4 +85,4 @@ export default function DashboardPage() {
       </div> */}
     </div>
   );
-} 
+}
