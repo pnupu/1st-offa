@@ -169,17 +169,63 @@ export const gameEventRouter = createTRPCRouter({
             }, scores);
 
             // Update or create profile
-            return ctx.db.oceanProfile.upsert({
-                where: {
-                    userId: ctx.session.user.id,
-                },
-                create: {
-                    userId: ctx.session.user.id,
-                    profileType: "USER",
-                    ...scores,
-                },
-                update: scores,
+            const result = await ctx.db.$transaction(async (tx) => {
+                // Calculate individual scores (existing logic)
+                const userProfile = await tx.oceanProfile.upsert({
+                    where: {
+                        userId: ctx.session.user.id,
+                    },
+                    create: {
+                        userId: ctx.session.user.id,
+                        profileType: "USER",
+                        ...scores,
+                    },
+                    update: scores,
+                });
+
+                // Get user's company
+                const user = await tx.user.findUnique({
+                    where: { id: ctx.session.user.id },
+                    include: { employeeAt: true }
+                });
+
+                if (user?.employeeAt) {
+                    // Get all employee profiles for this company
+                    const employeeProfiles = await tx.oceanProfile.findMany({
+                        where: {
+                            user: {
+                                companyId: user.employeeAt.id
+                            }
+                        }
+                    });
+
+                    // Calculate average scores
+                    const avgScores = {
+                        openness: employeeProfiles.reduce((sum, p) => sum + p.openness, 0) / employeeProfiles.length,
+                        conscientiousness: employeeProfiles.reduce((sum, p) => sum + p.conscientiousness, 0) / employeeProfiles.length,
+                        extraversion: employeeProfiles.reduce((sum, p) => sum + p.extraversion, 0) / employeeProfiles.length,
+                        agreeableness: employeeProfiles.reduce((sum, p) => sum + p.agreeableness, 0) / employeeProfiles.length,
+                        neuroticism: employeeProfiles.reduce((sum, p) => sum + p.neuroticism, 0) / employeeProfiles.length,
+                    };
+
+                    // Update company profile
+                    await tx.oceanProfile.upsert({
+                        where: {
+                            companyId: user.employeeAt.id,
+                        },
+                        create: {
+                            companyId: user.employeeAt.id,
+                            profileType: "COMPANY",
+                            ...avgScores,
+                        },
+                        update: avgScores,
+                    });
+                }
+
+                return userProfile;
             });
+
+            return result;
         }),
 
     saveDrawing: protectedProcedure
