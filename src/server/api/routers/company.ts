@@ -60,7 +60,6 @@ export const companyRouter = createTRPCRouter({
       return ctx.db.company.findMany({
         include: {
           oceanProfile: true,
-          logo: true,
         },
       });
     }),

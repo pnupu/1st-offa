@@ -140,4 +140,72 @@ export const gameEventRouter = createTRPCRouter({
                 update: scores,
             });
         }),
+
+    saveDrawing: protectedProcedure
+        .input(z.object({
+            imageData: z.string(),
+            type: z.string()
+        }))
+        .mutation(async ({ ctx, input }) => {
+            try {
+                // Remove base64 prefix if present
+                const base64Data = input.imageData.replace(/^data:image\/\w+;base64,/, '');
+                
+                // Convert base64 to Buffer
+                const buffer = Buffer.from(base64Data, 'base64');
+
+                // Create both file and game event in a transaction
+                const result = await ctx.db.$transaction(async (tx) => {
+                    // Create the file first
+                    const file = await tx.file.create({
+                        data: {
+                            blob: buffer,
+                            key: `drawing-${Date.now()}-${ctx.session.user.id}`,
+                            userId: ctx.session.user.id,
+                        }
+                    });
+
+                    // Create the game event with the file reference
+                    const gameEvent = await tx.gameEvent.create({
+                        data: {
+                            type: input.type,
+                            userId: ctx.session.user.id,
+                            fileId: file.id
+                        }
+                    });
+
+                    return { file, gameEvent };
+                });
+
+                return result.gameEvent;
+            } catch (error) {
+                console.error('Error saving drawing:', error);
+                throw error;
+            }
+        }),
+
+    getDrawings: protectedProcedure
+        .query(async ({ ctx }) => {
+            try {
+                const files = await ctx.db.file.findMany({
+                    where: {
+                        userId: ctx.session.user.id,
+                        gameEvent: {
+                            type: "GOAL_DRAWING"
+                        }
+                    },
+                    orderBy: {
+                        createdAt: 'desc'
+                    }
+                });
+
+                return files.map(file => ({
+                    id: file.id,
+                    dataUrl: `data:image/png;base64,${file.blob.toString('base64')}`
+                }));
+            } catch (error) {
+                console.error('Error fetching drawings:', error);
+                throw error;
+            }
+        })
 }); 

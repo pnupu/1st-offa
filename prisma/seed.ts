@@ -6,15 +6,7 @@ const prisma = new PrismaClient();
 async function main() {
   // Seed companies and their profiles
   for (const companyData of companiesData) {
-    // Create company logo
-    const logo = await prisma.file.upsert({
-      where: { key: companyData.logoKey },
-      update: { url: companyData.logoUrl },
-      create: {
-        key: companyData.logoKey,
-        url: companyData.logoUrl,
-      },
-    });
+
 
     // Create company
     await prisma.company.upsert({
@@ -24,7 +16,6 @@ async function main() {
         description: companyData.description,
         website: companyData.website,
         address: companyData.address,
-        logoId: logo.id,
       },
       create: {
         id: companyData.id,
@@ -32,7 +23,6 @@ async function main() {
         description: companyData.description,
         website: companyData.website,
         address: companyData.address,
-        logoId: logo.id,
       },
     });
   }

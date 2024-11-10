@@ -65,4 +65,4 @@ export const useAppState = () => {
     throw new Error('useAppState must be used within AppStateProvider');
   }
   return context;
-}; 
+};

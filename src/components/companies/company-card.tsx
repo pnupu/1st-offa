@@ -2,13 +2,12 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { OceanGraph } from "@/components/ocean-graph";
-import type { Company, OceanProfile, File } from "@prisma/client";
+import type { Company, OceanProfile } from "@prisma/client";
 import { api } from "@/trpc/react";
 import { Building } from "lucide-react";
 
 interface CompanyWithProfile extends Company {
   oceanProfile: OceanProfile | null;
-  logo: File | null;
 }
 
 interface CompanyCardProps {
