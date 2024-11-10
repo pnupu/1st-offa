@@ -23,46 +23,32 @@ import {
     DoorOpen,
   } from "lucide-react";
 import { playSound } from "./services";
+import { set } from "date-fns";
 
 const Game = () => {
 
-    const { startGameTime, pauseGameTime, timeAsNumber } = useGameTime();
+    const { startGameTime, timeAsNumber } = useGameTime();
     const [openTask, setOpenTask] = useState<number | null>(null);
     const [computerOn, setComputerOn] = useState(true);
+    const [computerCanSound, setComputerCanSound] = useState(true);
     const [isLeaving, setIsLeaving] = useState(false);
     const calculateFinalScores = api.gameEvent.calculateFinalScores.useMutation();
     const createGameEvent = api.gameEvent.create.useMutation();
-    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-        if (computerOn) {
+        if (computerOn && computerCanSound) {
             playSound('assets/sounds/computeron.mp3');
-        } else {
+        } else if (computerCanSound) {
             playSound('assets/sounds/computeroff.mp3');
         }
-    }, [computerOn]);
+    }, [computerOn, computerCanSound]);
 
     useEffect(() => {
         startGameTime();
-
-        addEventListener('keydown', (e: KeyboardEvent) => {
-            if (e.key === 'Escape') {
-                handleTogglePause();
-            }
-        });
-
-        return () => {
-            pauseGameTime()
-
-            removeEventListener('keydown', (e: KeyboardEvent) => {
-                if (e.key === 'Escape') {
-                    handleTogglePause();
-                }
-            });
-
-        }
-    }
-    , []);
+        setTimeout(() => {
+            setComputerCanSound(true);
+        } , 500);
+    }, []);
 
     const handleToggleOpenTask = (id: number) => {
         if (openTask === id) {
@@ -71,16 +57,6 @@ const Game = () => {
             setOpenTask(id);
         }
     }
-
-    const handleTogglePause = () => {
-        setIsPaused(!isPaused);
-        if (isPaused) {
-            startGameTime();
-        } else {
-            pauseGameTime();
-        }
-    }
-
 
     const handlePowerButtonClick = () => {
         setComputerOn(!computerOn);
@@ -257,7 +233,6 @@ const Game = () => {
             )}
         </MousePositionProvider>  
         </WebcamProvider>
-        {isPaused && <div className="absolute bottom-0 right-0 p-4 text-white text-xs bg-black bg-opacity-50">Press ESC to pause</div> }
         </div>
     );
 }
