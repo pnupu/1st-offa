@@ -98,7 +98,32 @@ const Koolout = () => {
         case "Julia Chen":
           completeAction(1, "answerMeetingEmail");
           break;
-        // ... rest of the switch cases remain the same
+        case "Anna Torres":
+          completeAction(2, "respondInternEmail");
+          break;
+        case "Derek Hall":
+          completeAction(3, "sendSummaryDerek");
+          break;
+        case "Carlos Mendes":
+          completeAction(4, "respondEventEmail");
+          break;
+        case "Paula Edwards":
+          completeAction(5, "respondToPaula");
+          break;
+        case "Lisa Bauer":
+          completeAction(5, "respondToLisa");
+          break;
+        case "Sean Matthews":
+          completeAction(6, "sendPinnacleReply");
+          break;
+        case "Thomas Yoo":
+          completeAction(7, "sendThomasReply");
+          break;
+        case "Sophie Nguyen":
+          completeAction(8, "sendSophieReply");
+          break;
+        default:
+          break;
       }
     }
   };
